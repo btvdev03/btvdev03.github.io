@@ -3,12 +3,21 @@
 @theme {
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-  --color-cyber-teal: #14b8a6;
-  --color-cyber-cyan: #06b6d4;
-  --color-cyber-indigo: #6366f1;
-  --color-dark-surface: #0b0d13;
-  --color-dark-card: #11141d;
-  --color-dark-border: #1e2433;
+  
+  /* Deep Abyss Dark Palette */
+  --color-abyss-950: #05070c;
+  --color-abyss-900: #080c16;
+  --color-abyss-850: #0d1322;
+  --color-abyss-800: #131a2e;
+  --color-abyss-border: #1c263f;
+
+  /* Phosphor Terminal Accents */
+  --color-phosphor-amber: #f59e0b;
+  --color-phosphor-amber-bright: #fbbf24;
+  --color-phosphor-emerald: #10b981;
+  --color-phosphor-emerald-bright: #34d399;
+  --color-phosphor-cyan: #06b6d4;
+  --color-phosphor-cyan-bright: #22d3ee;
 }
 
 @layer base {
@@ -19,6 +28,17 @@
   html {
     scroll-behavior: smooth;
     font-family: var(--font-sans);
+    background-color: #05070c;
+    color: #e2e8f0;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    background-color: #05070c;
   }
 
   code, pre, kbd {
@@ -28,41 +48,96 @@
 
 /* Custom scrollbar for dark aesthetic */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #08090d;
+  background: #05070c;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 4px;
+  background: #1c263f;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #2d3b5e;
+}
+
+/* CRT Scanline & Phosphor Overlay Effect */
+.crt-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: 
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.22) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.015), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.015));
+  background-size: 100% 3px, 3px 100%;
+  opacity: 0.75;
+}
+
+.crt-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.65);
 }
 
 /* Subtle background grid pattern */
 .bg-grid-pattern {
-  background-size: 36px 36px;
+  background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
 }
 
 .bg-dot-pattern {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
-/* Glow effects */
-.glow-teal {
-  box-shadow: 0 0 40px -10px rgba(20, 184, 166, 0.25);
+/* Phosphor Glow Utilities */
+.glow-amber {
+  box-shadow: 0 0 30px -5px rgba(245, 158, 11, 0.22);
 }
 
-.glow-indigo {
-  box-shadow: 0 0 40px -10px rgba(99, 102, 241, 0.25);
+.glow-emerald {
+  box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.22);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 30px -5px rgba(6, 182, 212, 0.22);
+}
+
+/* Retro Terminal Panel UI */
+.retro-window-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  background-color: rgba(13, 19, 34, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Blinking terminal cursor */
+.terminal-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  background-color: #10b981;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }

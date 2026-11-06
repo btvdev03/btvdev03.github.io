@@ -5,19 +5,18 @@ import {
   ArrowRight,
   Copy,
   Check,
-  Mail,
   FileCode,
   GraduationCap,
   Layers,
   Terminal,
   Clock,
   Sparkles,
-  ExternalLink,
   X,
 } from 'lucide-react'
 import { GithubIcon } from './GithubIcon'
 import { personalInfo } from '../data/portfolioData'
 import { triggerConfetti } from '../lib/confetti'
+import { retroAudio } from '../lib/retroAudio'
 
 interface CommandPaletteProps {
   isOpen: boolean
@@ -41,6 +40,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
   const inputRef = useRef<HTMLInputElement>(null)
 
   const handleCopyEmail = () => {
+    retroAudio.play('success')
     navigator.clipboard.writeText(personalInfo.email)
     setCopied(true)
     triggerConfetti()
@@ -51,6 +51,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
   }
 
   const navigateTo = (anchor: string) => {
+    retroAudio.play('click')
     onClose()
     const element = document.querySelector(anchor)
     if (element) {
@@ -65,7 +66,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
         title: copied ? 'Đã sao chép Email!' : 'Sao chép Email liên hệ',
         subtitle: personalInfo.email,
         category: 'Actions',
-        icon: copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4 text-teal-400" />,
+        icon: copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4 text-cyan-400" />,
         action: handleCopyEmail,
         keywords: ['email', 'contact', 'mail', 'btv.dev03@gmail.com', 'lien he'],
       },
@@ -74,8 +75,9 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
         title: 'Mở GitHub cá nhân',
         subtitle: 'github.com/btvdev03',
         category: 'Actions',
-        icon: <GithubIcon className="w-4 h-4 text-indigo-400" />,
+        icon: <GithubIcon className="w-4 h-4 text-emerald-400" />,
         action: () => {
+          retroAudio.play('click')
           window.open(personalInfo.github, '_blank', 'noopener,noreferrer')
           onClose()
         },
@@ -95,7 +97,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
         title: 'Chuyển đổi số & Giải pháp Thực tiễn',
         subtitle: 'Case studies số hóa quy trình, ERP, IoT & Data pipeline',
         category: 'Navigation',
-        icon: <Layers className="w-4 h-4 text-teal-400" />,
+        icon: <Layers className="w-4 h-4 text-emerald-400" />,
         action: () => navigateTo('#transformation'),
         keywords: ['chuyen doi so', 'digital transformation', 'erp', 'workflow', 'case study'],
       },
@@ -104,7 +106,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
         title: 'Nghiên cứu Khoa học & Papers',
         subtitle: 'Semantic search, Knowledge discovery & BibTeX citations',
         category: 'Navigation',
-        icon: <GraduationCap className="w-4 h-4 text-purple-400" />,
+        icon: <GraduationCap className="w-4 h-4 text-cyan-400" />,
         action: () => navigateTo('#research'),
         keywords: ['research', 'nghien cuu', 'paper', 'bai bao', 'bibtex', 'arxiv'],
       },
@@ -120,7 +122,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
       {
         id: 'proj-git-roast',
         title: 'Dự án: git-roast (CLI)',
-        subtitle: 'Phân tích thói quen code qua Git commit & bóc phốt dev phong cách Spotify Wrapped',
+        subtitle: 'Phân tích thói quen code qua Git commit & Spotify Wrapped style',
         category: 'Projects',
         icon: <Terminal className="w-4 h-4 text-amber-400" />,
         action: () => {
@@ -137,7 +139,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
         title: 'Dự án: InstantTranslate (Chrome Extension)',
         subtitle: 'Dịch thuật ngữ đa ngữ cảnh tức thì chuẩn Manifest V3',
         category: 'Projects',
-        icon: <FileCode className="w-4 h-4 text-sky-400" />,
+        icon: <FileCode className="w-4 h-4 text-cyan-400" />,
         action: () => {
           navigateTo('#projects')
           setTimeout(() => {
@@ -152,7 +154,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
         title: 'Dự án: IdeaClaimer (Automation & AI)',
         subtitle: 'Hệ sinh thái thu thập ý tưởng nghiên cứu arXiv & Hacker News',
         category: 'Projects',
-        icon: <Sparkles className="w-4 h-4 text-teal-400" />,
+        icon: <Sparkles className="w-4 h-4 text-emerald-400" />,
         action: () => {
           navigateTo('#projects')
           setTimeout(() => {
@@ -167,7 +169,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
         title: 'Dự án: zen-desk-clock (Web App)',
         subtitle: 'Đồng hồ để bàn phong cách Zen & Pomodoro Deep Work',
         category: 'Projects',
-        icon: <Clock className="w-4 h-4 text-indigo-400" />,
+        icon: <Clock className="w-4 h-4 text-amber-400" />,
         action: () => {
           navigateTo('#projects')
           setTimeout(() => {
@@ -182,7 +184,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
         title: 'Ma trận Năng lực & Công nghệ',
         subtitle: 'Kiến trúc HTTT, Software Engineering, AI & DevOps',
         category: 'Navigation',
-        icon: <FileCode className="w-4 h-4 text-blue-400" />,
+        icon: <FileCode className="w-4 h-4 text-cyan-400" />,
         action: () => navigateTo('#skills'),
         keywords: ['skills', 'ky nang', 'react', 'typescript', 'docker', 'python'],
       },
@@ -229,7 +231,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
         if (isOpen) {
           onClose()
         } else {
-          // Open
           const evt = new CustomEvent('open-command-palette')
           window.dispatchEvent(evt)
         }
@@ -242,9 +243,11 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
         onClose()
       } else if (e.key === 'ArrowDown') {
         e.preventDefault()
+        retroAudio.play('hover')
         setSelectedIndex((prev) => (prev + 1) % Math.max(1, filteredCommands.length))
       } else if (e.key === 'ArrowUp') {
         e.preventDefault()
+        retroAudio.play('hover')
         setSelectedIndex((prev) => (prev - 1 + filteredCommands.length) % Math.max(1, filteredCommands.length))
       } else if (e.key === 'Enter') {
         e.preventDefault()
@@ -261,7 +264,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 sm:pt-28">
+        <div className="fixed inset-0 z-50 flex items-start justify-center pt-16 px-3 sm:px-4 sm:pt-24">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -269,7 +272,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/70 backdrop-blur-md"
+            className="fixed inset-0 bg-black/80 backdrop-blur-md"
           />
 
           {/* Modal Container */}
@@ -278,37 +281,56 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: -10 }}
             transition={{ type: 'spring', damping: 25, stiffness: 350 }}
-            className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-[#0e121b] shadow-2xl shadow-teal-950/40"
+            className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-cyan-500/40 bg-[#080c16] shadow-2xl shadow-cyan-950/60"
           >
+            {/* Retro Window Header */}
+            <div className="retro-window-header">
+              <div className="flex items-center gap-2 text-cyan-400">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>[COMMAND_PALETTE // QUICK_EXEC]</span>
+              </div>
+              <div className="text-slate-400 text-[10px]">
+                <button
+                  onClick={onClose}
+                  className="hover:text-white cursor-pointer"
+                >
+                  [ ✕ ]
+                </button>
+              </div>
+            </div>
+
             {/* Input Bar */}
-            <div className="flex items-center gap-3 border-b border-white/10 px-4 py-3.5">
-              <Search className="w-5 h-5 text-teal-400/80 shrink-0" />
+            <div className="flex items-center gap-3 border-b border-white/10 px-4 py-3 bg-black/40">
+              <Search className="w-4 h-4 text-cyan-400 shrink-0" />
               <input
                 ref={inputRef}
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Tìm kiếm mục, dự án, bài báo hoặc gõ lệnh... (Nhấn Esc để đóng)"
-                className="w-full bg-transparent text-sm text-slate-100 placeholder-slate-400 focus:outline-none"
+                onChange={(e) => {
+                  retroAudio.play('terminal')
+                  setQuery(e.target.value)
+                }}
+                placeholder="Tìm mục, dự án, bài báo hoặc gõ lệnh..."
+                className="w-full bg-transparent text-xs sm:text-sm text-slate-100 placeholder-slate-500 font-mono focus:outline-none"
               />
               {query && (
                 <button
                   onClick={() => setQuery('')}
-                  className="rounded p-1 text-slate-400 hover:text-slate-200 hover:bg-white/5"
+                  className="rounded p-1 text-slate-400 hover:text-slate-200 hover:bg-white/5 cursor-pointer"
                 >
                   <X className="w-4 h-4" />
                 </button>
               )}
-              <div className="flex items-center gap-1 shrink-0 text-xs text-slate-400 bg-white/5 px-2 py-1 rounded border border-white/5 font-mono">
+              <div className="hidden sm:flex items-center gap-1 shrink-0 text-[10px] text-slate-400 bg-white/5 px-2 py-0.5 rounded border border-white/10 font-mono">
                 <span>ESC</span>
               </div>
             </div>
 
             {/* Results List */}
-            <div className="max-h-96 overflow-y-auto p-2 space-y-1">
+            <div className="max-h-80 sm:max-h-96 overflow-y-auto p-2 space-y-1">
               {filteredCommands.length === 0 ? (
-                <div className="py-12 text-center text-sm text-slate-400">
+                <div className="py-12 text-center text-xs sm:text-sm text-slate-400 font-mono">
                   <p>Không tìm thấy kết quả phù hợp cho "{query}"</p>
-                  <p className="text-xs text-slate-500 mt-1">Thử tìm "email", "tdmu", "git-roast", "paper"...</p>
+                  <p className="text-[11px] text-slate-500 mt-1">Thử tìm "email", "tdmu", "git-roast", "paper"...</p>
                 </div>
               ) : (
                 filteredCommands.map((cmd, idx) => {
@@ -318,34 +340,34 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
                       key={cmd.id}
                       onClick={cmd.action}
                       onMouseEnter={() => setSelectedIndex(idx)}
-                      className={`w-full flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-xl text-left transition-all duration-150 ${
+                      className={`w-full flex items-center justify-between gap-3 px-3 py-2.5 rounded-xl text-left transition-all duration-150 cursor-pointer ${
                         isSelected
-                          ? 'bg-teal-500/15 text-white border border-teal-500/30'
+                          ? 'bg-cyan-500/15 text-white border border-cyan-500/40 glow-cyan'
                           : 'text-slate-300 hover:bg-white/[0.04] border border-transparent'
                       }`}
                     >
                       <div className="flex items-center gap-3 min-w-0">
                         <div
                           className={`p-2 rounded-lg shrink-0 ${
-                            isSelected ? 'bg-teal-500/20 text-teal-300' : 'bg-white/5 text-slate-400'
+                            isSelected ? 'bg-cyan-500/20 text-cyan-300' : 'bg-white/5 text-slate-400'
                           }`}
                         >
                           {cmd.icon}
                         </div>
                         <div className="min-w-0 truncate">
-                          <div className="text-sm font-medium truncate flex items-center gap-2">
+                          <div className="text-xs sm:text-sm font-medium font-mono truncate flex items-center gap-2">
                             <span>{cmd.title}</span>
-                            <span className="text-[10px] font-mono uppercase px-1.5 py-0.5 rounded bg-white/5 text-slate-400 border border-white/5">
+                            <span className="text-[9px] font-mono uppercase px-1.5 py-0.2 rounded bg-white/5 text-slate-400 border border-white/5">
                               {cmd.category}
                             </span>
                           </div>
-                          <div className="text-xs text-slate-400 truncate">{cmd.subtitle}</div>
+                          <div className="text-[11px] text-slate-400 truncate mt-0.5">{cmd.subtitle}</div>
                         </div>
                       </div>
 
                       <ArrowRight
                         className={`w-4 h-4 shrink-0 transition-transform ${
-                          isSelected ? 'text-teal-400 translate-x-0.5' : 'text-slate-500 opacity-40'
+                          isSelected ? 'text-cyan-400 translate-x-0.5' : 'text-slate-500 opacity-40'
                         }`}
                       />
                     </button>
@@ -355,20 +377,19 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
             </div>
 
             {/* Keyboard Footer */}
-            <div className="border-t border-white/10 px-4 py-2.5 bg-black/30 flex items-center justify-between text-xs text-slate-400 font-mono">
-              <div className="flex items-center gap-3">
+            <div className="border-t border-white/10 px-4 py-2 bg-black/60 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+              <div className="flex items-center gap-2 sm:gap-3">
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-[10px]">↑</kbd>
-                  <kbd className="px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-[10px]">↓</kbd>
-                  <span className="text-slate-400 ml-1">Điều hướng</span>
+                  <kbd className="px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-[9px]">↑↓</kbd>
+                  <span className="text-slate-400 hidden sm:inline">Di chuyển</span>
                 </span>
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-[10px]">↵</kbd>
-                  <span className="text-slate-400 ml-1">Chọn</span>
+                  <kbd className="px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-[9px]">↵</kbd>
+                  <span className="text-slate-400 hidden sm:inline">Chọn</span>
                 </span>
               </div>
-              <div className="text-[11px] text-teal-400/80">
-                Võ Tấn Bản • Portfolio
+              <div className="text-[10px] text-emerald-400/90">
+                btvdev03 • TDMU
               </div>
             </div>
           </motion.div>

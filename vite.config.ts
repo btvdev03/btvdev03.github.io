@@ -10,6 +10,16 @@ export default defineConfig({
     tailwindcss(),
   ],
   base: '/',
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'three-vendor': ['three'],
+          'motion-vendor': ['framer-motion'],
+        },
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

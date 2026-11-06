@@ -17,6 +17,7 @@ export interface PersonalInfo {
     title: string
     description: string
     icon: string
+    metric?: string
   }[]
   metrics: {
     value: string
@@ -42,6 +43,7 @@ export interface DigitalTransformationCase {
   keyArchitectures: string[]
   techStack: string[]
   metrics: MetricItem[]
+  pipeline?: string[]
   featured: boolean
 }
 
@@ -59,6 +61,8 @@ export interface ResearchPaper {
   doi?: string
   codeUrl?: string
   topics: string[]
+  metricBadge?: string
+  takeaway?: string
 }
 
 export interface EngineeringProject {
@@ -74,6 +78,7 @@ export interface EngineeringProject {
   demoUrl?: string
   terminalSnippet?: string
   starredCount?: string
+  metric?: string
 }
 
 export interface SkillItem {
@@ -102,6 +107,7 @@ export interface TimelineEntry {
   points: string[]
   tags: string[]
   isCurrent?: boolean
+  highlightBadge?: string
 }
 
 export interface NavItem {
