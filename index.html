@@ -4,8 +4,11 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Võ Tấn Bản | Software Engineer &amp; Information Systems Researcher</title>
-<meta name="description" content="Portfolio của Kỹ sư Võ Tấn Bản - Kỹ sư Kỹ thuật Phần mềm, Học viên Cao học Hệ thống Thông tin (TDMU). Chuyên về Practical Engineering, Kiến trúc dữ liệu &amp; Chuyển đổi số doanh nghiệp.">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Ban Vo Tan | Kỹ sư Phần mềm &amp; Học viên Cao học Hệ thống Thông tin (TDMU)</title>
+<meta name="description" content="Portfolio của Kỹ sư Võ Tấn Bản (Ban Vo Tan) - Kỹ sư Kỹ thuật Phần mềm, Học viên Cao học Hệ thống Thông tin (TDMU).">
 <meta name="keywords" content="Võ Tấn Bản, btvdev03, Software Engineer, Information Systems, TDMU, Thủ Dầu Một, Chuyển đổi số, Academic Research, Practical Engineering, Python, FastAPI, TypeScript, React, Docker, PostgreSQL">
 <meta name="author" content="Võ Tấn Bản">
 <meta property="og:type" content="website">
@@ -624,7 +627,7 @@ footer{position:relative;margin-top:120px;padding:0 0 0}
     <div class="ld-mark"><canvas id="ldEnso" width="91" height="90" aria-hidden="true"></canvas><canvas id="ldSeal" width="18" height="18" aria-hidden="true"></canvas></div>
     <div class="ld-brand">Ban Vo Tan</div>
     <canvas id="ldBar" width="110" height="3" aria-hidden="true"></canvas>
-    <p class="ld-msg"><span id="ldMsg">Grinding the ink</span><b id="ldNum">0%</b></p>
+    <p class="ld-msg"><span id="ldMsg">Khởi tạo không gian phù sa...</span><b id="ldNum">0%</b></p>
   </div>
 </div>
 <script>
@@ -650,16 +653,33 @@ footer{position:relative;margin-top:120px;padding:0 0 0}
     L.querySelector('.ld-bot .ld-paper').style.clipPath = poly(0, false); L.querySelector('.ld-bot .ld-rim').style.clipPath = poly(PX, false);
   }
   tearLine(); addEventListener('resize', tearLine);
-  // ensō painted on by angle, from its opening at the upper right
-  var ens = document.getElementById('ldEnso'), ex = ens.getContext('2d'), src = null, img = new __threeuiStorageImage();
-  img.onload = function () { var t = document.createElement('canvas'); t.width = 91; t.height = 90; var tx = t.getContext('2d'); tx.drawImage(img, 0, 0); src = tx.getImageData(0, 0, 91, 90); };
-  img.src = 'https://ublctyddhtbgaersvxxb.supabase.co/storage/v1/object/public/threeui-media/scene-images/embedded/e86cdc1b824ae3633a0b54f7459d51a093455c17a1796358cbe4dae85aabd733.png';
-  var drawEnso = function (p) { if (!src) return; var out = ex.createImageData(91, 90), d = src.data, o = out.data, sweep = p * TAU * 1.02, a0 = -0.8;
-    for (var y = 0; y < 90; y++) for (var x = 0; x < 91; x++) { var i = (y * 91 + x) * 4; if (!d[i + 3]) continue;
-      var rel = (((a0 - Math.atan2(y - 45, x - 45.5)) % TAU) + TAU) % TAU; if (rel <= sweep) { o[i] = d[i]; o[i + 1] = d[i + 1]; o[i + 2] = d[i + 2]; o[i + 3] = d[i + 3]; } }
-    ex.putImageData(out, 0, 0); };
-  // vermilion seal with the Agentic mark
-  (function () { var s = document.getElementById('ldSeal').getContext('2d'), R = rnd(5), A = ['000001100000', '000011110000', '000011110000', '000111111000', '000111011000', '001110011100', '001100001100', '011111111110', '011111111110', '011000000110', '110000000011', '110000000011'];
+  // circular river ring badge
+  var ens = document.getElementById('ldEnso'), ex = ens.getContext('2d');
+  var drawEnso = function (p) {
+    ex.clearRect(0, 0, 91, 90);
+    ex.save();
+    ex.lineWidth = 4;
+    ex.strokeStyle = '#2d5a42';
+    ex.beginPath();
+    ex.arc(45.5, 45, 34, -Math.PI / 2, -Math.PI / 2 + p * TAU);
+    ex.stroke();
+    ex.restore();
+  };
+  // son do seal voi chu 'B' (Ban)
+  (function () { var s = document.getElementById('ldSeal').getContext('2d'), R = rnd(5), A = [
+    '111111110000',
+    '111111111000',
+    '110000001100',
+    '110000001100',
+    '111111111000',
+    '111111110000',
+    '110000001100',
+    '110000001100',
+    '110000001100',
+    '111111111000',
+    '111111110000',
+    '000000000000'
+  ];
     for (var y = 0; y < 18; y++) for (var x = 0; x < 18; x++) { var edge = !x || !y || x === 17 || y === 17; if (edge && R() < 0.4) continue; if ((x < 1 || x > 16) && (y < 1 || y > 16)) continue;
       var gy = y - 3, gx = x - 3, on = gy >= 0 && gy < 12 && gx >= 0 && gx < 12 && A[gy][gx] === '1';
       s.fillStyle = on ? '#f7efe2' : R() < 0.04 ? '#d86e5c' : '#c63a2c'; s.fillRect(x, y, 1, 1); } })();
@@ -918,7 +938,6 @@ footer{position:relative;margin-top:120px;padding:0 0 0}
 <!-- ============ GUIDE ============ -->
 <section class="guide" id="guide">
   <div class="gridbg"></div>
-  <img crossorigin="anonymous" class="orn orn-enso-guide px" src="https://ublctyddhtbgaersvxxb.supabase.co/storage/v1/object/public/threeui-media/scene-images/embedded/e86cdc1b824ae3633a0b54f7459d51a093455c17a1796358cbe4dae85aabd733.png" alt="" aria-hidden="true">
   <div class="seal-c"><canvas class="hanko px" data-k="HỌC" aria-hidden="true"></canvas></div>
   <h2 class="h2">Quá Trình Học Tập &amp; <span class="brush">Định Hướng Phát Triển</span></h2>
   <p class="lede">Tốt nghiệp Kỹ sư Kỹ thuật Phần mềm và hiện đang tiếp tục học tập, nghiên cứu Cao học ngành Hệ thống Thông tin tại Trường Đại học Thủ Dầu Một (TDMU).</p>
@@ -1087,8 +1106,7 @@ $$('#sheet a').forEach((a) => a.addEventListener('click', () => $('#sheet').clas
   let W = 740, H = 601;
   const X = (x) => (x / 740) * W, Y = (y) => (y / 601) * H;
   const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt) e.textContent = txt; return e; };
-  const enso = el('img', 'orn-enso px'); enso.src = 'https://ublctyddhtbgaersvxxb.supabase.co/storage/v1/object/public/threeui-media/scene-images/embedded/e86cdc1b824ae3633a0b54f7459d51a093455c17a1796358cbe4dae85aabd733.png'; enso.alt = ''; enso.setAttribute('aria-hidden', 'true'); org.appendChild(enso);
-  const core = el('div', 'node core', 'Võ Tấn Bản'); org.appendChild(core);
+  const core = el('div', 'node core', 'Ban Vo Tan'); org.appendChild(core);
   const slot = el('div', 'sprout-slot'); slot.id = 'sproutSlot'; slot.style.cssText = 'position:absolute;width:36px;height:56px;transform:translate(-50%,-100%);pointer-events:none'; org.appendChild(slot);
   const ghostEls = [];
   ghosts.forEach(([a, b]) => { [a, b].filter(Boolean).forEach((p) => { const g = el('div', 'ghost'); org.appendChild(g); ghostEls.push([g, p]); }); });
@@ -2301,45 +2319,41 @@ class HeroView {
     }));
     S.add(ground);
 
-    /* Mount Fuji: concave lathe cone, gullied snow cap, haze-blue flanks */
+    /* Rặng núi Thất Sơn (Bảy Núi An Giang) thoai thoải chân trời sông nước */
     {
       const FD = 2300, w = this.wpp(FD);
-      const peak = this.at(640, 330, FD), base = this.at(640, 590, FD);
-      const H = peak.y - base.y, Rb = 800 * w;
+      const peak = this.at(640, 500, FD), base = this.at(640, 592, FD);
+      const H = peak.y - base.y, Rb = 1200 * w;
       const prof = [];
-      for (let i = 0; i <= 48; i++) { const t = i / 48; const r = Rb * (0.055 + 0.945 * Math.pow(1 - t, 1.7)); prof.push(new THREE.Vector2(r, t * H)); }
-      prof.push(new THREE.Vector2(Rb * 0.02, H * 1.004), new THREE.Vector2(0, H * 0.99));
+      for (let i = 0; i <= 48; i++) { const t = i / 48; const r = Rb * (0.08 + 0.92 * Math.pow(1 - t, 2.2)); prof.push(new THREE.Vector2(r, t * H)); }
+      prof.push(new THREE.Vector2(Rb * 0.04, H * 1.002), new THREE.Vector2(0, H * 0.99));
       const geo = new THREE.LatheGeometry(prof, 96);
-      const fuji = new THREE.Mesh(geo, new THREE.ShaderMaterial({
-        uniforms: { uH: { value: H }, uSun: shared.uSun, uB: { value: ['#142d20', '#1c402d', '#28583c', '#37734e'].map(col) }, uS: { value: ['#234b38', '#346b4c', '#4f8c62', '#6eb080'].map(col) }, uHaze: { value: col('#76b08a') } },
+      const hills = new THREE.Mesh(geo, new THREE.ShaderMaterial({
+        uniforms: { uH: { value: H }, uSun: shared.uSun, uB: { value: ['#123522', '#1b4d32', '#2a6a45', '#3d8c5b'].map(col) }, uHaze: { value: col('#76b08a') } },
         vertexShader: 'varying vec3 vL; varying vec3 vN; void main(){ vL = position; vN = normalize(mat3(modelMatrix)*normal); gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }',
         fragmentShader: G + /* glsl */`
-          uniform float uH; uniform vec3 uSun; uniform vec3 uB[4]; uniform vec3 uS[4]; uniform vec3 uHaze; varying vec3 vL; varying vec3 vN;
+          uniform float uH; uniform vec3 uSun; uniform vec3 uB[4]; uniform vec3 uHaze; varying vec3 vL; varying vec3 vN;
           void main(){
-            float t = vL.y / uH; float ang = atan(vL.x, vL.z);
-            float gul = pow(abs(sin(ang*6.5 + vnoise2(vec2(ang*2.2, 1.))*2.6)), 2.4);
-            float line = .66 - gul*.2 - (vnoise2(vec2(ang*16., t*5.))-.5)*.07;
-            float ridge = (vnoise2(vec2(ang*40., t*3.)) - .5)*.18;
+            float t = clamp(vL.y / uH, 0., 1.); float ang = atan(vL.x, vL.z);
+            float ridge = (vnoise2(vec2(ang*24., t*4.)) - .5)*.14;
             float l = dot(normalize(vN), uSun)*.5 + .5 + ridge + (bayer4(gl_FragCoord.xy)-.5)*.06;
-            vec3 c;
-            if (t > line) c = l < .42 ? uS[0] : l < .56 ? uS[1] : l < .7 ? uS[2] : uS[3];
-            else { c = l < .4 ? uB[0] : l < .52 ? uB[1] : l < .64 ? uB[2] : uB[3]; }
-            float hz = smoothstep(.34, 0., t); hz = floor(hz*4.+.5)/4.;
-            c = mix(c, uHaze, hz*.55);
+            vec3 c = l < .38 ? uB[0] : l < .52 ? uB[1] : l < .66 ? uB[2] : uB[3];
+            float hz = smoothstep(.6, 0., t); hz = floor(hz*4.+.5)/4.;
+            c = mix(c, uHaze, hz*.62);
             gl_FragColor = vec4(c,1.);
           }`,
       }));
-      fuji.position.copy(base); fuji.rotation.y = 0.4; S.add(fuji);
-      // a low band of mist across the foot of the mountain
-      const mist = new THREE.Mesh(cloudGeometry(rng(18), 1100, 46, 1.2), cloudMat);
+      hills.position.copy(base); hills.rotation.y = 0.4; S.add(hills);
+      // dải sương khói sông nước mờ ảo chân trời
+      const mist = new THREE.Mesh(cloudGeometry(rng(18), 1200, 42, 1.2), cloudMat);
       const mp = this.at(600, 596, 1900); mist.scale.setScalar(this.wpp(1900)); mist.position.copy(mp); mist.lookAt(this.cam.position.clone().setY(mp.y)); S.add(mist);
-      this.clouds.push({ m: mist, p0: mp.clone(), cx: 600, w: 1100, s: this.wpp(1900), spd: 8 });
+      this.clouds.push({ m: mist, p0: mp.clone(), cx: 600, w: 1200, s: this.wpp(1900), spd: 8 });
     }
 
-    /* distant tree line */
-    const farTreeMat = toonMat({ c: ['#22583f', '#2f6c46', '#468250', '#63995a', '#86b366'], t: [0.3, 0.46, 0.62, 0.8], noise: 0.5, ns: 0.9, fog: [80, 900, 0.62], fogColor: '#7cc0cf', wind: 0.004 });
+    /* distant tree line - rặng cây miệt vườn ven sông */
+    const farTreeMat = toonMat({ c: ['#1a4a35', '#245e3f', '#35774a', '#4d9356', '#72b36b'], t: [0.3, 0.46, 0.62, 0.8], noise: 0.5, ns: 0.9, fog: [80, 900, 0.62], fogColor: '#7cc0cf', wind: 0.004 });
     const farTrunkMat = toonMat({ c: ['#2e2a24', '#3d352c'], t: [0.5, 2, 2, 2], fog: [80, 900, 0.62], fogColor: '#7cc0cf' });
-    const tl = [], pinkTl = [];
+    const tl = [], greenTl2 = [];
     const trunks = [];
     const addTree = (sx, sy, hpx, sd) => {
       const r2 = rng(sd); const base = this.ground(sx, sy); const D = this.depthOf(base); const s = this.wpp(D);
@@ -2350,7 +2364,7 @@ class HeroView {
         tl.push({ c: new THREE.Vector3(base.x + Math.cos(a) * cr * 0.5 * s, base.y + (hpx - cr * 0.95 + Math.sin(a) * cr * 0.4) * s, base.z + Math.sin(a) * cr * 0.3 * s), r: rr * s, card: 7 * s });
       }
       tl.push({ c: new THREE.Vector3(base.x, base.y + (hpx - cr * 0.6) * s, base.z), r: cr * 0.7 * s, card: 7 * s });
-      if (r2() < 0.34) { const moved = tl.splice(tl.length - nb - 1, nb + 1); pinkTl.push(...moved); }
+      if (r2() < 0.34) { const moved = tl.splice(tl.length - nb - 1, nb + 1); greenTl2.push(...moved); }
       trunks.push(new THREE.CylinderGeometry(cr * 0.08 * s, cr * 0.12 * s, hpx * 0.55 * s, 5).translate(base.x, base.y + hpx * 0.27 * s, base.z).toNonIndexed());
     };
     for (let sx = -80; sx < 1560; sx += 16 + R() * 26) {
@@ -2361,19 +2375,17 @@ class HeroView {
     // a few nearer mid trees
     [[610, 596, 60], [680, 594, 46], [745, 592, 52], [830, 600, 70], [262, 590, 40], [470, 588, 44]].forEach(([sx, sy, h], i) => addTree(sx, sy, h, 90 + i));
     S.add(foliageMesh(clusterLeaves(tl, rng(61), { density: 3.2 }), leafMat({ c: ['#1f5540', '#2c6846', '#437f4f', '#5f975a', '#83b166'], t: [0.3, 0.46, 0.62, 0.8], fog: [80, 900, 0.6], fogColor: '#7cc0cf', wind: 0.04 })));
-    S.add(foliageMesh(clusterLeaves(pinkTl, rng(62), { density: 3.2 }), leafMat({ c: ['#381a4a', '#582476', '#8739b5', '#b765e6', '#e9c2fb'], t: [0.3, 0.46, 0.62, 0.8], tex: BLOSSOM_TEX, fog: [80, 900, 0.5], fogColor: '#c9dcf2', wind: 0.04 })));
+    S.add(foliageMesh(clusterLeaves(greenTl2, rng(62), { density: 3.2 }), leafMat({ c: ['#14462e', '#1e6841', '#308d57', '#4eb573', '#8ae1a0'], t: [0.3, 0.46, 0.62, 0.8], tex: LEAF_TEX, fog: [80, 900, 0.5], fogColor: '#c9dcf2', wind: 0.04 })));
     void farTreeMat;
     S.add(new THREE.Mesh(mergeGeometries(trunks.map((g) => { g.deleteAttribute('uv'); return g; })), farTrunkMat));
 
-    /* village: tiled-roof houses, a five-storey pagoda, a torii on the path, stone lanterns */
+    /* nhà gỗ mái ngói đỏ miệt vườn miền Tây bên rạch nước */
     const houseFog = { fog: [60, 900, 0.36], fogColor: '#9fd2ef' };
-    const plaster = toonMat({ c: ['#b8b0a0', '#d8d0bf', '#ebe4d4', '#f6f1e6', '#fffdf7'], t: [0.3, 0.46, 0.62, 0.8], ...houseFog });
-    const timber = toonMat({ c: ['#2a1d16', '#3d2a1f', '#553b2b', '#6d4c37'], t: [0.35, 0.5, 0.68, 2], ...houseFog });
-    const kawara = toonMat({ c: ['#232833', '#2f3542', '#404857', '#58627a', '#7682a0'], t: [0.28, 0.44, 0.6, 0.8], noise: 0.25, ns: [0.3, 4, 0.3], ...houseFog });
-    const vermilion = toonMat({ c: ['#7a1f16', '#a32d1f', '#c8412c', '#e0603f', '#f08a5c'], t: [0.28, 0.44, 0.6, 0.8], ...houseFog });
-    const shoji = toonMat({ c: ['#c9c0aa', '#efe6cf'], t: [0.45, 2, 2, 2], ...houseFog }); void shoji;
-    const shojiGlow = emisMat({ color: '#efe0bd' });
-    const hip = (w, d, h, over = 0.14) => { // hipped roof: 4-sided frustum with a short ridge
+    const plaster = toonMat({ c: ['#3a2c20', '#564230', '#745a43', '#947558', '#b59473'], t: [0.3, 0.46, 0.62, 0.8], ...houseFog });
+    const timber = toonMat({ c: ['#221710', '#322217', '#483222', '#5e412d'], t: [0.35, 0.5, 0.68, 2], ...houseFog });
+    const kawara = toonMat({ c: ['#6a2416', '#8e3422', '#b84932', '#d46549', '#e8896d'], t: [0.28, 0.44, 0.6, 0.8], noise: 0.25, ns: [0.3, 4, 0.3], ...houseFog });
+    const shojiGlow = emisMat({ color: '#ffe6aa' });
+    const hip = (w, d, h, over = 0.14) => {
       const g = new THREE.CylinderGeometry(0.2, 0.72 + over, h, 4, 1); g.rotateY(Math.PI / 4); g.scale(w, 1, d); g.translate(0, h / 2, 0); return g;
     };
     const makeHouse = (sx, sy, wpx, o = {}) => {
@@ -2396,59 +2408,10 @@ class HeroView {
     makeHouse(568, 596, 38, { yaw: 0.6 });
     makeHouse(640, 594, 30, { yaw: 0.1 });
 
-    // five-storey pagoda
-    { const g = new THREE.Group(); let y = 0;
-      const stone = toonMat({ c: ['#6e716c', '#8f928b', '#adb0a7', '#c8cabf'], t: [0.35, 0.5, 0.68, 2], ...houseFog });
-      const bronze = toonMat({ c: ['#5a4a22', '#8a7233', '#b89a4a', '#d8bd6a'], t: [0.35, 0.5, 0.68, 2], ...houseFog });
-      const plinth = new THREE.Mesh(new THREE.BoxGeometry(0.62, 0.05, 0.62), stone); plinth.position.y = 0.025; g.add(plinth); y = 0.05;
-      for (let i = 0; i < 5; i++) {
-        const bw = 0.36 - i * 0.032, bh = i === 0 ? 0.11 : 0.075;
-        const body = new THREE.Mesh(new THREE.BoxGeometry(bw, bh, bw), vermilion); body.position.y = y + bh / 2; g.add(body);
-        const rail = new THREE.Mesh(new THREE.BoxGeometry(bw * 1.12, 0.012, bw * 1.12), plaster); rail.position.y = y + bh * 0.2; g.add(rail);
-        y += bh;
-        const rw = bw + 0.24; const roof = new THREE.Mesh(hip(rw * 1.1, rw * 1.1, 0.06, 0.1), kawara); roof.position.y = y - 0.006; g.add(roof);
-        const eave = new THREE.Mesh(new THREE.BoxGeometry(rw * 1.1, 0.012, rw * 1.1), kawara); eave.position.y = y; g.add(eave);
-        y += 0.056;
-      }
-      const spire = new THREE.Mesh(new THREE.CylinderGeometry(0.008, 0.014, 0.26, 6), bronze); spire.position.y = y + 0.13; g.add(spire);
-      for (let k = 0; k < 6; k++) { const ring = new THREE.Mesh(new THREE.CylinderGeometry(0.028, 0.028, 0.008, 8), bronze); ring.position.y = y + 0.05 + k * 0.026; g.add(ring); }
-      const p = this.ground(408, 606); const s = 196 * this.wpp(this.depthOf(p)) / (y + 0.26);
-      g.scale.setScalar(s); g.position.copy(p); g.rotation.y = 0.55; S.add(g); }
+    // Không dùng chùa hay cổng Torii Nhật Bản
+    this.makeLantern = () => {};
 
-    // torii straddling the path
-    { const g = new THREE.Group();
-      const pil = (x) => { const m = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.055, 1, 10), vermilion); m.position.set(x, 0.5, 0); g.add(m);
-        const cuff = new THREE.Mesh(new THREE.CylinderGeometry(0.062, 0.066, 0.1, 10), timber); cuff.position.set(x, 0.05, 0); g.add(cuff); };
-      pil(-0.38); pil(0.38);
-      const nuki = new THREE.Mesh(new THREE.BoxGeometry(0.98, 0.06, 0.06), vermilion); nuki.position.y = 0.78; g.add(nuki);
-      const shim = new THREE.Mesh(new THREE.BoxGeometry(1.12, 0.07, 0.1), vermilion); shim.position.y = 0.97; g.add(shim);
-      const kasa = new THREE.Mesh(new THREE.BoxGeometry(1.28, 0.06, 0.13), timber); kasa.position.y = 1.03; g.add(kasa);
-      [-1, 1].forEach((sd) => { const tip = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.06, 0.13), timber); tip.position.set(sd * 0.67, 1.05, 0); tip.rotation.z = sd * 0.22; g.add(tip); });
-      const gk = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.19, 0.05), vermilion); gk.position.y = 0.875; g.add(gk);
-      const p = this.ground(212, 646); const s = 116 * this.wpp(this.depthOf(p)) / 1.06;
-      g.scale.setScalar(s); g.position.copy(p); g.rotation.y = 0.32; S.add(g); }
-
-    // stone lanterns
-    this.makeLantern = (sx, sy, hpx, yaw = 0.3) => {
-      const g = new THREE.Group();
-      const st = toonMat({ c: ['#4b504c', '#676d67', '#878d84', '#a7ac9f', '#c3c7b9'], t: [0.3, 0.46, 0.62, 0.8], noise: 0.35, ns: 12 });
-      const add = (geo, y, m = st) => { const x = new THREE.Mesh(geo, m); x.position.y = y; g.add(x); return x; };
-      add(new THREE.CylinderGeometry(0.26, 0.3, 0.1, 6), 0.05);
-      add(new THREE.CylinderGeometry(0.09, 0.11, 0.46, 8), 0.33);
-      add(new THREE.CylinderGeometry(0.24, 0.16, 0.08, 6), 0.6);
-      add(new THREE.BoxGeometry(0.28, 0.2, 0.28), 0.74);
-      const glow = emisMat({ color: '#ffcf6b', side: THREE.DoubleSide });
-      [[0, 0.141], [0.141, 0]].forEach(([x, z]) => { const w = new THREE.Mesh(new THREE.PlaneGeometry(0.13, 0.11), glow); w.position.set(x, 0.75, z); if (x) w.rotation.y = Math.PI / 2; g.add(w); const w2 = w.clone(); w2.position.set(-x, 0.75, -z); w2.rotation.y += Math.PI; g.add(w2); });
-      add(new THREE.CylinderGeometry(0.05, 0.36, 0.16, 6), 0.92);
-      add(new THREE.IcosahedronGeometry(0.06, 1), 1.04);
-      const p = this.ground(sx, sy); const s = hpx * this.wpp(this.depthOf(p)) / 1.1;
-      g.scale.setScalar(s); g.position.copy(p); g.rotation.y = yaw; S.add(g); return g;
-    };
-    this.makeLantern(318, 622, 44, 0.2);
-    this.makeLantern(128, 668, 60, 0.5);
-
-    /* bench tree (left) */
-    const leafMid = { c: ['#123f33', '#1d5a3d', '#337747', '#579a50', '#8ec15e'], t: [0.3, 0.45, 0.6, 0.76], noise: 0.62, dither: 0.08 };
+    /* bench tree (left) - rặng cây xanh rợp bóng */
     const bt = this.ground(92, 614); const btD = this.depthOf(bt);
     const trunkMat2 = toonMat({ c: ['#1e1719', '#2d2326', '#433539', '#5b4a4c', '#75625f'], t: [0.3, 0.45, 0.62, 0.8], noise: 0.5, ns: [3, 0.6, 3], fog: [60, 900, 0.3], fogColor: '#9fd2ef' });
     this.limb([[92, 614], [98, 560], [104, 500], [116, 470]], btD, [9, 7, 5.5, 3.5], trunkMat2, 7);
@@ -2456,7 +2419,7 @@ class HeroView {
     this.limb([[103, 520], [140, 480], [160, 468]], btD, [4, 3, 2], trunkMat2, 6);
     const btBlobs = [[30, 505, 34], [65, 470, 40], [108, 452, 46], [152, 470, 40], [182, 505, 30], [48, 530, 26], [96, 500, 38, -1], [140, 510, 32], [168, 535, 20], [22, 540, 18], [120, 432, 28, 1], [80, 438, 26, 1]];
     this.twigs(btBlobs, btD, [100, 520], trunkMat2);
-    void leafMid; this.leaves(btBlobs, btD, { c: ['#381a4a', '#582476', '#8739b5', '#b765e6', '#e9c2fb'], t: [0.3, 0.45, 0.6, 0.76], tex: BLOSSOM_TEX, card: 15, density: 3.6, seed: 12, wind: 0.08, fog: [60, 900, 0.28], fogColor: '#f6dbe6' });
+    this.leaves(btBlobs, btD, { c: ['#103e28', '#1a5d3a', '#298350', '#42a969', '#7ad894'], t: [0.3, 0.45, 0.6, 0.76], tex: LEAF_TEX, card: 15, density: 3.6, seed: 12, wind: 0.08, fog: [60, 900, 0.28], fogColor: '#c8e6c9' });
     // bench
     { const g = new THREE.Group(); const wood = toonMat({ c: ['#3a2a1d', '#5a4029', '#7a5636', '#946c44', '#a9804f'], t: [0.3, 0.45, 0.6, 0.8] });
       const iron = toonMat({ c: ['#1b1d20', '#2a2c30'], t: [0.5, 2, 2, 2] });
@@ -2488,7 +2451,7 @@ class HeroView {
     [[1110, 190, 44], [1040, 170, 34], [990, 140, 38], [1255, 395, 40], [1228, 470, 28], [1296, 520, 30], [1440, 540, 60, 3], [1390, 500, 46, 1], [860, 60, 56], [790, 20, 46], [940, 30, 60]].forEach((b) => bigBlobs.push(b));
     void leafBig;
     this.twigs(bigBlobs.filter((b) => b[0] < 1330), BD, [1370, 260], bark);
-    this.bigLeaves = this.leaves(bigBlobs, BD, { c: ['#381a4a', '#582476', '#8739b5', '#b765e6', '#e9c2fb'], t: [0.28, 0.44, 0.6, 0.77], tex: BLOSSOM_TEX, card: 34, density: 3.8, seed: 77, wind: 0.07 });
+    this.bigLeaves = this.leaves(bigBlobs, BD, { c: ['#0d3822', '#155733', '#237b46', '#3aa55d', '#72d28f'], t: [0.28, 0.44, 0.6, 0.77], tex: LEAF_TEX, card: 34, density: 3.8, seed: 77, wind: 0.07 });
     /* falling leaves from the big tree: two depth layers */
     { const w = this.wpp(BD);
       const petals = ['#7e22ce', '#9333ea', '#a855f7', '#c084fc', '#e9d5ff', '#ffffff'];
@@ -2549,9 +2512,6 @@ class HeroView {
     this.buildNotebook();
     /* phone leaning on a stone */
     this.buildPhone();
-    /* a big stone lantern beside the phone */
-    this.makeLantern(478, 792, 150, 0.35);
-    this.shadow(4, 486, 796, 60, 26);
     /* ladybug on a leaf */
     this.buildLadybug();
     /* butterflies */
@@ -2932,7 +2892,7 @@ class ToolsView {
     this.gTL = new THREE.Group(); this.gTR = new THREE.Group(); this.gBL = new THREE.Group(); this.gBR = new THREE.Group(); this.gBC = new THREE.Group();
     S.add(this.gTL, this.gTR, this.gBL, this.gBR, this.gBC);
     const leafBright = leafMat({ c: ['#10391f', '#1c622f', '#378c33', '#6bba40', '#b0e35b'], t: [0.3, 0.45, 0.6, 0.77], sun, wind: 0.08 });
-    const sakura = leafMat({ c: ['#86385c', '#b3567c', '#dc86a6', '#f5b8cc', '#ffe8f0'], t: [0.28, 0.44, 0.6, 0.77], sun, wind: 0.08, tex: BLOSSOM_TEX });
+    const sakura = leafMat({ c: ['#10391f', '#1c622f', '#378c33', '#6bba40', '#b0e35b'], t: [0.28, 0.44, 0.6, 0.77], sun, wind: 0.08, tex: LEAF_TEX });
     const leafDeep = leafMat({ c: ['#0c2f1f', '#16502b', '#2a7532', '#51a23b', '#8fd052'], t: [0.3, 0.45, 0.6, 0.77], sun, wind: 0.08 });
     const grassCards = leafMat({ c: ['#2c6a26', '#428a2f', '#5fab38', '#86ca46', '#b8e666'], t: [0.3, 0.45, 0.6, 0.77], sun, wind: 0.14 });
     const V = (x, y, z = 0) => new THREE.Vector3(x, -y, z);
@@ -2953,26 +2913,6 @@ class ToolsView {
     this.gTR.add(new THREE.Mesh(tube([[90, 210, -40], [-40, 180, -40], [-170, 150, -40], [-290, 112, -40], [-380, 96, -40]], [26, 20, 14, 9, 5]), barkM));
     this.gTR.add(new THREE.Mesh(tube([[60, 350, -40], [-60, 326, -40], [-150, 344, -40], [-230, 372, -40]], [18, 13, 8, 4]), barkM));
     this.gTR.add(new THREE.Mesh(tube([[-120, 165, -40], [-150, 60, -40], [-170, -20, -40]], [9, 6, 4]), barkM));
-    { // paper lanterns strung under the branch: emissive, ribbed, flickering
-      const lanternMat = new THREE.ShaderMaterial({ uniforms: { uTime: shared.uTime },
-        vertexShader: 'varying vec3 vW; varying vec3 vN; void main(){ vN = normalize(normal); vec4 w = modelMatrix*vec4(position,1.); vW = w.xyz; gl_Position = projectionMatrix*viewMatrix*w; }',
-        fragmentShader: G + `uniform float uTime; varying vec3 vW; varying vec3 vN;
-          void main(){ float fl = .9 + .1*sin(uTime*6.7 + vW.x*.13)*sin(uTime*2.9 + vW.x*.07);
-            float l = dot(vN, normalize(vec3(-.4,.5,.8)))*.5 + .5 + (bayer4(gl_FragCoord.xy)-.5)*.14;
-            vec3 c = l < .42 ? vec3(.72,.18,.12) : l < .62 ? vec3(.9,.3,.18) : vec3(1.,.6,.32);
-            c *= mix(1., .8, step(.72, fract(vW.y*.3)));
-            gl_FragColor = vec4(c*fl, .5); }` });
-      const capM = toonMat({ c: ['#141113', '#241e20'], t: [0.5, 2, 2, 2], sun });
-      [[-58, 186, 13], [-150, 158, 11], [-238, 130, 12], [-318, 106, 10], [30, 205, 12]].forEach(([x, by, r], i) => {
-        const drop = 36 + (i % 2) * 14, cy = by + drop;
-        const g = new THREE.Group();
-        g.add(new THREE.Mesh(new THREE.BoxGeometry(1.2, drop - r * 1.2, 1.2).translate(0, (drop - r * 1.2) / 2 + r * 1.2, 0), capM));
-        g.add(new THREE.Mesh(new THREE.SphereGeometry(r, 12, 10).scale(1, 1.25, 1), lanternMat));
-        g.add(new THREE.Mesh(new THREE.CylinderGeometry(r * 0.55, r * 0.55, 3, 10).translate(0, r * 1.24, 0), capM));
-        g.add(new THREE.Mesh(new THREE.CylinderGeometry(r * 0.55, r * 0.55, 3, 10).translate(0, -r * 1.24, 0), capM));
-        g.position.set(x, -cy, 40); this.gTR.add(g);
-      });
-    }
     const trC = [cl(-40, 110, 92), cl(-150, 60, 70), cl(-240, 120, 58), cl(-320, 200, 40), cl(-210, 215, 74), cl(-95, 250, 86), cl(-25, 380, 70), cl(-150, 355, 56),
       cl(-255, 300, 40), cl(-340, 110, 32), cl(-110, 0, 60), cl(-205, -10, 40), cl(15, 220, 84), cl(-60, 460, 46), cl(-190, 430, 30), cl(-300, 40, 30), cl(-380, 170, 22), cl(-400, 100, 18)];
     this.gTR.add(foliageMesh(clusterLeaves(trC, rng(301), { density: 3.8 }), sakura));
@@ -3176,7 +3116,7 @@ class Mini {
             if (water > .5 && tw > .986) c = mix(c, vec3(1.), .75);
             float sky = step(.2, c.b - c.r) * step(.55, vUv.y);
             if (sky > .5 && tw > .9965) c = mix(c, vec3(1.), .35);
-            // sakura petals drifting across the illustration, flipping between a flat and an edge-on pixel pair
+            // hoa luc binh tim troi tren buc hoa
             for (int i = 0; i < 6; i++) {
               float fi = float(i);
               float sp = .03 + hash12(vec2(fi, uSeed))*.03;
@@ -3185,7 +3125,7 @@ class Mini {
               vec2 d = cell - floor(pos);
               bool lie = sin(uTime*4.6 + fi*1.3) > 0.;
               bool hit = lie ? (d.x >= 0. && d.x < 2. && d.y == 0.) : (d.x == 0. && d.y >= 0. && d.y < 2.);
-              if (hit) c = fract(fi*.37) > .5 ? vec3(1., .9, .93) : vec3(.97, .69, .78);
+              if (hit) c = fract(fi*.37) > .5 ? vec3(.92, .82, .98) : vec3(.72, .42, .92);
             }
           }
           gl_FragColor = vec4(c, 1.);
@@ -3218,7 +3158,7 @@ class Mini {
           if (p.y < top) {
             float l = .5 + (vnoise2(p*vec2(.11,.35))-.5)*.9 + (hash12(p)-.5)*.35 + (top - p.y < 1.5 ? .3 : 0.) - (p.y < 2. ? .15 : 0.);
             vec3 c = l < .3 ? uC[0] : l < .45 ? uC[1] : l < .62 ? uC[2] : l < .8 ? uC[3] : uC[4];
-            if (hash12(p + 91.) > .972) c = hash12(p + 5.) > .5 ? vec3(.98,.76,.84) : vec3(1.,.93,.96);
+            if (hash12(p + 91.) > .972) c = hash12(p + 5.) > .5 ? vec3(.78,.52,.95) : vec3(.92,.78,.98);
             o = vec4(c, 1.);
           } else if (p.y < top + 6. && hash12(p + floor(uTime*.5)*3.) > .955 + (p.y-top)*.006) {
             o = vec4(uC[2 + int(hash12(p+1.)*2.99)], 1.);
@@ -3227,7 +3167,7 @@ class Mini {
             float lt = fract(uTime*(.02 + hash12(vec2(fi, 4.))*.02) + hash12(vec2(fi, 9.)));
             vec2 pos = vec2((1. - lt)*(uRes.x + 20.) - 10., uRes.y*.55 + sin(lt*18. + fi)*uRes.y*.35);
             vec2 d = p - floor(pos); bool lie = sin(uTime*4. + fi) > 0.;
-            if (lie ? (d.x >= 0. && d.x < 2. && d.y == 0.) : (d.x == 0. && d.y >= 0. && d.y < 2.)) o = vec4(fract(fi*.37) > .5 ? vec3(1.,.9,.93) : vec3(.97,.69,.78), 1.);
+            if (lie ? (d.x >= 0. && d.x < 2. && d.y == 0.) : (d.x == 0. && d.y >= 0. && d.y < 2.)) o = vec4(fract(fi*.37) > .5 ? vec3(.92,.82,.98) : vec3(.72,.42,.92), 1.);
           }
           gl_FragColor = o;
         }`,
