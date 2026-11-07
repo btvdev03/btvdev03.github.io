@@ -1117,7 +1117,6 @@ $$('#sheet a').forEach((a) => a.addEventListener('click', () => $('#sheet').clas
     W = org.clientWidth || 740; H = org.clientHeight || 601;
     const sx = W / 740, sy = H / 601, s = Math.min(sx, sy);
     core.style.left = X(C[0]) + 'px'; core.style.top = Y(C[1]) + 'px';
-    enso.style.left = X(C[0]) + 'px'; enso.style.top = Y(C[1]) - 10 + 'px';
     slot.style.left = X(C[0]) + 'px'; slot.style.top = Y(C[1]) - 24 + 'px';
     Object.values(nodes).forEach((n) => { const [x, y] = pos(n.deg); n.x = X(x); n.y = Y(y); n.el.style.left = n.x + 'px'; n.el.style.top = n.y + 'px'; });
     ghostEls.forEach(([g, [x, y]]) => { g.style.left = X(x) + 'px'; g.style.top = Y(y) + 'px'; });
