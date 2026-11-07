@@ -451,6 +451,20 @@ html.is-loading{overflow:hidden}
 .track span{display:flex;align-items:center;gap:8px;height:38px;padding:0 14px 0 8px;border-radius:10px;background:rgba(14,17,22,.72);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1),0 6px 16px rgba(0,30,80,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font:500 12.5px/1 var(--sans);color:#f2f4f7;white-space:nowrap}
 .track img{width:22px;height:22px}
 @keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- projects marquee ---------- */
+.proj-marquee-container{position:relative;width:min(1100px,calc(100% - 24px));margin:48px auto 0;display:flex;flex-direction:column;gap:18px;z-index:2}
+.proj-marquee{position:relative;width:100%;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);padding:8px 0}
+.proj-track{display:flex;gap:18px;width:max-content}
+.proj-track.proj-left{animation:projSlideLeft 24s linear infinite}
+.proj-track.proj-right{animation:projSlideRight 27s linear infinite}
+.proj-track:hover{animation-play-state:paused}
+@keyframes projSlideLeft{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes projSlideRight{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+.proj-card{display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 30px;background:rgba(20,23,30,.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.14);clip-path:var(--px-corner-s);color:#f2f4f8;font-family:var(--pixel);font-size:18px;letter-spacing:.04em;text-decoration:none;white-space:nowrap;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.06);transition:all .22s cubic-bezier(.16,1,.3,1)}
+.proj-card:hover{background:rgba(28,36,50,.95);border-color:#06b6d4;color:#38bdf8;box-shadow:0 10px 28px rgba(6,182,212,.35),inset 0 0 0 1px #06b6d4;transform:translateY(-3px) scale(1.04)}
+@media(max-width:760px){.proj-card{height:48px;padding:0 20px;font-size:15px}}
+
 /* ---------- industries ---------- */
 .industries{padding:110px 0 0;text-align:center}
 .industries .h2{font-size:32px;line-height:36.8px;letter-spacing:.01em}
@@ -607,7 +621,7 @@ footer{position:relative;margin-top:120px;padding:0 0 0}
   <canvas class="ld-petals" id="ldPetals" aria-hidden="true"></canvas>
   <div class="ld-core">
     <div class="ld-mark"><canvas id="ldEnso" width="91" height="90" aria-hidden="true"></canvas><canvas id="ldSeal" width="18" height="18" aria-hidden="true"></canvas></div>
-    <div class="ld-brand">[VB] VÕ TẤN BẢN</div>
+    <div class="ld-brand">Ban Vo Tan</div>
     <canvas id="ldBar" width="110" height="3" aria-hidden="true"></canvas>
     <p class="ld-msg"><span id="ldMsg">Grinding the ink</span><b id="ldNum">0%</b></p>
   </div>
@@ -688,9 +702,9 @@ footer{position:relative;margin-top:120px;padding:0 0 0}
 </script>
 <header class="nav" id="nav">
   <canvas class="nav-ink px" aria-hidden="true"></canvas>
-  <a class="brand" href="#top" aria-label="Vo Tan Ban Portfolio home">
+  <a class="brand" href="#top" aria-label="Ban Vo Tan Portfolio home">
     <svg viewBox="0 0 22 22" aria-hidden="true"><rect x="2" y="2" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6 7l5 8 5-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8 12h6" stroke="currentColor" stroke-width="1.8"/></svg>
-    [VB] VÕ TẤN BẢN
+    Ban Vo Tan
   </a>
   <div class="nav-right">
     <nav class="pill" aria-label="Chuyên môn">
@@ -921,72 +935,47 @@ footer{position:relative;margin-top:120px;padding:0 0 0}
 <!-- ============ TOOLS ============ -->
 <section class="tools" id="tools">
   <div class="stage" id="toolsStage"><canvas id="toolsCanvas" class="px" aria-hidden="true"></canvas></div>
-  <div class="seal-c"><canvas class="hanko px" data-k="具" aria-hidden="true"></canvas></div>
-  <h2 class="h2">Hệ sinh thái Công cụ &amp; Mã nguồn mở<br><span class="m brush">Thực chiến cho Lập trình viên &amp; Nhà nghiên cứu</span></h2>
-  <p class="lede">Tập trung vào các giải pháp tăng năng suất, tự động hóa quy trình phân tích mã nguồn, crawl dữ liệu học thuật và hỗ trợ deep work.</p>
-  <div class="ttabs" role="tablist">
-    <button class="ttab on" role="tab" data-i="0">git-roast — CLI phân tích Git commit &amp; dev personality (npx git-roast)</button>
-    <button class="ttab" role="tab" data-i="1">InstantTranslate &amp; IdeaClaimer — Chrome Extension MV3 &amp; Crawl arXiv</button>
-    <button class="ttab" role="tab" data-i="2">zen-desk-clock &amp; Kiến trúc Đa tầng — Đồng hồ Zen Deep Work</button>
-  </div>
-  <div class="tframe">
-    <div class="app">
-      <div class="app-top"><span class="dots"><i></i><i></i><i></i></span><span class="crumb">Võ Tấn Bản <b>/</b> <span id="crumb">git-roast (CLI)</span></span><span class="search">Tìm kiếm công cụ hoặc repo… <kbd>⌘K</kbd></span><span class="avatar">VB</span></div>
-      <div class="app-body">
-        <aside class="side">
-          <p class="sh">Projects / Tools</p>
-          <a class="on"><i style="--c:#35c26a"></i>git-roast (CLI)<small>TS</small></a>
-          <a><i style="--c:#f5b73b"></i>InstantTranslate<small>MV3</small></a>
-          <a><i style="--c:#35c26a"></i>IdeaClaimer<small>Py</small></a>
-          <a><i style="--c:#4aa3ef"></i>zen-desk-clock<small>Zen</small></a>
-          <a><i style="--c:#6b7280"></i>TDMU Thesis<small>Lab</small></a>
-          <p class="sh">Connected systems</p>
-          <div class="sys">
-            <span title="Email"><img class="px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAADoklEQVR4nO2UXUybZRTHf+/bl1JaoJQCpVQYk819ROLHNsymC/ODOSVzxCXGeKGJeDEuNMGJiyTOzJiRxWSJE+N0bLJFzC40y0gAF53L/GLMbhkw56gbMBiFlo8CpV+0fR/DayRRHBuaXZj4v3gunjzn/zvnPDkH/uuSbvWhNdMu4vEYajyGwZiMd7D/lmNvKHtOnjhSu1tERy8Jt/MLEXV9J+K+LjHg/FxEPO3im+P1wmLJEPN5KDfKtsfZiCnZhN83gqzTY+6PoLqvIxfKmNQQOr2JlQ4jnotN+P2TYvnD5QwP9s2pSv7rhcWaI65836CZq8NDSKqAeAR5QCJ8phXhCTLePghqBDUQJVLzNWlZuVw+eQBrhl3MCyjbXCq8l1pACNRjXYTeO4HyaQczUZIxEVPJRkiQsacuIdR8msycxbxx8TBHa2uRhMDjOsWWsq1/gsyWZLFmi2HXKe1qcrAb/RUJ3bluVFsasZJslPPX0T96L+4mJ7ZeP8TgtR8+puZQHdNBHwZVxpBbQBywFWzAN+bWvLUj1ZwpLn+1D1lWyFi0jBc3l/H+R/tRWqfQPZFDeDpM1QvlBKIq9W8dRHjG0CWacKX20Nt7jeKUBxDOMyTYCvCX2ZETkkhfUSLNtmjLk4+QtXQ15tNTBKsaeHf9s+za/grjzvP8VFXPjvKX2LVvD0e+bEYaGCJQZGR6XRr5DjtF34bRRUFOyiA64SPNsYTULAdPbSzWWqVRvBeOi/TcpYgf+4m3uqhu+wD3ZJj9nx2BhrOoz63GYExCMZiQ1GkkWU8sGoODbegQVLbs5Z0DtaTY7iAwPqa5uk/UsLyiSdIAa4rWiua6au1z975ezUggQk1FJcYH70FWErl6oZ1tO97mofwUUlIT8CQmsbNqp5ZpcMKHmPSjWMyoccFU2yf8+nMnz9T14fF6fgf8oYwsu3g8T8/hlkYty5GBq7xZ+Sq5BXlsKgjR0TlKj2+aTevziesSkMy5rCt7GWSZ7qPb8bqHKf2wjwnf6Kzv34672WIVPWcbmez4ha7uQ3jdegLeAUa8Idbc78A1FiQt3cLQeIjSZUZ6h8Z5vt7DiHdojt9N98nau1eIiseSOdfuwWE10tk7xapCK4WLkth97Bon2wf//U6a0dOrsoUtO0vs2bpS3HWnY979849VnJMp7lucvSDzObtoPm2QFML+mVm9TQBHVMKoKLcPYEBlm6JbEGBB6QQliKAuCPC/uJl+A9MAdQnP8QbsAAAAAElFTkSuQmCC" alt=""></span><span title="Web"><img crossorigin="anonymous" class="px" src="https://ublctyddhtbgaersvxxb.supabase.co/storage/v1/object/public/threeui-media/scene-images/embedded/59d67f423f0aecb3d70736a5a7c93aaf16823c7000abc420dfc12b706fcc2c17.png" alt=""></span><span title="Banking"><img class="px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAADW0lEQVR4nL1VTY8URRh+3qrqnhlc1umdnc9lYROVhPgREAInOagnY4zevGgiRi78AC4evXqQcPAP6NkzJODBm0EDUTlsiMSwMOwwMz2zO7vsdtf7mqpeZx1nl4ZEfQ6d7qq3n6fezwL+D0RzVfm3OSvVhuc07nH02GvYGK1LUAjx+/JvCIIAqw/b9GyENTFao9ZchLAgCAN0O214klq9JQuHlyACCARKKawP10DkFpyJgIjgj0SAAoH/8lkYRMDMbBnM1i8xMx6s/IHV9n23lWGuWpeDMyEK4iQIzE5IIE7AWzlG5cmyT/cisMyZKAPslkhhfYvRfrBC4xA5HNDATRc2RXDHcycUUl7MW7oFlemII/M7mUtO1HntNlkIb99N0d7hnYhzpdYQthaBJlwwwNfbgjOzGqEA10aMk0T+xDcs462DBlorXB8BHyHFt4lFYgIfHudFt/Nw/xyeb9Zk450X5ItDLUnTVJhZkiSRu8cb0j/VEmutX7OplVazJb03luT6iUN7VuI4RPO1ulx8uYQj9xJUyWJ7YPGYLT47sYQPXi0j1oS6DmCtwsonJ1EUxvc/j3DOplAc4sWCxnfHFuSXRogvbw7R73Unc2DTBOdRAlcVbqUEbQhnQ40zz2vg3iiLfVFnlXQnBing3VnGDwMFIUK5wHjFEN4U4Cszpp3MQbkc+cxdOt3C+1sbOHJrDUrRTvm5ZO6au1onpcAiuPNSCaXDz6F5pQ0Thuh2VseGu1IA4rjvNwqlRdmKM4Luo13jvRCVI6cFSRMMBvGUrZr6Ya4q7x1giGXfC7lwDShAoT6DKJqXXAFf5I/TrB8on983gWtMS4DWyBcgQhpvZ81DT6HA7PNh729iZ5g8WcBRFpdKwHaCXk78Hfpxn8hamMUiwtDkC3yzYKACAwTTzu0Lo73nP+7Ra1MsW+yGnbN/pmkNUgQ3rnMFPl1lDG+P9ojm/vg8thj81MflHk/tTQXt9dNn8XFQxPLyr5irJtLr5F8810wFH5aPotgoIXp0Vfrd3UE34UFUqclgsIY0TcA2HV8gT0JUya7bwXAIHRiwK/O/YULAxT0wbqBlI9d3UA78PSCCwBhfgf90d8r9cqUq7idhRr/beapMz9ea4g63ubmB9eH0uPhP8SeJ9HQJTlAyTwAAAABJRU5ErkJggg==" alt=""></span><span title="Payments"><img crossorigin="anonymous" class="px" src="https://ublctyddhtbgaersvxxb.supabase.co/storage/v1/object/public/threeui-media/scene-images/embedded/40ecdf463b4e6bb68c42d5b161e21e12b4e884b7089220459b0a76b43fafed42.png" alt=""></span>
-            <span title="Design"><img crossorigin="anonymous" class="px" src="https://ublctyddhtbgaersvxxb.supabase.co/storage/v1/object/public/threeui-media/scene-images/embedded/e95b3a28a00ef7e465855528aaf83e65a26b642be78fc6a6d11011c616b4b059.png" alt=""></span><span title="Integrations"><img class="px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAADTElEQVR4nO1V309Tdxw939uCTOztvb3YFi4tODWTERWjAxISJYvuYYaQEFlQtwd1GpcsJr7vfzDZgw8qGo0PZhg3jYkmm27Z5hIUAy6MIrS9YG0tl9JC6Y9xS+9n6YUQkbbwoMkePE/3e3PO95zkcz73Au/xGqxiFeENmPGW4HC6KJPFu0FlZQ0FxkZWpM+BexsGjc1N4HR9beSr3ZdpX+tnedPkg01yUTqukuIZWF1TU7+TMukEeT0eam5pXZNJ0D9Ek6FxqrDXFOc7nZspEQ1TU9M+6r5wmebiKlkEZ1ERb7WTloiS+sJLUoWcl2u0iBdkam7cBdfmBmSJQbIJYOYyuNwyhqbDBQ2mXnkRjaggXcdUJMgKEjfwjmXube1dpCWnaS4RXXpvsTpItLmXzoLopEwyRhMBL4XH8zdoqUWJ+MQy9/bP9wPQwZlKIDlqDXH/498QUJ7AWbWJRFslqQEPYrEYGGMY9o4VDJ930bx+BYPDXmyv+wgh5W84qrYRX14GLa3hz19u4869B0j9q0HPzkOfn8ehw18XNMi7Bxe7r2MumV4kEOwOCf8M+vHc44PsduPb08fATMBUZBbJlAZdX0PhRGkTSfYPKRWfJN/QM+rr7SUtNUOZ9AxpyRhJji2kjI4Yz7NRlZQRD3UcOkqTQYUiQYXu//hD4U3mrdUUHO9DeKwfZpMJdx/+BdkuwAhGhNnZBE4d/xLl68tw6UoPSteVQpYrcePaeeSGxzjO2GZp48K8VhjEZ14yp1wH15ZdYFwJPm3Zg2xWx62f7iKdSmNrfQsEuwxB5HHyRBc4jjMuzV1utdmMELmzb/APWPgKyjuD+IzKwiE/c1R/jL0HOkGMwVJejmQigeNHOlBf68SZM9/hVWgiF3lBxIz84AXR2IUcRoaeFB9ydCrAspk5zGsaHvU9N4Rnz36Dhu1bcfiLDvhHX8BeVYcdu/cueCzqLIIIxjF8UGLK+19YgZs9d6i/9zG1HminoDJKL33D9PvPv1JX11fLxDapmg62tS8WIm58YqbV4OoGUoWbhgee0vfnzlHA56HOziOrikTJTdGoSqlYiBo/aTH4rKhAdBFMDCaTGZEJf1Hu67DwG8lcuh6xyPiaNf9f/AdWEYpMWz1MiwAAAABJRU5ErkJggg==" alt=""></span><span title="Ideas"><img class="px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACfElEQVR4nM2Uy2pTURSGv73PTk6btCdNe06Saq/aooiXiYIKRXCkc1/Aga/gAzh14Ehw4gs4cSY6EBHqqIIoWixarRTsNZikPclJzmVJ6kxIbGoF/+nee33r3+sC/5Oe3DkpC/cuytypKTn04AUvL41GQ4IgkGIhv2+A2s+lyelZyY94TE4dQ1sWn5YW8Xd2+Lr88Y/vzX4Au7Uf2GnF6kpIKmxQr9Xxff/vHbheUR7aNuNpAyKM5fpJYmG55tNvpVgNQ24FIZtbax3j6G6AB3aay/lBTDrFlOuQyQ3iHHE5c9SjHiWczfZztw3voq6nw1YK23Xwv5VxLk3AkV/5mOUB9HqVXG6A442gK6CjA88tST8CSYyXMUi7cSwFWqHGFKWhLCZr7wWY80rSswNRipzRGCfDQKuJPj0IloXSe+XAfrqOGbIZShk0LXoHoHCcLOZEmqFzJdSwgfM39p6o149wrxWwAhhcHUBXO3dU5yJLTFDZRWKh+mIdidrfFUHkI60Wu/MVgjc7SK1B3GXsOjowShOlLFpvazRbAt9D5PljJIlRiaIVhvRpzXYiKCW9O9jYWlNBnKDSFkEisBnuuWo3vCzvsL22i9IalSS83NpQB2rTd40WE2WfnFFEixX0dh8SJcSVgFImRX2jyod68+CTXCiOyn3LcMHpY6MRMTPuEAUxX8p1CinNe7/J7WbI0vZ6xzh/XFZuYVSKlqaJYjabJh8nvGqGZBIoJwmbm53XxL4AbY24RRl2i0xMThMlwurKZ6qVMuUuf38gjXiueMXOU9vzsvtd16+kuTrTW1Kmp2zmoWJZ/w5w0xjsjObZvwIsRBF9tcOt61/rJ5tr+Ml87vkPAAAAAElFTkSuQmCC" alt=""></span><span title="Growth"><img crossorigin="anonymous" class="px" src="https://ublctyddhtbgaersvxxb.supabase.co/storage/v1/object/public/threeui-media/scene-images/embedded/34d2d032c817521beb0fa270774774e10df3d82ff1cfdbccb830f7383d82a9c9.png" alt=""></span>
-          </div>
-        </aside>
-        <div class="tpanes">
-          <div class="tpane on approvals" data-p="0">
-            <div class="pane-h">Chờ xác nhận chạy thực tế <small>4 công cụ &amp; pipelines</small></div>
-            <div class="ap"><span class="ic"><img class="px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAADoklEQVR4nO2UXUybZRTHf+/bl1JaoJQCpVQYk819ROLHNsymC/ODOSVzxCXGeKGJeDEuNMGJiyTOzJiRxWSJE+N0bLJFzC40y0gAF53L/GLMbhkw56gbMBiFlo8CpV+0fR/DayRRHBuaXZj4v3gunjzn/zvnPDkH/uuSbvWhNdMu4vEYajyGwZiMd7D/lmNvKHtOnjhSu1tERy8Jt/MLEXV9J+K+LjHg/FxEPO3im+P1wmLJEPN5KDfKtsfZiCnZhN83gqzTY+6PoLqvIxfKmNQQOr2JlQ4jnotN+P2TYvnD5QwP9s2pSv7rhcWaI65836CZq8NDSKqAeAR5QCJ8phXhCTLePghqBDUQJVLzNWlZuVw+eQBrhl3MCyjbXCq8l1pACNRjXYTeO4HyaQczUZIxEVPJRkiQsacuIdR8msycxbxx8TBHa2uRhMDjOsWWsq1/gsyWZLFmi2HXKe1qcrAb/RUJ3bluVFsasZJslPPX0T96L+4mJ7ZeP8TgtR8+puZQHdNBHwZVxpBbQBywFWzAN+bWvLUj1ZwpLn+1D1lWyFi0jBc3l/H+R/tRWqfQPZFDeDpM1QvlBKIq9W8dRHjG0CWacKX20Nt7jeKUBxDOMyTYCvCX2ZETkkhfUSLNtmjLk4+QtXQ15tNTBKsaeHf9s+za/grjzvP8VFXPjvKX2LVvD0e+bEYaGCJQZGR6XRr5DjtF34bRRUFOyiA64SPNsYTULAdPbSzWWqVRvBeOi/TcpYgf+4m3uqhu+wD3ZJj9nx2BhrOoz63GYExCMZiQ1GkkWU8sGoODbegQVLbs5Z0DtaTY7iAwPqa5uk/UsLyiSdIAa4rWiua6au1z975ezUggQk1FJcYH70FWErl6oZ1tO97mofwUUlIT8CQmsbNqp5ZpcMKHmPSjWMyoccFU2yf8+nMnz9T14fF6fgf8oYwsu3g8T8/hlkYty5GBq7xZ+Sq5BXlsKgjR0TlKj2+aTevziesSkMy5rCt7GWSZ7qPb8bqHKf2wjwnf6Kzv34672WIVPWcbmez4ha7uQ3jdegLeAUa8Idbc78A1FiQt3cLQeIjSZUZ6h8Z5vt7DiHdojt9N98nau1eIiseSOdfuwWE10tk7xapCK4WLkth97Bon2wf//U6a0dOrsoUtO0vs2bpS3HWnY979849VnJMp7lucvSDzObtoPm2QFML+mVm9TQBHVMKoKLcPYEBlm6JbEGBB6QQliKAuCPC/uJl+A9MAdQnP8QbsAAAAAElFTkSuQmCC" alt=""></span><div><b>Phân tích commit: npx git-roast --repo btvdev03</b><small>CLI Tool · Sinh báo cáo Spotify Wrapped bóc phốt dev</small></div><span class="btns"><span>Chi tiết</span><span class="ok">Chấp thuận</span></span></div>
-            <div class="ap"><span class="ic"><img crossorigin="anonymous" class="px" src="https://ublctyddhtbgaersvxxb.supabase.co/storage/v1/object/public/threeui-media/scene-images/embedded/59d67f423f0aecb3d70736a5a7c93aaf16823c7000abc420dfc12b706fcc2c17.png" alt=""></span><div><b>Cập nhật từ điển chuyên ngành InstantTranslate MV3</b><small>Chrome Extension · Đồng bộ 850 thuật ngữ khoa học</small></div><span class="btns"><span>Chi tiết</span><span class="ok">Chấp thuận</span></span></div>
-            <div class="ap"><span class="ic"><img crossorigin="anonymous" class="px" src="https://ublctyddhtbgaersvxxb.supabase.co/storage/v1/object/public/threeui-media/scene-images/embedded/40ecdf463b4e6bb68c42d5b161e21e12b4e884b7089220459b0a76b43fafed42.png" alt=""></span><div><b>Kích hoạt crawler IdeaClaimer cho arXiv &amp; Hacker News</b><small>Academic Research · Vector hóa 42 bài báo mới</small></div><span class="btns"><span>Chi tiết</span><span class="ok">Chấp thuận</span></span></div>
-            <div class="ap"><span class="ic"><img class="px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAADa0lEQVR4nL1VTY8URRh+3qrqnhlc1umdnc9lYROVhPgREAInOagnY4zevGgiRi78AC4evXqQcPAP6NkzJODBm0EDUTlsiMSwMOwwMz2zO7vsdtf7mqpeZx1nl4ZEfQ6d7qq3n6fezwL+D0RzVfm3OSvVhuc07nH02GvYGK1LUAjx+/JvCIIAqw/b9GyENTFao9ZchLAgCAN0O214klq9JQuHlyACCARKKawP10DkFpyJgIjgj0SAAoH/8lkYRMDMbBnM1i8xMx6s/IHV9n23lWGuWpeDMyEK4iQIzE5IIE7AWzlG5cmyT/cisMyZKAPslkhhfYvRfrBC4xA5HNDATRc2RXDHcycUUl7MW7oFlemII/M7mUtO1HntNlkIb99N0d7hnYhzpdYQthaBJlwwwNfbgjOzGqEA10aMk0T+xDcs462DBlorXB8BHyHFt4lFYgIfHudFt/Nw/xyeb9Zk450X5ItDLUnTVJhZkiSRu8cb0j/VEmutX7OplVazJb03luT6iUN7VuI4RPO1ulx8uYQj9xJUyWJ7YPGYLT47sYQPXi0j1oS6DmCtwsonJ1EUxvc/j3DOplAc4sWCxnfHFuSXRogvbw7R73Unc2DTBOdRAlcVbqUEbQhnQ40zz2vg3iiLfVFnlXQnBing3VnGDwMFIUK5wHjFEN4U4Cszpp3MQbkc+cxdOt3C+1sbOHJrDUrRTvm5ZO6au1onpcAiuPNSCaXDz6F5pQ0Thuh2VseGu1IA4rjvNwqlRdmKM4Luo13jvRCVI6cFSRMMBvGUrZr6Ya4q7x1giGXfC7lwDShAoT6DKJqXXAFf5I/TrB8on983gWtMS4DWyBcgQhpvZ81DT6HA7PNh729iZ5g8WcBRFpdKwHaCXk78Hfpxn8hamMUiwtDkC3yzYKACAwTTzu0Lo73nP+7Ra1MsW+yGnbN/pmkNUgQ3rnMFPl1lDG+P9ojm/vg8thj81MflHk/tTQXt9dNn8XFQxPLyr5irJtLr5F8810wFH5aPotgoIXp0Vfrd3UE34UFUqclgsIY0TcA2HV8gT0JUya7bwXAIHRiwK/O/YULAxT0wbqBlI9d3UA78PSCCwBhfgf90d8r9cqUq7idhRr/beapMz9ea4g63ubmB9eH0uPhP8SeJ9HQJTlAyTwAAAABJRU5ErkJggg==" alt=""></span><div><b>Xác thực chuyển trạng thái State Machine Engine</b><small>Core Engine · Kiểm thử 100% transition &amp; Audit Trail</small></div><span class="btns"><span>Chi tiết</span><span class="ok">Chấp thuận</span></span></div>
-            <div class="guard"><i></i>Toàn bộ mã nguồn và pipeline dữ liệu được kiểm thử nghiêm ngặt trước khi chạy thực tế.</div>
-          </div>
-          <div class="tpane queue" data-p="1">
-            <div class="pane-h">Đang chạy ngầm <small>7 tiến trình · 3 hàng đợi</small></div>
-            <div class="q"><b>git-roast: Phân tích AST commit &amp; token style <small>CLI</small></b><span class="pb"><i data-w=".82"></i></span><em>82%</em></div>
-            <div class="q"><b>InstantTranslate: Đồng bộ ngữ cảnh LevelDB <small>Extension</small></b><span class="pb"><i data-w=".64"></i></span><em>64%</em></div>
-            <div class="q"><b>IdeaClaimer: Crawl arXiv cs.AI &amp; cs.SE papers <small>Research</small></b><span class="pb"><i data-w=".92"></i></span><em>92%</em></div>
-            <div class="q"><b>PostgreSQL: CDC Pipeline đồng bộ Star Schema <small>Database</small></b><span class="pb"><i data-w=".75"></i></span><em>75%</em></div>
-            <div class="q"><b>zen-desk-clock: Đồng bộ phiên Deep Work <small>Focus</small></b><span class="pb"><i data-w=".88"></i></span><em>88%</em></div>
-            <div class="log" id="log"></div>
-          </div>
-          <div class="tpane" data-p="2">
-            <div class="flow" id="flow">
-              <svg class="w" viewBox="0 0 520 446" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M260 66v30M260 144v34M260 214v30M260 262v24M160 286h200M160 286v36M260 286v36M360 286v36" fill="none" stroke="rgba(255,255,255,.22)" stroke-dasharray="3 3"/>
-              </svg>
-              <span class="tag" style="left:50%;top:48px">Trigger · Commit / PR / Schedule</span>
-              <span class="plus" style="left:50%;top:84px">+</span>
-              <div class="agent" style="left:50%;top:124px"><span class="g"></span><span><b>Võ Tấn Bản</b><small>Lead Architect</small></span></div>
-              <span class="tag" style="left:50%;top:196px">Phân rã module</span>
-              <span class="plus" style="left:50%;top:232px">+</span>
-              <div class="agent" style="left:26%;top:344px"><span class="g"></span><span><b>git-roast</b><small>AST Engine</small></span></div>
-              <div class="agent" style="left:50%;top:344px"><span class="g"></span><span><b>InstantTranslate</b><small>NLP Context</small></span></div>
-              <div class="agent" style="left:74%;top:344px"><span class="g"></span><span><b>IdeaClaimer</b><small>Crawler Lab</small></span></div>
-              <div class="skills"><span>Python</span><span>FastAPI</span><span>TypeScript</span><span>React</span><span>Docker</span><span>PostgreSQL</span><span>Three.js</span><span>Redis</span></div>
-            </div>
-          </div>
-        </div>
+  <div class="seal-c"><canvas class="hanko px" data-k="作" aria-hidden="true"></canvas></div>
+  <h2 class="h2">Dự Án &amp; Mã Nguồn Mở<br><span class="m brush">Featured Projects &amp; Open Source</span></h2>
+  <p class="lede">Khám phá các sản phẩm và công cụ thực tiễn. Nhấp vào từng dự án để xem mã nguồn hoặc trải nghiệm trực tiếp.</p>
+  
+  <div class="proj-marquee-container">
+    <!-- Row 1: Leftward running track -->
+    <div class="proj-marquee" aria-label="Projects Marquee Row 1">
+      <div class="proj-track proj-left">
+        <a class="proj-card" href="https://github.com/btvdev03/git-roast" target="_blank" rel="noopener noreferrer">git-roast</a>
+        <a class="proj-card" href="https://btvdev03.github.io/zen-desk-clock/" target="_blank" rel="noopener noreferrer">zen-desk-clock</a>
+        <a class="proj-card" href="https://github.com/btvdev03/InstantTranslate" target="_blank" rel="noopener noreferrer">InstantTranslate</a>
+        <a class="proj-card" href="https://github.com/btvdev03/IdeaClaimer" target="_blank" rel="noopener noreferrer">IdeaClaimer</a>
+        <a class="proj-card" href="https://btvdev03.github.io/" target="_blank" rel="noopener noreferrer">btvdev03.github.io</a>
+        <a class="proj-card" href="https://github.com/btvdev03" target="_blank" rel="noopener noreferrer">btvdev03</a>
+        <!-- Duplicate set for seamless infinite loop -->
+        <a class="proj-card" href="https://github.com/btvdev03/git-roast" target="_blank" rel="noopener noreferrer">git-roast</a>
+        <a class="proj-card" href="https://btvdev03.github.io/zen-desk-clock/" target="_blank" rel="noopener noreferrer">zen-desk-clock</a>
+        <a class="proj-card" href="https://github.com/btvdev03/InstantTranslate" target="_blank" rel="noopener noreferrer">InstantTranslate</a>
+        <a class="proj-card" href="https://github.com/btvdev03/IdeaClaimer" target="_blank" rel="noopener noreferrer">IdeaClaimer</a>
+        <a class="proj-card" href="https://btvdev03.github.io/" target="_blank" rel="noopener noreferrer">btvdev03.github.io</a>
+        <a class="proj-card" href="https://github.com/btvdev03" target="_blank" rel="noopener noreferrer">btvdev03</a>
       </div>
     </div>
-  </div>
-  <div class="marquee" aria-label="Systems Agentic connects to">
-    <div class="track" id="track">
-      <span><img class="px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAADoklEQVR4nO2UXUybZRTHf+/bl1JaoJQCpVQYk819ROLHNsymC/ODOSVzxCXGeKGJeDEuNMGJiyTOzJiRxWSJE+N0bLJFzC40y0gAF53L/GLMbhkw56gbMBiFlo8CpV+0fR/DayRRHBuaXZj4v3gunjzn/zvnPDkH/uuSbvWhNdMu4vEYajyGwZiMd7D/lmNvKHtOnjhSu1tERy8Jt/MLEXV9J+K+LjHg/FxEPO3im+P1wmLJEPN5KDfKtsfZiCnZhN83gqzTY+6PoLqvIxfKmNQQOr2JlQ4jnotN+P2TYvnD5QwP9s2pSv7rhcWaI65836CZq8NDSKqAeAR5QCJ8phXhCTLePghqBDUQJVLzNWlZuVw+eQBrhl3MCyjbXCq8l1pACNRjXYTeO4HyaQczUZIxEVPJRkiQsacuIdR8msycxbxx8TBHa2uRhMDjOsWWsq1/gsyWZLFmi2HXKe1qcrAb/RUJ3bluVFsasZJslPPX0T96L+4mJ7ZeP8TgtR8+puZQHdNBHwZVxpBbQBywFWzAN+bWvLUj1ZwpLn+1D1lWyFi0jBc3l/H+R/tRWqfQPZFDeDpM1QvlBKIq9W8dRHjG0CWacKX20Nt7jeKUBxDOMyTYCvCX2ZETkkhfUSLNtmjLk4+QtXQ15tNTBKsaeHf9s+za/grjzvP8VFXPjvKX2LVvD0e+bEYaGCJQZGR6XRr5DjtF34bRRUFOyiA64SPNsYTULAdPbSzWWqVRvBeOi/TcpYgf+4m3uqhu+wD3ZJj9nx2BhrOoz63GYExCMZiQ1GkkWU8sGoODbegQVLbs5Z0DtaTY7iAwPqa5uk/UsLyiSdIAa4rWiua6au1z975ezUggQk1FJcYH70FWErl6oZ1tO97mofwUUlIT8CQmsbNqp5ZpcMKHmPSjWMyoccFU2yf8+nMnz9T14fF6fgf8oYwsu3g8T8/hlkYty5GBq7xZ+Sq5BXlsKgjR0TlKj2+aTevziesSkMy5rCt7GWSZ7qPb8bqHKf2wjwnf6Kzv34672WIVPWcbmez4ha7uQ3jdegLeAUa8Idbc78A1FiQt3cLQeIjSZUZ6h8Z5vt7DiHdojt9N98nau1eIiseSOdfuwWE10tk7xapCK4WLkth97Bon2wf//U6a0dOrsoUtO0vs2bpS3HWnY979849VnJMp7lucvSDzObtoPm2QFML+mVm9TQBHVMKoKLcPYEBlm6JbEGBB6QQliKAuCPC/uJl+A9MAdQnP8QbsAAAAAElFTkSuQmCC" alt="">Email &amp; inbox</span><span><img crossorigin="anonymous" class="px" src="https://ublctyddhtbgaersvxxb.supabase.co/storage/v1/object/public/threeui-media/scene-images/embedded/59d67f423f0aecb3d70736a5a7c93aaf16823c7000abc420dfc12b706fcc2c17.png" alt="">Website &amp; domains</span><span><img class="px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAADW0lEQVR4nL1VTY8URRh+3qrqnhlc1umdnc9lYROVhPgREAInOagnY4zevGgiRi78AC4evXqQcPAP6NkzJODBm0EDUTlsiMSwMOwwMz2zO7vsdtf7mqpeZx1nl4ZEfQ6d7qq3n6fezwL+D0RzVfm3OSvVhuc07nH02GvYGK1LUAjx+/JvCIIAqw/b9GyENTFao9ZchLAgCAN0O214klq9JQuHlyACCARKKawP10DkFpyJgIjgj0SAAoH/8lkYRMDMbBnM1i8xMx6s/IHV9n23lWGuWpeDMyEK4iQIzE5IIE7AWzlG5cmyT/cisMyZKAPslkhhfYvRfrBC4xA5HNDATRc2RXDHcycUUl7MW7oFlemII/M7mUtO1HntNlkIb99N0d7hnYhzpdYQthaBJlwwwNfbgjOzGqEA10aMk0T+xDcs462DBlorXB8BHyHFt4lFYgIfHudFt/Nw/xyeb9Zk450X5ItDLUnTVJhZkiSRu8cb0j/VEmutX7OplVazJb03luT6iUN7VuI4RPO1ulx8uYQj9xJUyWJ7YPGYLT47sYQPXi0j1oS6DmCtwsonJ1EUxvc/j3DOplAc4sWCxnfHFuSXRogvbw7R73Unc2DTBOdRAlcVbqUEbQhnQ40zz2vg3iiLfVFnlXQnBing3VnGDwMFIUK5wHjFEN4U4Cszpp3MQbkc+cxdOt3C+1sbOHJrDUrRTvm5ZO6au1onpcAiuPNSCaXDz6F5pQ0Thuh2VseGu1IA4rjvNwqlRdmKM4Luo13jvRCVI6cFSRMMBvGUrZr6Ya4q7x1giGXfC7lwDShAoT6DKJqXXAFf5I/TrB8on983gWtMS4DWyBcgQhpvZ81DT6HA7PNh729iZ5g8WcBRFpdKwHaCXk78Hfpxn8hamMUiwtDkC3yzYKACAwTTzu0Lo73nP+7Ra1MsW+yGnbN/pmkNUgQ3rnMFPl1lDG+P9ojm/vg8thj81MflHk/tTQXt9dNn8XFQxPLyr5irJtLr5F8810wFH5aPotgoIXp0Vfrd3UE34UFUqclgsIY0TcA2HV8gT0JUya7bwXAIHRiwK/O/YULAxT0wbqBlI9d3UA78PSCCwBhfgf90d8r9cqUq7idhRr/beapMz9ea4g63ubmB9eH0uPhP8SeJ9HQJTlAyTwAAAABJRU5ErkJggg==" alt="">Banking</span><span><img crossorigin="anonymous" class="px" src="https://ublctyddhtbgaersvxxb.supabase.co/storage/v1/object/public/threeui-media/scene-images/embedded/40ecdf463b4e6bb68c42d5b161e21e12b4e884b7089220459b0a76b43fafed42.png" alt="">Payments &amp; billing</span><span><img crossorigin="anonymous" class="px" src="https://ublctyddhtbgaersvxxb.supabase.co/storage/v1/object/public/threeui-media/scene-images/embedded/e95b3a28a00ef7e465855528aaf83e65a26b642be78fc6a6d11011c616b4b059.png" alt="">Design files</span><span><img class="px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAADTElEQVR4nO1V309Tdxw939uCTOztvb3YFi4tODWTERWjAxISJYvuYYaQEFlQtwd1GpcsJr7vfzDZgw8qGo0PZhg3jYkmm27Z5hIUAy6MIrS9YG0tl9JC6Y9xS+9n6YUQkbbwoMkePE/3e3PO95zkcz73Au/xGqxiFeENmPGW4HC6KJPFu0FlZQ0FxkZWpM+BexsGjc1N4HR9beSr3ZdpX+tnedPkg01yUTqukuIZWF1TU7+TMukEeT0eam5pXZNJ0D9Ek6FxqrDXFOc7nZspEQ1TU9M+6r5wmebiKlkEZ1ERb7WTloiS+sJLUoWcl2u0iBdkam7cBdfmBmSJQbIJYOYyuNwyhqbDBQ2mXnkRjaggXcdUJMgKEjfwjmXube1dpCWnaS4RXXpvsTpItLmXzoLopEwyRhMBL4XH8zdoqUWJ+MQy9/bP9wPQwZlKIDlqDXH/498QUJ7AWbWJRFslqQEPYrEYGGMY9o4VDJ930bx+BYPDXmyv+wgh5W84qrYRX14GLa3hz19u4869B0j9q0HPzkOfn8ehw18XNMi7Bxe7r2MumV4kEOwOCf8M+vHc44PsduPb08fATMBUZBbJlAZdX0PhRGkTSfYPKRWfJN/QM+rr7SUtNUOZ9AxpyRhJji2kjI4Yz7NRlZQRD3UcOkqTQYUiQYXu//hD4U3mrdUUHO9DeKwfZpMJdx/+BdkuwAhGhNnZBE4d/xLl68tw6UoPSteVQpYrcePaeeSGxzjO2GZp48K8VhjEZ14yp1wH15ZdYFwJPm3Zg2xWx62f7iKdSmNrfQsEuwxB5HHyRBc4jjMuzV1utdmMELmzb/APWPgKyjuD+IzKwiE/c1R/jL0HOkGMwVJejmQigeNHOlBf68SZM9/hVWgiF3lBxIz84AXR2IUcRoaeFB9ydCrAspk5zGsaHvU9N4Rnz36Dhu1bcfiLDvhHX8BeVYcdu/cueCzqLIIIxjF8UGLK+19YgZs9d6i/9zG1HminoDJKL33D9PvPv1JX11fLxDapmg62tS8WIm58YqbV4OoGUoWbhgee0vfnzlHA56HOziOrikTJTdGoSqlYiBo/aTH4rKhAdBFMDCaTGZEJf1Hu67DwG8lcuh6xyPiaNf9f/AdWEYpMWz1MiwAAAABJRU5ErkJggg==" alt="">MCP servers</span><span><img class="px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAACfElEQVR4nM2Uy2pTURSGv73PTk6btCdNe06Saq/aooiXiYIKRXCkc1/Aga/gAzh14Ehw4gs4cSY6EBHqqIIoWixarRTsNZikPclJzmVJ6kxIbGoF/+nee33r3+sC/5Oe3DkpC/cuytypKTn04AUvL41GQ4IgkGIhv2+A2s+lyelZyY94TE4dQ1sWn5YW8Xd2+Lr88Y/vzX4Au7Uf2GnF6kpIKmxQr9Xxff/vHbheUR7aNuNpAyKM5fpJYmG55tNvpVgNQ24FIZtbax3j6G6AB3aay/lBTDrFlOuQyQ3iHHE5c9SjHiWczfZztw3voq6nw1YK23Xwv5VxLk3AkV/5mOUB9HqVXG6A442gK6CjA88tST8CSYyXMUi7cSwFWqHGFKWhLCZr7wWY80rSswNRipzRGCfDQKuJPj0IloXSe+XAfrqOGbIZShk0LXoHoHCcLOZEmqFzJdSwgfM39p6o149wrxWwAhhcHUBXO3dU5yJLTFDZRWKh+mIdidrfFUHkI60Wu/MVgjc7SK1B3GXsOjowShOlLFpvazRbAt9D5PljJIlRiaIVhvRpzXYiKCW9O9jYWlNBnKDSFkEisBnuuWo3vCzvsL22i9IalSS83NpQB2rTd40WE2WfnFFEixX0dh8SJcSVgFImRX2jyod68+CTXCiOyn3LcMHpY6MRMTPuEAUxX8p1CinNe7/J7WbI0vZ6xzh/XFZuYVSKlqaJYjabJh8nvGqGZBIoJwmbm53XxL4AbY24RRl2i0xMThMlwurKZ6qVMuUuf38gjXiueMXOU9vzsvtd16+kuTrTW1Kmp2zmoWJZ/w5w0xjsjObZvwIsRBF9tcOt61/rJ5tr+Ml87vkPAAAAAElFTkSuQmCC" alt="">Docs &amp; wikis</span><span><img crossorigin="anonymous" class="px" src="https://ublctyddhtbgaersvxxb.supabase.co/storage/v1/object/public/threeui-media/scene-images/embedded/34d2d032c817521beb0fa270774774e10df3d82ff1cfdbccb830f7383d82a9c9.png" alt="">CRM &amp; pipeline</span>
+
+    <!-- Row 2: Rightward running track (chạy ngược chiều) -->
+    <div class="proj-marquee" aria-label="Projects Marquee Row 2">
+      <div class="proj-track proj-right">
+        <a class="proj-card" href="https://btvdev03.github.io/zen-desk-clock/" target="_blank" rel="noopener noreferrer">zen-desk-clock</a>
+        <a class="proj-card" href="https://github.com/btvdev03/IdeaClaimer" target="_blank" rel="noopener noreferrer">IdeaClaimer</a>
+        <a class="proj-card" href="https://github.com/btvdev03/git-roast" target="_blank" rel="noopener noreferrer">git-roast</a>
+        <a class="proj-card" href="https://btvdev03.github.io/" target="_blank" rel="noopener noreferrer">btvdev03.github.io</a>
+        <a class="proj-card" href="https://github.com/btvdev03/InstantTranslate" target="_blank" rel="noopener noreferrer">InstantTranslate</a>
+        <a class="proj-card" href="https://github.com/btvdev03" target="_blank" rel="noopener noreferrer">btvdev03</a>
+        <!-- Duplicate set for seamless infinite loop -->
+        <a class="proj-card" href="https://btvdev03.github.io/zen-desk-clock/" target="_blank" rel="noopener noreferrer">zen-desk-clock</a>
+        <a class="proj-card" href="https://github.com/btvdev03/IdeaClaimer" target="_blank" rel="noopener noreferrer">IdeaClaimer</a>
+        <a class="proj-card" href="https://github.com/btvdev03/git-roast" target="_blank" rel="noopener noreferrer">git-roast</a>
+        <a class="proj-card" href="https://btvdev03.github.io/" target="_blank" rel="noopener noreferrer">btvdev03.github.io</a>
+        <a class="proj-card" href="https://github.com/btvdev03/InstantTranslate" target="_blank" rel="noopener noreferrer">InstantTranslate</a>
+        <a class="proj-card" href="https://github.com/btvdev03" target="_blank" rel="noopener noreferrer">btvdev03</a>
+      </div>
     </div>
   </div>
 </section>
@@ -1262,43 +1251,7 @@ $$('.acc li').forEach((li) => li.querySelector('button').addEventListener('click
   })();
 }
 
-/* ---------- tools tabs ---------- */
-{
-  const tabs = $$('.ttab'), panes = $$('.tpane'); const DUR = 5600; let cur = 0; let timer = null; const sec = $('#tools');
-  const crumbs = ['git-roast (CLI)', 'InstantTranslate & Crawler', 'zen-desk-clock & Architecture'];
-  const sideLinks = $$('.side a');
-  document.documentElement.style.setProperty('--dur', DUR / 1000 + 's');
-  const approve = async (pane) => { const aps = $$('.ap', pane); aps.forEach((a) => a.classList.remove('done')); await sleep(700); for (const a of aps) { if (!pane.classList.contains('on')) return; a.classList.add('done'); await sleep(1000); } };
-  const queue = (pane) => { $$('.pb i', pane).forEach((b) => { b.style.transition = 'none'; b.style.width = '0'; requestAnimationFrame(() => requestAnimationFrame(() => { b.style.transition = 'width 4.2s cubic-bezier(.2,.7,.2,1)'; b.style.width = (+b.dataset.w * 100) + '%'; })); }); };
-  const LOG = [
-    ['git-roast', 'analyzed 1,420 commits · generated Spotify Wrapped style dev roast'],
-    ['InstantTranslate', 'cached 850 technical domain terms into LevelDB storage'],
-    ['IdeaClaimer', 'crawled arXiv cs.AI & cs.SE · extracted 42 paper research abstracts'],
-    ['PostgreSQL', 'executed EXPLAIN ANALYZE on CDC events · latency 2.1ms'],
-    ['Docker', 'spun up Redis cluster & FastAPI microservices container'],
-    ['TDMU IS Lab', 'vectorized semantic knowledge graph nodes · cosine similarity 0.94'],
-    ['State Machine', 'processed transition: ORDER_CONFIRMED -> IN_PACKAGING (audit logged)'],
-    ['WebSockets', 'broadcasted telemetry frame to 32 worker dashboards'],
-    ['Audit Trail', 'verified HMAC signature integrity on 1,200 audit logs'],
-    ['zen-desk-clock', 'synced 25-minute Pomodoro focus session · 0 interruptions'],
-  ];
-  const log = $('#log'); let li = 0; let logTimer = null;
-  const pushLog = () => { const [who, msg] = LOG[li++ % LOG.length]; const d = document.createElement('div'); const t = new Date(Date.UTC(2026, 8, 23, 9, 14, li * 7)); d.innerHTML = `<span>${t.toISOString().slice(11, 19)}</span> ${who} → ${msg}`; log.appendChild(d); while (log.children.length > 6) log.firstElementChild.remove(); };
-  const show = (i) => {
-    cur = i; tabs.forEach((t, k) => { t.classList.toggle('on', k === i); t.style.animation = 'none'; void t.offsetWidth; t.style.animation = ''; });
-    panes.forEach((p, k) => p.classList.toggle('on', k === i));
-    $('#crumb').textContent = crumbs[i];
-    sideLinks.forEach((a, k) => a.classList.toggle('on', k === [0, 3, 0][i]));
-    clearInterval(logTimer);
-    if (i === 0) approve(panes[0]);
-    if (i === 1) { queue(panes[1]); log.innerHTML = ''; for (let k = 0; k < 3; k++) pushLog(); logTimer = setInterval(pushLog, 700); }
-    clearTimeout(timer); timer = setTimeout(tickTabs, DUR);
-  };
-  const tickTabs = () => { if (!vis(sec) || REDUCED) { timer = setTimeout(tickTabs, 800); return; } show((cur + 1) % tabs.length); };
-  tabs.forEach((t, i) => t.addEventListener('click', () => show(i)));
-  const track = $('#track'); track.innerHTML += track.innerHTML;
-  (async () => { await whenVisible(sec); show(0); })();
-}
+/* ---------- tools tabs (marquee replaced) ---------- */
 
 /* ---------- sudoku: a solver agent fills the gaps, one industry per 3x3 box ---------- */
 {
