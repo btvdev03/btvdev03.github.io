@@ -25,70 +25,188 @@ const PROFILE_DATA = {
     verified: true, // Hiển thị tích xanh Meta chính chủ
     title: "Kỹ sư Phần mềm & Học viên Cao học Hệ thống Thông tin",
     institution: "Trường Đại học Thủ Dầu Một (TDMU)",
-    department: "Khoa Công nghệ Thông tin",
-    location: "Bình Dương & Miền Tây Nam Bộ, Việt Nam",
+    department: "Trung tâm Chuyển đổi số & Khoa CNTT",
+    location: "Bình Dương & Tháp Mười, Đồng Tháp, Việt Nam",
     email: "btv.dev03@gmail.com",
     githubUsername: "btvdev03",
-    statusBadge: "🟢 Sẵn sàng hợp tác nghiên cứu & phát triển phần mềm",
-    bioShort: "Kỹ sư Kỹ thuật Phần mềm & Học viên Cao học HTTT tại Trường Đại học Thủ Dầu Một (TDMU). Xuất thân từ vùng đất phù sa sông nước miền Tây, đam mê xây dựng những hệ thống phần mềm thực tế, bền bỉ và các công cụ mã nguồn mở hữu ích.",
+    statusBadge: "🟢 Sẵn sàng hợp tác nghiên cứu & chuyển đổi số thực tế",
+    bioShort: "Kỹ sư Kỹ thuật Phần mềm & Học viên Cao học Hệ thống Thông tin tại Trường Đại học Thủ Dầu Một (TDMU). Xuất thân từ vùng quê hương sen hồng Tháp Mười (Đồng Tháp), học tập và làm việc tại Bình Dương, đam mê xây dựng những hệ thống phần mềm thực tế, bền bỉ và giải pháp chuyển đổi số hữu ích.",
     bioDetails: [
-      "Kết hợp tư duy nghiên cứu học thuật chuẩn mực với năng lực kỹ thuật thực chiến giải quyết trực diện các bài toán vận hành.",
-      "Lĩnh vực quan tâm chính: Hệ thống Thông tin (Information Systems), Khai phá dữ liệu khoa học, Semantic Search, Kiến trúc phần mềm và Chuyển đổi số doanh nghiệp."
+      "Kết hợp tư duy nghiên cứu học thuật chuẩn mực với năng lực kỹ thuật thực chiến giải quyết trực diện các bài toán vận hành của nhà trường và doanh nghiệp.",
+      "Lĩnh vực quan tâm chính: Hệ thống Thông tin (Information Systems), Khai phá dữ liệu khoa học, Semantic Search, Kiến trúc phần mềm và Tự động hóa quy trình Chuyển đổi số."
     ],
     avatarInitials: "VB"
   },
 
   // --------------------------------------------------------------------------
-  // 2. QUÁ TRÌNH HỌC TẬP & LÀM VIỆC (TIMELINE: EDUCATION & EXPERIENCE)
+  // 2. QUÁ TRÌNH HỌC TẬP & CÔNG TÁC THỰC TẾ (TIMELINE: EDUCATION & EXPERIENCE)
   // --------------------------------------------------------------------------
   timeline: [
+    // --- 2.1 CÔNG VIỆC THỰC TẾ ĐANG LÀM (PROFESSIONAL EXPERIENCE) ---
     {
-      id: "tdmu-msc",
-      period: "2024 - Hiện tại",
-      badge: "M.Sc Candidate",
-      type: "academic", // "academic" (học thuật) hoặc "work" (công việc)
-      title: "Học viên Cao học ngành Hệ thống Thông tin",
-      organization: "Trường Đại học Thủ Dầu Một (TDMU)",
-      location: "Bình Dương, Việt Nam",
-      description: "Tiếp tục chương trình đào tạo Thạc sĩ Hệ thống Thông tin. Tập trung nghiên cứu Kiến trúc HTTT nâng cao, Khai phá tri thức từ dữ liệu khoa học (Knowledge Discovery), Semantic Search và biểu diễn dữ liệu ngữ nghĩa.",
+      id: "tdmu-dtc-solutions",
+      period: "10/2026 - Hiện tại",
+      badge: "Ban Chuyên Môn Số",
+      type: "work", // "work" (công việc thực chiến) hoặc "academic" (học tập đào tạo)
+      title: "Thành viên Ban chuyên môn - Phòng Giải pháp số",
+      organization: "Trung tâm Chuyển đổi số - Trường Đại học Thủ Dầu Một (TDMU)",
+      location: "Số 06 Trần Văn Ơn, P. Phú Hòa, TP. Thủ Dầu Một, Bình Dương",
+      website: "https://dtc.tdmu.edu.vn",
+      websiteLabel: "dtc.tdmu.edu.vn",
+      description: "Trực tiếp nghiên cứu, phát triển và triển khai các giải pháp công nghệ chuyển đổi số, tự động hóa quy trình nghiệp vụ nội bộ phục vụ công tác điều hành của Nhà trường và hỗ trợ chuyển đổi số cộng đồng.",
       points: [
-        "Nghiên cứu kiến trúc truy xuất thông tin ngữ nghĩa (Semantic Information Retrieval) ứng dụng trong dữ liệu ấn phẩm khoa học.",
-        "Mô hình hóa dữ liệu và đề xuất kiến trúc module hóa chi phí thấp cho chuyển đổi số doanh nghiệp địa phương.",
-        "Tham gia sinh hoạt học thuật, báo cáo chuyên đề nghiên cứu tại Khoa Công nghệ Thông tin - TDMU."
+        "Nghiên cứu, thiết kế kiến trúc và trực tiếp lập trình các ứng dụng phần mềm giải quyết bài toán số hóa quy trình quản lý đại học.",
+        "Xây dựng các luồng tự động hóa quy trình nghiệp vụ (Workflow Automation), chuẩn hóa luồng xử lý dữ liệu và tích hợp hệ thống liên thông.",
+        "Tham gia hỗ trợ kỹ thuật, chuyển giao giải pháp số và hướng dẫn cán bộ, giảng viên áp dụng công nghệ số vào công việc hàng ngày."
       ],
-      tags: ["Hệ thống Thông tin", "Nghiên cứu Khoa học", "Semantic Search", "TDMU"]
+      tags: ["Chuyển đổi số", "Phòng Giải pháp số", "TDMU DTC", "Tự động hóa", "Kiến trúc Phần mềm"]
     },
     {
-      id: "dx-engineer",
-      period: "2023 - Hiện tại",
-      badge: "Kỹ sư Thực chiến",
+      id: "tdmu-dtc-media",
+      period: "04/2026 - Hiện tại",
+      badge: "Truyền Thông Số",
       type: "work",
-      title: "Kỹ sư Giải pháp & Phần mềm Ứng dụng",
-      organization: "Dự án Doanh nghiệp & Thực tiễn",
-      location: "Bình Dương & TP.HCM",
-      description: "Trực tiếp khảo sát hiện trạng, tư vấn giải pháp kỹ thuật và phát triển các hệ sinh thái phần mềm số hóa vận hành nhà xưởng, văn phòng điện tử.",
+      title: "Chuyên viên Truyền thông",
+      organization: "Trung tâm Chuyển đổi số - Trường Đại học Thủ Dầu Một (TDMU)",
+      location: "Số 06 Trần Văn Ơn, P. Phú Hòa, TP. Thủ Dầu Một, Bình Dương",
+      website: "https://dtc.tdmu.edu.vn",
+      websiteLabel: "dtc.tdmu.edu.vn",
+      description: "Phụ trách nội dung truyền thông số, xây dựng tư liệu hình ảnh, biên soạn tài liệu kỹ thuật và kết nối cộng đồng công nghệ số trong và ngoài trường.",
       points: [
-        "Thiết kế và triển khai luồng tự động hóa quy trình nghiệp vụ (Workflow Automation) với State Machine và Audit Trail bất biến.",
-        "Tối ưu hóa cơ sở dữ liệu quan hệ và xây dựng pipeline đồng bộ dữ liệu đáp ứng độ trễ thấp.",
-        "Phát triển ứng dụng Web giám sát vận hành Offline-First loại bỏ quy trình ghi chép giấy tờ thủ công."
+        "Sản xuất nội dung truyền thông số, bài viết chuyên đề công nghệ, biên tập tài liệu hướng dẫn kỹ thuật và cẩm nang số hóa.",
+        "Thiết kế ấn phẩm đồ họa số, quản trị hình ảnh thương hiệu và truyền thông các chương trình, hội thảo chuyển đổi số.",
+        "Kết nối mạng lưới sinh viên, giảng viên và các đối tác công nghệ, thúc đẩy văn hóa số và chia sẻ tri thức công nghệ trong nhà trường."
       ],
-      tags: ["Kỹ thuật Phần mềm", "Chuyển đổi số", "State Machine", "Full-Stack"]
+      tags: ["Truyền thông số", "Tài liệu kỹ thuật", "Sáng tạo nội dung", "Kết nối cộng đồng", "TDMU DTC"]
+    },
+    {
+      id: "hoanggiang-solar-it-lead",
+      period: "03/2026 - Hiện tại",
+      badge: "IT Lead Doanh Nghiệp",
+      type: "work",
+      title: "Phụ trách Công nghệ Thông tin (IT Lead)",
+      organization: "Công ty TNHH TM DV Hoàng Giang Solar",
+      location: "Thửa đất 1960, Đ. TC1, KP 6, P. Thới Hòa, TP. Bến Cát, Bình Dương & Chi nhánh TP.HCM",
+      website: "https://hoanggiang-solar.com",
+      websiteLabel: "hoanggiang-solar.com",
+      extraInfo: "Mã số thuế: 3703038002",
+      description: "Phụ trách toàn diện công tác quản trị hệ thống hạ tầng CNTT, an toàn thông tin, vận hành phần mềm quản trị doanh nghiệp và số hóa toàn bộ quy trình vận hành chuỗi cung ứng, thi công điện mặt trời.",
+      points: [
+        "Quản trị hạ tầng mạng máy tính, máy chủ dữ liệu, hệ thống giám sát an ninh và an toàn thông tin tại trụ sở Bến Cát và chi nhánh TP.HCM.",
+        "Triển khai các giải pháp phần mềm quản lý kho vật tư thiết bị, quy trình bảo hành tấm pin - inverter và chăm sóc khách hàng doanh nghiệp.",
+        "Vận hành và tối ưu hóa website thương mại điện tử hoanggiang-solar.com, ứng dụng công cụ số hỗ trợ tiếp thị và kinh doanh năng lượng sạch."
+      ],
+      tags: ["IT Lead", "Hoàng Giang Solar", "Quản trị hạ tầng", "Số hóa doanh nghiệp", "Solar Energy"]
+    },
+
+    // --- 2.2 HÀNH TRÌNH HỌC TẬP & ĐÀO TẠO (ACADEMIC JOURNEY) ---
+    {
+      id: "tdmu-msc",
+      period: "2026 - 2028 (Dự kiến)",
+      badge: "Học Viên Cao Học M.Sc",
+      type: "academic",
+      title: "Học viên Cao học ngành Hệ thống Thông tin (Information Systems)",
+      organization: "Trường Đại học Thủ Dầu Một (TDMU)",
+      location: "Số 06 Trần Văn Ơn, P. Phú Hòa, TP. Thủ Dầu Một, Bình Dương",
+      website: "https://tdmu.edu.vn",
+      websiteLabel: "tdmu.edu.vn",
+      description: "Tiếp tục con đường học vấn chuyên sâu với chương trình Thạc sĩ ngành Hệ thống Thông tin. Tập trung nghiên cứu về Semantic Search, Khai phá dữ liệu khoa học, Đồ thị tri thức (Knowledge Graph) và Kiến trúc hệ thống thông tin quy mô lớn.",
+      points: [
+        "Đang trong quá trình thực hiện nghiên cứu cao học tại TDMU dưới sự hướng dẫn khoa học của quý thầy cô Khoa Công nghệ Thông tin.",
+        "Tập trung bài toán trích xuất thực thể, quan hệ ngữ nghĩa trong kho dữ liệu khoa học và mô hình hóa dữ liệu phục vụ chuyển đổi số.",
+        "Tích cực tích lũy học liệu, viết báo cáo chuyên đề và chuẩn bị công bố các bài báo khoa học trên các tạp chí và hội nghị chuyên ngành."
+      ],
+      tags: ["Hệ thống Thông tin", "Information Systems", "M.Sc Candidate", "Semantic Search", "TDMU"]
     },
     {
       id: "tdmu-beng",
-      period: "2020 - 2024",
-      badge: "Tốt nghiệp Kỹ sư",
+      period: "2021 - 2026",
+      badge: "Kỹ Sư Tốt Nghiệp Khá",
       type: "academic",
-      title: "Kỹ sư Kỹ thuật Phần mềm (B.Eng)",
+      title: "Kỹ sư Kỹ thuật Phần mềm (Software Engineering)",
       organization: "Trường Đại học Thủ Dầu Một (TDMU)",
-      location: "Bình Dương, Việt Nam",
-      description: "Tốt nghiệp Kỹ sư Kỹ thuật Phần mềm chính quy. Nắm vững nền tảng khoa học máy tính, cấu trúc dữ liệu, giải thuật, công nghệ web và kiến trúc phần mềm.",
+      location: "Số 06 Trần Văn Ơn, P. Phú Hòa, TP. Thủ Dầu Một, Bình Dương",
+      website: "https://tdmu.edu.vn",
+      websiteLabel: "tdmu.edu.vn",
+      description: "Tốt nghiệp Kỹ sư Kỹ thuật Phần mềm chính quy (xếp loại Khá). Trong suốt 5 năm đại học, vừa rèn luyện chuyên môn kỹ thuật phần mềm vững vàng, vừa sôi nổi cống hiến cho công tác Đoàn - Hội Sinh viên trường.",
       points: [
-        "Đồ án tốt nghiệp và các dự án chuyên ngành đạt kết quả xuất sắc với định hướng ứng dụng thực tiễn cao.",
-        "Xây dựng và đóng góp nhiều công cụ mã nguồn mở phục vụ cộng đồng lập trình viên.",
-        "Chuyển tiếp học tập trực tiếp lên bậc Cao học ngành Hệ thống Thông tin tại TDMU."
+        "Từng tham gia Ban Chấp hành, Ban Thư ký Hội Sinh viên Trường Đại học Thủ Dầu Một; cống hiến nhiệt huyết cho phong trào sinh viên và các hoạt động tình nguyện.",
+        "Trực tiếp nghiên cứu và lập trình phần mềm quản lý minh chứng phục vụ kiểm định chất lượng đào tạo và hỗ trợ chấm điểm rèn luyện sinh viên.",
+        "Trang bị nền tảng chuyên sâu về cấu trúc dữ liệu & giải thuật, kiến trúc phần mềm, phát triển ứng dụng Full-Stack và tư duy hệ thống thực chiến."
       ],
-      tags: ["Kỹ thuật Phần mềm", "Kỹ sư TDMU", "Computer Science", "Open-Source"]
+      tags: ["Kỹ sư Phần mềm", "Tốt nghiệp loại Khá", "BCH Hội Sinh viên", "Phần mềm minh chứng", "TDMU"]
+    },
+    {
+      id: "nonglam-bd",
+      period: "Lớp 10 - Lớp 12",
+      badge: "Song Bằng THPT & Nghề",
+      type: "academic",
+      title: "Học song song THPT & Trung cấp nghề Tin học Ứng dụng",
+      organization: "Trường Trung cấp Nông Lâm nghiệp Bình Dương",
+      location: "Số 8, Đường ĐX061, KP 8, P. Định Hòa, TP. Thủ Dầu Một, Bình Dương",
+      website: "http://nonglambd.edu.vn/",
+      websiteLabel: "nonglambd.edu.vn",
+      description: "Chặng đường bản lề với mô hình kép: vừa hoàn thành chương trình văn hóa Trung học Phổ thông vừa học chuyên sâu nghề Tin học Ứng dụng. Nơi rèn luyện đức tính tự lập, cần mẫn và bắt đầu nuôi dưỡng ước mơ trở thành kỹ sư công nghệ.",
+      points: [
+        "Học chuyên sâu nghề Tin học Ứng dụng: kỹ thuật phần cứng, mạng căn bản, tin học văn phòng nâng cao và các thuật toán lập trình cơ bản.",
+        "Rèn luyện kỹ năng thực hành nghề nghiệp thực chiến trong phòng máy tính, đạt chuẩn kỹ năng nghề cấp quốc gia.",
+        "Hình thành tính kỷ luật, tự giác học tập và quyết tâm thi đỗ đại học ngành Kỹ thuật Phần mềm."
+      ],
+      tags: ["Tin học Ứng dụng", "Trung cấp Nghề", "THPT", "Nông Lâm nghiệp Bình Dương"]
+    },
+    {
+      id: "thcs-hoaloi",
+      period: "Lớp 6 - Lớp 9",
+      badge: "Bậc Trung Học Cơ Sở",
+      type: "academic",
+      title: "Học sinh Trường THCS Hoà Lợi (nay là THCS Lý Tự Trọng)",
+      organization: "Trường THCS Lý Tự Trọng (Tiền thân là THCS Hoà Lợi)",
+      location: "Đường DI3, Khu phố 1, P. Thới Hòa, TP. Bến Cát, Bình Dương (Địa chỉ cũ: An Hoà, Hoà Lợi, Bến Cát)",
+      website: "https://thcslytutrong.thoihoa.edu.vn",
+      websiteLabel: "thcslytutrong.thoihoa.edu.vn",
+      description: "Bốn năm đèn sách tuổi niên thiếu gắn với mái trường Hoà Lợi (nay là Trường THCS Lý Tự Trọng) tại Bến Cát. Chăm ngoan, hiếu học, bắt đầu làm quen và say mê chiếc máy tính qua những tiết học Tin học đầu tiên.",
+      points: [
+        "Chăm chỉ học tập, đạt học lực khá giỏi các năm học cấp 2 dưới sự dìu dắt tận tâm của quý thầy cô.",
+        "Đặc biệt yêu thích môn Tin học khi lần đầu tiếp cận với ngôn ngữ lập trình Pascal và tư duy thuật toán cơ bản.",
+        "Tích cực tham gia các phong trào thi đua học tốt và hoạt động Đội Thiếu niên Tiền phong Hồ Chí Minh."
+      ],
+      tags: ["THCS Hoà Lợi", "THCS Lý Tự Trọng", "Bến Cát", "Bình Dương", "Tuổi học trò"]
+    },
+    {
+      id: "th-hoaloi",
+      period: "Lớp 2 - Lớp 5",
+      badge: "Bậc Tiểu Học (Lớp 2 - 5)",
+      type: "academic",
+      title: "Học sinh Trường Tiểu học Hoà Lợi",
+      organization: "Trường Tiểu học Hoà Lợi",
+      location: "Khu phố An Hòa, P. Hòa Lợi, TP. Bến Cát, Bình Dương",
+      website: "https://thhoaloi.bencat.edu.vn/",
+      websiteLabel: "thhoaloi.bencat.edu.vn",
+      description: "Theo gia đình về định cư tại vùng đất Bình Dương và theo học các năm tiểu học tại Hòa Lợi, Bến Cát. Kỷ niệm tuổi thơ êm đềm với bạn bè thầy cô miền đất Đông Nam Bộ kiên cường.",
+      points: [
+        "Hoàn thành tốt chương trình tiểu học các lớp 2, 3, 4, 5 với tinh thần hiếu học và sự cần cù, chăm chỉ.",
+        "Được thầy cô thương mến bởi tính nết ngoan ngoãn, lễ phép, chất phác và luôn hòa đồng giúp đỡ bạn bè.",
+        "Tích cực tham gia phong trào Vở sạch chữ đẹp và các hoạt động Sao Nhi đồng rèn luyện chăm ngoan."
+      ],
+      tags: ["Tiểu học Hoà Lợi", "Hòa Lợi", "Bến Cát", "Bình Dương", "Kỷ niệm tuổi thơ"]
+    },
+    {
+      id: "th-langbien",
+      period: "Lớp 1",
+      badge: "Nơi Khởi Đầu (Lớp 1)",
+      type: "academic",
+      title: "Học sinh Trường Tiểu học Láng Biển (nay là TH & THCS Láng Biển)",
+      organization: "Trường TH & THCS Láng Biển",
+      location: "Ấp 3, xã Láng Biển, huyện Tháp Mười, tỉnh Đồng Tháp",
+      website: null,
+      websiteLabel: null,
+      description: "Gắn liền với quê hương Tháp Mười sen hồng, miền Tây Nam Bộ mộc mạc và nghĩa tình. Nơi cắp sách học những nét chữ đầu đời bên những đầm sen bát ngát và con nước phù sa đỏ nặng tình quê.",
+      points: [
+        "Bước chân đầu tiên đến trường học chữ tại điểm trường quê hương xứ sen Láng Biển - Tháp Mười.",
+        "Ký ức tuổi thơ sâu đậm với ruộng đồng bát ngát, dòng kênh phù sa mát ngọt và tình cảm gia đình, bà con xóm giềng ấm áp.",
+        "Cội nguồn nuôi dưỡng tâm hồn chất phác, thật thà, đức tính khiêm tốn và ý chí bền bỉ của người kỹ sư hôm nay."
+      ],
+      tags: ["Tiểu học Láng Biển", "Tháp Mười", "Đồng Tháp", "Quê hương Miền Tây", "Sen hồng"]
     }
   ],
 
@@ -192,7 +310,8 @@ const PROFILE_DATA = {
   // 4. NGHIÊN CỨU KHOA HỌC & BÀI BÁO (RESEARCH PAPERS & PUBLICATIONS)
   // --------------------------------------------------------------------------
   research: {
-    overview: "Các công trình nghiên cứu, báo cáo học thuật và hướng nghiên cứu chính tại Trường Đại học Thủ Dầu Một (TDMU).",
+    statusNotice: "Hiện đang trong quá trình thực hiện nghiên cứu Cao học ngành Hệ thống Thông tin tại Trường Đại học Thủ Dầu Một (TDMU) với các hướng trọng tâm: Semantic Search, Khai phá dữ liệu khoa học, Đồ thị tri thức (Knowledge Graph) và Chuyển đổi số. Toàn bộ các công trình, bài báo và ấn phẩm khoa học sẽ được tự động cập nhật ngay khi có công bố mới.",
+    overview: "Các định hướng nghiên cứu chuyên sâu về Hệ thống Thông tin, Khám phá tri thức (Knowledge Discovery), Semantic Search và các công trình đang thực hiện tại Trường Đại học Thủ Dầu Một (TDMU).",
     papers: [
       {
         id: "paper-semantic-retrieval",
@@ -200,10 +319,10 @@ const PROFILE_DATA = {
         titleVi: "Kiến trúc Khám phá Tri thức & Truy xuất Thông tin Ngữ nghĩa cho Tài liệu Khoa học trong Hệ thống Thông tin",
         authors: "Võ Tấn Bản, Giảng viên Hướng dẫn & Nhóm Nghiên cứu TDMU",
         venue: "Information Systems & Intelligent Computing Research Series, TDMU",
-        year: 2024,
-        status: "Working Paper",
-        badge: "Nghiên cứu Cao học",
-        metricBadge: "-40% Retrieval Time",
+        year: 2026,
+        status: "Đang Nghiên Cứu Cao Học (TDMU)",
+        badge: "Đang Thực Hiện (M.Sc Thesis)",
+        metricBadge: "Semantic Search",
         takeaway: "Kiến trúc lai kết hợp dense vector embeddings và quan hệ knowledge graph giúp thu hẹp khoảng cách ngữ nghĩa, tăng độ chính xác tìm kiếm tài liệu khoa học.",
         abstract: "Trong kỷ nguyên bùng nổ số lượng ấn phẩm khoa học, các phương pháp tìm kiếm từ khóa truyền thống thường bỏ sót các mối liên kết ngữ nghĩa liên ngành. Nghiên cứu này đề xuất một kiến trúc truy xuất lai (hybrid retrieval) kết hợp biểu diễn vector ngữ nghĩa (dense vector embeddings) với trích xuất quan hệ trong đồ thị tri thức (knowledge graphs), giúp các nhà nghiên cứu rút ngắn hơn 40% thời gian tổng quan tài liệu và phát hiện các mối tương quan học thuật tiềm ẩn.",
         keywords: [
@@ -215,11 +334,11 @@ const PROFILE_DATA = {
         ],
         pdfUrl: "https://github.com/btvdev03/IdeaClaimer",
         codeUrl: "https://github.com/btvdev03/IdeaClaimer",
-        bibtex: `@article{vo2024semantic,
+        bibtex: `@article{vo2026semantic,
   title   = {A Semantic Knowledge Discovery and Retrieval Architecture for Scientific Literature in Information Systems},
   author  = {Vo, Tan Ban},
   journal = {Information Systems & Intelligent Computing Series, Thu Dau Mot University (TDMU)},
-  year    = {2024},
+  year    = {2026},
   keywords= {Information Systems, Knowledge Graphs, Semantic Search, Information Retrieval}
 }`
       },
@@ -229,10 +348,10 @@ const PROFILE_DATA = {
         titleVi: "Khung Kiến trúc Module hóa Chi phí Thấp cho Chuyển đổi số Doanh nghiệp Sản xuất Vừa và Nhỏ (SMEs)",
         authors: "Võ Tấn Bản",
         venue: "Applied Software Engineering & Enterprise Architecture Journal",
-        year: 2024,
-        status: "Preprint",
-        badge: "Ứng dụng Thực tiễn",
-        metricBadge: "-60% Upfront Cost",
+        year: 2026,
+        status: "Bản Thảo / Chuẩn Bị Công Bố",
+        badge: "Thực Nghiệm Thực Tiễn",
+        metricBadge: "Modular DX",
         takeaway: "Mô hình kiến trúc module hóa hướng sự kiện chi phí thấp cho phép các doanh nghiệp sản xuất SME chuyển đổi số từng bước mà không cần đầu tư ERP nguyên khối đắt đỏ.",
         abstract: "Các doanh nghiệp sản xuất vừa và nhỏ (SMEs) thường gặp rào cản tài chính rất lớn khi triển khai các hệ thống ERP nguyên khối (monolithic). Nghiên cứu đề xuất khung kiến trúc vi module (micro-modular architecture) ứng dụng luồng xử lý bất đồng bộ dựa trên sự kiện và các dịch vụ độc lập, giúp doanh nghiệp số hóa từng công đoạn với chi phí đầu tư ban đầu giảm hơn 60% trong khi vẫn duy trì tính toàn vẹn và nhất quán của dữ liệu nghiệp vụ.",
         keywords: [
@@ -244,11 +363,11 @@ const PROFILE_DATA = {
         ],
         pdfUrl: "#",
         codeUrl: "https://github.com/btvdev03",
-        bibtex: `@article{vo2024sme,
+        bibtex: `@article{vo2026sme,
   title   = {Architectural Framework for Low-Cost Modular Digital Transformation in Industrial Manufacturing SMEs},
   author  = {Vo, Tan Ban},
   journal = {Applied Software Engineering & Enterprise Systems},
-  year    = {2024},
+  year    = {2026},
   keywords= {Digital Transformation, Enterprise Architecture, Micro-modular}
 }`
       }
@@ -287,9 +406,9 @@ const PROFILE_DATA = {
       id: "art-academic-journey",
       title: "Từ Kỹ sư Phần mềm đến Học viên Cao học HTTT: Góc nhìn Thực tế",
       category: "Học thuật & Định hướng",
-      date: "08/2024",
+      date: "10/2026",
       readTime: "7 phút đọc",
-      summary: "Chia sẻ về hành trình tiếp nối từ bậc đại học kỹ sư sang nghiên cứu cao học tại TDMU: làm thế nào để dung hòa giữa tư duy học thuật chuẩn mực và yêu cầu thực tế khắt khe.",
+      summary: "Chia sẻ về hành trình tiếp nối từ bậc đại học kỹ sư (2021 - 2026) sang nghiên cứu cao học tại TDMU: làm thế nào để dung hòa giữa tư duy học thuật chuẩn mực và yêu cầu thực tế khắt khe.",
       tags: ["TDMU", "Cao học HTTT", "Kỹ sư", "Academic"],
       url: "#"
     },

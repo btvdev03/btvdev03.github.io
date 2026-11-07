@@ -229,19 +229,39 @@ html.is-loading{overflow:hidden}
 /* ---------- 2. Timeline Section ---------- */
 .timeline-section{position:relative;padding:90px 0 40px}
 .timeline-header{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
-.timeline-wrap{position:relative;display:flex;flex-direction:column;gap:32px;margin-top:32px}
-.timeline-wrap::before{content:"";position:absolute;left:20px;top:10px;bottom:10px;width:2px;background:linear-gradient(to bottom,#c9412e,#5a9f4a,rgba(32,32,32,.1))}
-.timeline-item{position:relative;display:flex;align-items:flex-start;gap:28px}
-.timeline-dot{width:16px;height:16px;border-radius:50%;background:#c9412e;border:3px solid #f4f0e7;box-shadow:0 0 0 2px #c9412e;margin-top:6px;flex:none;z-index:2}
-.timeline-item.edu .timeline-dot{background:#1d70d9;box-shadow:0 0 0 2px #1d70d9}
-.timeline-card{flex:1;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
-.timeline-period{font:500 12px/1 var(--mono);color:#c9412e;margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em}
-.timeline-item.edu .timeline-period{color:#1d70d9}
-.timeline-role{margin:0 0 4px;font:600 17px/1.3 var(--sans);color:var(--ink-strong)}
-.timeline-org{margin:0 0 12px;font:500 13.5px/1.4 var(--sans);color:var(--ink-mute)}
+.timeline-toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin:24px 0 32px}
+.timeline-tabs{display:inline-flex;gap:6px;padding:4px;border-radius:24px;background:rgba(32,32,32,.04);border:1px solid rgba(32,32,32,.08)}
+.t-tab{border:0;background:transparent;padding:7px 15px;border-radius:20px;font:500 12.5px/1.2 var(--sans);color:var(--ink-soft);cursor:pointer;transition:all .2s;white-space:nowrap}
+.t-tab:hover{color:var(--ink-strong);background:rgba(255,255,255,.6)}
+.t-tab.active{background:#262323;color:#fff;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+.timeline-wrap{position:relative;display:flex;flex-direction:column;gap:28px;margin-top:16px}
+.timeline-wrap::before{content:"";position:absolute;left:20px;top:10px;bottom:10px;width:2px;background:linear-gradient(to bottom,#059669,#1d70d9,#c9412e,rgba(32,32,32,.1))}
+.timeline-item{position:relative;display:flex;align-items:flex-start;gap:24px;transition:opacity .2s}
+.timeline-dot{width:16px;height:16px;border-radius:50%;background:#c9412e;border:3px solid #f4f0e7;box-shadow:0 0 0 2px #c9412e;margin-top:7px;flex:none;z-index:2;transition:all .2s}
+.timeline-item.work .timeline-dot{background:#059669;box-shadow:0 0 0 2px #059669,0 0 0 4px rgba(5,150,105,.18)}
+.timeline-item.academic .timeline-dot{background:#1d70d9;box-shadow:0 0 0 2px #1d70d9,0 0 0 4px rgba(29,112,217,.18)}
+.timeline-card{flex:1;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 24px;transition:transform .2s,box-shadow .2s}
+.timeline-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.04)}
+.timeline-top{margin-bottom:8px}
+.timeline-title-wrap{display:flex;flex-direction:column;gap:8px}
+.timeline-title{margin:0;font:600 17.5px/1.35 var(--sans);color:var(--ink-strong)}
+.timeline-badges{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.timeline-period-badge{font:600 11.5px/1 var(--mono);padding:4px 8px;border-radius:6px;background:rgba(38,35,35,.07);color:var(--ink-strong)}
+.timeline-badge-pill{font:500 11px/1 var(--mono);padding:4px 8px;border-radius:6px}
+.timeline-badge-pill.work{background:rgba(5,150,105,.1);color:#047857;border:1px solid rgba(5,150,105,.25)}
+.timeline-badge-pill.academic{background:rgba(29,112,217,.09);color:#1d70d9;border:1px solid rgba(29,112,217,.2)}
+.timeline-type-pill{font:500 11px/1 var(--sans);padding:3px 8px;border-radius:4px;background:rgba(0,0,0,.04);color:var(--ink-mute)}
+.timeline-org-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:4px 0 6px;font:500 13.5px/1.4 var(--sans);color:var(--ink)}
+.timeline-org-link{color:#1d70d9;text-decoration:none;font:500 12px/1 var(--mono);padding:2px 8px;border-radius:4px;background:rgba(29,112,217,.06);border:1px solid rgba(29,112,217,.15);display:inline-flex;align-items:center;gap:3px;transition:all .2s}
+.timeline-org-link:hover{background:rgba(29,112,217,.12);color:#0e58b8}
+.timeline-meta-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font:400 12.5px/1.4 var(--sans);color:var(--ink-mute);margin-bottom:12px}
+.timeline-meta-item{display:inline-flex;align-items:center;gap:4px}
 .timeline-desc{margin:0 0 12px;font:400 14px/1.6 var(--sans);color:var(--ink)}
-.timeline-achievements{margin:0;padding-left:18px;font:400 13px/1.6 var(--sans);color:var(--ink-soft)}
-.timeline-achievements li{margin-bottom:4px}
+.timeline-points{margin:0 0 14px;padding-left:18px;font:400 13px/1.6 var(--sans);color:var(--ink-soft)}
+.timeline-points li{margin-bottom:5px}
+.timeline-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.research-status-notice{background:rgba(29,112,217,.05);border:1px solid rgba(29,112,217,.18);border-left:4px solid #1d70d9;border-radius:8px;padding:14px 18px;margin:24px 0;font:450 13.5px/1.6 var(--sans);color:var(--ink-strong);display:flex;align-items:flex-start;gap:10px}
+.research-status-notice svg{flex:none;margin-top:2px;color:#1d70d9}
 
 /* ---------- 3. Research Section ---------- */
 .research-section{position:relative;padding:90px 0 40px}
@@ -583,14 +603,13 @@ footer{position:relative;margin-top:100px;padding:0 0 0}
   <div class="gridbg"></div>
   <div class="seal-c"><canvas class="hanko px" data-k="HỌC" aria-hidden="true"></canvas></div>
   <h2 class="h2">Quá Trình Học Tập &amp; <span class="brush">Kinh Nghiệm Thực Tế</span></h2>
-  <p class="lede">Hành trình từ Kỹ sư Kỹ thuật Phần mềm đến Học viên Cao học Hệ thống Thông tin tại Đại học Thủ Dầu Một (TDMU) cùng các dự án phần mềm ứng dụng.</p>
+  <p class="lede">Hành trình học tập từ mái trường làng quê hương sen hồng Tháp Mười đến bậc Cao học tại Trường Đại học Thủ Dầu Một (TDMU), cùng các dấu mốc công tác thực chiến tại các trung tâm và doanh nghiệp.</p>
   
-  <div class="shelf">
-    <div class="books">
-      <a class="book" href="#timeline"><div class="page"><h3>Chặng 1<br>Kỹ thuật Phần mềm</h3><hr><div class="ch">Software Engineering</div><canvas class="px cover" data-art="ch1" width="117" height="96" aria-label="Pixel art 16-bit: Chiếc xuồng ba lá lướt nhẹ trên dòng kênh rợp bóng rặng dừa nước xanh biếc"></canvas><div class="bfoot"><span>Võ Tấn Bản · B.Eng</span><span>TDMU</span></div></div><div class="case"></div><span class="read">Xem Chặng I</span></a>
-      <a class="book" href="#timeline"><div class="page"><h3>Chặng 2<br>Hệ thống Thông tin</h3><hr><div class="ch">Information Systems</div><canvas class="px cover" data-art="ch2" width="117" height="96" aria-label="Pixel art 16-bit: Cầu vó kéo cá sông nước hoàng hôn vàng rực rỡ"></canvas><div class="bfoot"><span>Võ Tấn Bản · M.Sc</span><span>TDMU Lab</span></div></div><div class="case"></div><span class="read">Xem Chặng II</span></a>
-      <a class="book" href="#timeline"><div class="page"><h3>Chặng 3<br>Nghiên cứu Khoa học</h3><hr><div class="ch">Academic Research</div><canvas class="px cover" data-art="ch3" width="117" height="96" aria-label="Pixel art 16-bit: Cảnh Chợ nổi Cái Răng tấp nập thuyền ghe chở đầy hoa trái miền Tây"></canvas><div class="bfoot"><span>Báo cáo &amp; Bài báo</span><span>Research</span></div></div><div class="case"></div><span class="read">Xem Chặng III</span></a>
-      <a class="book" href="#timeline"><div class="page"><h3>Chặng 4<br>Chuyển đổi số</h3><hr><div class="ch">Digital Transformation</div><canvas class="px cover" data-art="ch4" width="117" height="96" aria-label="Pixel art 16-bit: Cánh đồng lúa chín vàng ươm bát ngát cò bay thẳng cánh"></canvas><div class="bfoot"><span>Giải pháp Doanh nghiệp</span><span>Industry</span></div></div><div class="case"></div><span class="read">Xem Chặng IV</span></a>
+  <div class="timeline-toolbar">
+    <div class="timeline-tabs" id="timelineTabs">
+      <button class="t-tab active" data-filter="all">Tất Cả Chặng Đường (9)</button>
+      <button class="t-tab" data-filter="work">💼 Công Tác Thực Chiến (3)</button>
+      <button class="t-tab" data-filter="academic">🎓 Hành Trình Học Tập (6)</button>
     </div>
     <div class="dl">
       <a class="btn btn-light" href="mailto:btv.dev03@gmail.com?subject=Lien%20he%20Nhan%20Ho%20so%20CV%20Vo%20Tan%20Ban">Tải Hồ Sơ Năng Lực &amp; CV (PDF) <span class="ico"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M5.5 1.5v6M3 5l2.5 2.5L8 5M2 9.5h7" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></span></a>
@@ -607,6 +626,13 @@ footer{position:relative;margin-top:100px;padding:0 0 0}
   <div class="seal-c"><canvas class="hanko px" data-k="NGHIÊN" aria-hidden="true"></canvas></div>
   <h2 class="h2">Nghiên Cứu Khoa Học &amp; <span class="brush">Công Bố Học Thuật</span></h2>
   <p class="lede">Các định hướng nghiên cứu chuyên sâu về Hệ thống Thông tin, Khám phá tri thức (Knowledge Discovery), Semantic Search và các ấn phẩm học thuật tại TDMU.</p>
+
+  <div class="research-status-notice" id="researchNotice">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+    <div>
+      <strong>Thông báo Học thuật &amp; Nghiên cứu:</strong> Hiện đang trong quá trình thực hiện nghiên cứu Cao học ngành Hệ thống Thông tin tại Trường Đại học Thủ Dầu Một (TDMU) (trọng tâm: Semantic Search, Khai phá dữ liệu khoa học, Đồ thị tri thức và Chuyển đổi số). Toàn bộ các công trình nghiên cứu, bài báo và báo cáo khoa học sẽ được tự động cập nhật ngay khi có công bố mới.
+    </div>
+  </div>
 
   <div class="focus-grid" id="focusGrid">
     <!-- 3 Focus cards rendered from profile-data.js -->
@@ -771,26 +797,57 @@ function initProfileData() {
   const timelineCont = $('#timelineContainer');
   if (timelineCont && data.timeline) {
     timelineCont.innerHTML = data.timeline.map(t => `
-      <div class="timeline-item">
+      <div class="timeline-item ${t.type}" data-type="${t.type}">
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="timeline-card">
           <div class="timeline-top">
-            <h3 class="timeline-title">${t.title}</h3>
-            <span class="timeline-badge">${t.period} · ${t.badge || ''}</span>
+            <div class="timeline-title-wrap">
+              <h3 class="timeline-title">${t.title}</h3>
+              <div class="timeline-badges">
+                <span class="timeline-period-badge">${t.period}</span>
+                <span class="timeline-badge-pill ${t.type}">${t.badge || ''}</span>
+                <span class="timeline-type-pill">${t.type === 'work' ? '💼 Công Việc Thực Chiến' : '🎓 Học Tập &amp; Đào Tạo'}</span>
+              </div>
+            </div>
           </div>
-          <div class="timeline-org">🏛️ <b>${t.organization}</b> (${t.location})</div>
+          <div class="timeline-org-row">
+            <span>🏛️ <b>${t.organization}</b></span>
+            ${t.website ? `<a class="timeline-org-link" href="${t.website}" target="_blank" rel="noopener noreferrer">🌐 ${t.websiteLabel || 'Website'} ↗</a>` : ''}
+          </div>
+          <div class="timeline-meta-row">
+            <span class="timeline-meta-item">📍 <i>${t.location}</i></span>
+            ${t.extraInfo ? `<span class="timeline-meta-item">📋 <b>${t.extraInfo}</b></span>` : ''}
+          </div>
           <p class="timeline-desc">${t.description}</p>
           ${t.points && t.points.length ? `
             <ul class="timeline-points">
               ${t.points.map(pt => `<li>${pt}</li>`).join('')}
             </ul>
           ` : ''}
-          <div class="proj-tags">
+          <div class="timeline-tags">
             ${(t.tags || []).map(tag => `<span class="tech-tag">${tag}</span>`).join('')}
           </div>
         </div>
       </div>
     `).join('');
+
+    // Tab filter handling
+    const tabs = $$('.t-tab', document);
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(b => b.classList.remove('active'));
+        tab.classList.add('active');
+        const filter = tab.dataset.filter;
+        const items = $$('.timeline-item', timelineCont);
+        items.forEach(it => {
+          if (filter === 'all' || it.dataset.type === filter) {
+            it.style.display = 'flex';
+          } else {
+            it.style.display = 'none';
+          }
+        });
+      });
+    });
   }
 
   // 3. Research Focus & Papers
