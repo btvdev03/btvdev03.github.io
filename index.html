@@ -123,6 +123,7 @@ html.is-loading{overflow:hidden}
 .nav.light::before{opacity:0}
 .brand{position:relative;display:flex;align-items:center;gap:9px;font:400 31px/1 var(--serif);letter-spacing:-.005em;color:#fbfbf8;text-decoration:none;transition:color .35s}
 .brand svg{width:22px;height:22px;flex:none}
+.brand .verified-badge{width:18px;height:18px;margin-left:4px;vertical-align:middle;filter:drop-shadow(0 1px 2px rgba(0,0,0,.3))}
 .nav.light .brand{color:#262323}
 .nav-right{position:relative;display:flex;align-items:center;gap:12px}
 .pill{display:flex;align-items:center;height:41px;padding:0 6px;border-radius:8px;background:rgba(10,18,28,.34);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),inset 0 1px 0 rgba(255,255,255,.14),0 2px 8px rgba(0,30,70,.1);backdrop-filter:blur(12px) saturate(1.2);-webkit-backdrop-filter:blur(12px) saturate(1.2);transition:background-color .35s,box-shadow .35s}
@@ -703,8 +704,8 @@ footer{position:relative;margin-top:120px;padding:0 0 0}
 <header class="nav" id="nav">
   <canvas class="nav-ink px" aria-hidden="true"></canvas>
   <a class="brand" href="#top" aria-label="Ban Vo Tan Portfolio home">
-    <svg viewBox="0 0 22 22" aria-hidden="true"><rect x="2" y="2" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6 7l5 8 5-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8 12h6" stroke="currentColor" stroke-width="1.8"/></svg>
-    Ban Vo Tan
+    <span>Ban Vo Tan</span>
+    <svg class="verified-badge" viewBox="0 0 24 24" aria-label="Verified" title="Verified"><path fill="#0866FF" d="M12 2.25c.57 0 1.11.23 1.5.64l.87.91c.38.4.92.62 1.47.61l1.26-.03c.57-.01 1.12.2 1.52.6.4.4.61.95.6 1.52l-.03 1.26c-.01.55.21 1.09.61 1.47l.91.87c.41.39.64.93.64 1.5s-.23 1.11-.64 1.5l-.91.87c-.4.38-.62.92-.61 1.47l.03 1.26c.01.57-.2 1.12-.6 1.52-.4.4-.95.61-1.52.6l-1.26-.03c-.55-.01-1.09.21-1.47.61l-.87.91c-.39.41-.93.64-1.5.64s-1.11-.23-1.5-.64l-.87-.91c-.38-.4-.92-.62-1.47-.61l-1.26.03c-.57.01-1.12-.2-1.52-.6-.4-.4-.61-.95-.6-1.52l.03-1.26c.01-.55-.21-1.09-.61-1.47l-.91-.87c-.41-.39-.64-.93-.64-1.5s.23-1.11.64-1.5l.91-.87c.4-.38.62-.92.61-1.47l-.03-1.26c-.01-.57.2-1.12.6-1.52.4-.4.95-.61 1.52-.6l1.26.03c.55.01 1.09-.21 1.47-.61l.87-.91c.39-.41.93-.64 1.5-.64z"/><path fill="#FFFFFF" d="M10.25 15.75l-3.25-3.25 1.4-1.4 1.85 1.85 4.85-4.85 1.4 1.4z"/></svg>
   </a>
   <div class="nav-right">
     <nav class="pill" aria-label="Chuyên môn">
@@ -716,7 +717,7 @@ footer{position:relative;margin-top:120px;padding:0 0 0}
     </nav>
     <nav class="pill" aria-label="Dự án"><a href="#tools">Dự án</a></nav>
     <nav class="pill" aria-label="Liên hệ"><a href="#footer">Liên hệ</a></nav>
-    <a class="btn btn-light cta" href="mailto:btv.dev03@gmail.com">Liên hệ hợp tác</a>
+    <a class="btn btn-light cta" href="mailto:btv.dev03@gmail.com">Liên hệ</a>
     <button class="burger" id="burger" aria-label="Open menu"><span></span></button>
   </div>
 </header>
@@ -730,10 +731,10 @@ footer{position:relative;margin-top:120px;padding:0 0 0}
   <div class="stage" id="heroStage"><canvas id="heroCanvas" class="px" aria-label="Pixel-art spring meadow with cherry trees, a pagoda, a torii gate and Mount Fuji, with a laptop and phone in the grass, rendered live in Three.js" role="img"></canvas></div>
   <div class="hero-band b1"></div><div class="hero-band b2"></div>
   <div class="hero-copy">
-    <h1>Kỹ sư Phần mềm Thực chiến &amp;<br><span class="brush">Nhà nghiên cứu Hệ thống Thông tin</span></h1>
-    <p class="hero-sub">Định hướng xây dựng các ứng dụng / website giải quyết bài toán thực tế, nghiên cứu viết báo khoa học và tư vấn triển khai giải pháp chuyển đổi số thông minh.</p>
+    <h1>Kỹ sư Phần mềm &amp;<br><span class="brush">Học viên Cao học Hệ thống Thông tin</span></h1>
+    <p class="hero-sub">Đam mê lập trình, xây dựng các ứng dụng hữu ích giải quyết nhu cầu thực tế và tiếp tục học tập, nghiên cứu về Hệ thống Thông tin tại Trường Đại học Thủ Dầu Một.</p>
     <div class="hero-ctas">
-      <a class="btn btn-light" href="#tools">Dự Án Thực Chiến</a>
+      <a class="btn btn-light" href="#tools">Dự Án Đã Làm</a>
       <a class="btn btn-glass" href="#guide">Nghiên cứu &amp; Báo cáo</a>
       <a class="btn btn-glass" href="mailto:btv.dev03@gmail.com">Liên Hệ Hợp Tác</a>
     </div>
@@ -745,9 +746,9 @@ footer{position:relative;margin-top:120px;padding:0 0 0}
     <button role="radio" aria-checked="false" data-mode="night"><svg viewBox="0 0 12 12" aria-hidden="true" shape-rendering="crispEdges"><rect x="4" y="1" width="5" height="1"/><rect x="3" y="2" width="3" height="1"/><rect x="2" y="3" width="3" height="3"/><rect x="2" y="6" width="3" height="2"/><rect x="3" y="8" width="3" height="1"/><rect x="4" y="9" width="5" height="1"/><rect x="9" y="2" width="1" height="1"/><rect x="10" y="6" width="1" height="1"/><rect x="7" y="5" width="1" height="1"/></svg><span>Night</span></button>
   </div>
   <div class="tasks" id="tasks" aria-hidden="true">
-    <div class="task"><i class="dot"></i><span>Nghiên cứu chạy ngầm</span><b>Semantic Graph Lab</b></div>
-    <div class="task run"><i class="dot"></i><span>Hệ thống vận hành</span><b>State Machine Engine</b></div>
-    <div class="task"><i class="dot"></i><span>Đã kiểm chứng</span><b>Postgres CDC Pipeline</b></div>
+    <div class="task"><i class="dot"></i><span>Đang tìm hiểu</span><b>Semantic Graph Lab</b></div>
+    <div class="task run"><i class="dot"></i><span>Đang thử nghiệm</span><b>State Machine Engine</b></div>
+    <div class="task"><i class="dot"></i><span>Đã hoàn thành</span><b>Postgres CDC Pipeline</b></div>
   </div>
 </section>
 
@@ -757,27 +758,27 @@ footer{position:relative;margin-top:120px;padding:0 0 0}
     <a class="logo-tile" href="#guide"><span class="mark lm-loom"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 14l6-10 6 10H3z" fill="none" stroke="#6d73d8" stroke-width="1.6"/><circle cx="9" cy="9" r="2" fill="#6d73d8"/></svg>TDMU · Kỹ sư Phần mềm</span><span class="hover">B.Eng Honor</span></a>
     <a class="logo-tile" href="#guide"><span class="mark lm-kes"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="none" stroke="#3c7a63" stroke-opacity=".45"/><path d="M6 13c3-1 5-4 10-6-2 4-4 7-9 7z" fill="#3c7a63" fill-opacity=".7"/></svg>TDMU · Cao học HTTT</span><span class="hover">M.Sc Candidate</span></a>
     <a class="logo-tile" href="#platform"><span class="mark lm-par">Applied AI &amp; CDC</span><span class="hover">Kiến trúc dữ liệu</span></a>
-    <a class="logo-tile" href="#tools"><span class="mark lm-fld">Full-Stack Practical</span><span class="hover">Thực chiến</span></a>
+    <a class="logo-tile" href="#tools"><span class="mark lm-fld">Full-Stack Practical</span><span class="hover">Thực tế</span></a>
   </div>
   <p class="proof"><b id="count">100% Thực tiễn &amp; Hướng tới Giá trị Doanh nghiệp</b></p>
 </section>
 
 <!-- ============ PLATFORM ============ -->
 <section class="platform" id="platform">
-  <h2 class="h2">Kiến trúc Hệ thống Thực chiến<br><span class="m brush">Chuyển đổi số toàn diện cho Doanh nghiệp</span></h2>
+  <h2 class="h2">Một Số Bài Toán Thực Tế<br><span class="m brush">Và giải pháp phần mềm đã áp dụng</span></h2>
   <div class="osmock" id="osmock">
     <div class="org" id="org">
       <svg class="wires" id="wires" aria-hidden="true"></svg>
       <div class="chip"><span class="av">VB</span>Võ Tấn Bản <svg width="9" height="9" viewBox="0 0 9 9" aria-hidden="true"><path d="M2 3.5 4.5 6 7 3.5" fill="none" stroke="currentColor" stroke-width="1.1"/></svg></div>
       <div class="zoom">⌕ 60%</div>
       <div class="icons"><svg width="13" height="13" viewBox="0 0 13 13" aria-hidden="true"><path d="M1.5 3.5h4l1 1.2h5v6.3h-10z" fill="none" stroke="currentColor"/></svg><svg width="13" height="13" viewBox="0 0 13 13" aria-hidden="true"><circle cx="5.5" cy="5.5" r="3.8" fill="none" stroke="currentColor"/><path d="m8.4 8.4 3 3" stroke="currentColor"/></svg></div>
-      <div class="path">⌥ voban/enterprise-architecture</div>
+      <div class="path">⌥ voban/practical-projects</div>
     </div>
     <div class="chat">
       <div class="tabs"><span class="on">Tự động hóa luồng</span><span>CDC &amp; Kho dữ liệu</span><span>Giám sát PWA</span><span>Bảo mật</span><span>Kiến trúc</span></div>
       <div class="thread">
         <div class="msgs" id="msgs"></div>
-        <div class="ask"><span>Trao đổi về kiến trúc hệ thống và chuyển đổi số…</span><button aria-label="Send"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 8.5v-7M2 4.5l3-3 3 3" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></button></div>
+        <div class="ask"><span>Cùng trao đổi về lập trình và giải pháp công nghệ…</span><button aria-label="Send"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 8.5v-7M2 4.5l3-3 3 3" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></button></div>
       </div>
     </div>
   </div>
@@ -787,8 +788,8 @@ footer{position:relative;margin-top:120px;padding:0 0 0}
     <p><b>3. Hệ thống Giám sát Sản xuất Số —</b> Ứng dụng mô hình Offline-First PWA kết hợp WebSockets truyền nhận tín hiệu dây chuyền sản xuất theo thời gian thực, nâng cao 18% thời gian máy chạy hiệu dụng (OEE).</p>
   </div>
   <div class="cta-row">
-    <p>Khám phá năng lực giải quyết bài toán nghiệp vụ phức tạp bằng kiến trúc phần mềm chuẩn mực.</p>
-    <a class="btn btn-dark" href="#tools">Khám Phá Các Dự Án Thực Chiến</a>
+    <p>Mỗi dự án là một cơ hội để tìm hiểu sâu hơn về lập trình và hệ thống thông tin.</p>
+    <a class="btn btn-dark" href="#tools">Xem Các Dự Án</a>
   </div>
 </section>
 
@@ -796,8 +797,8 @@ footer{position:relative;margin-top:120px;padding:0 0 0}
 <section class="does wrap">
   <p class="eyebrow lg"><canvas class="hanko px" data-k="術" aria-hidden="true"></canvas>Phương Pháp Luận Kỹ Thuật</p>
   <img crossorigin="anonymous" class="orn orn-bamboo px" src="https://ublctyddhtbgaersvxxb.supabase.co/storage/v1/object/public/threeui-media/scene-images/embedded/809d1f48a044dd115ebd24cc97c4a024f93c6c70664238b0550e6e64ef1bff6b.png" alt="" aria-hidden="true">
-  <h2 class="h2">Từ Bài Toán Nghiệp Vụ Thực Tế<br><span class="m"><span class="brush">Đến Giải Pháp Phần Mềm Chuẩn Mực</span></span></h2>
-  <p class="lede">Mọi dòng mã và kiến trúc đều hướng tới việc giải quyết triệt để nút thắt vận hành, bảo đảm tính toàn vẹn dữ liệu và tạo đòn bẩy tăng trưởng bền vững cho tổ chức.</p>
+  <h2 class="h2">Quy Trình Làm Việc Đơn Giản<br><span class="m"><span class="brush">Từ ý tưởng đến sản phẩm hoàn thiện</span></span></h2>
+  <p class="lede">Lắng nghe bài toán thực tế, tìm giải pháp phù hợp và viết mã nguồn cẩn thận để tạo ra phần mềm chạy ổn định, dễ bảo trì.</p>
 
   <!-- 1.0 LAUNCH -->
   <div class="chapter launch" id="launch">
@@ -919,9 +920,9 @@ footer{position:relative;margin-top:120px;padding:0 0 0}
   <div class="gridbg"></div>
   <img crossorigin="anonymous" class="orn orn-enso-guide px" src="https://ublctyddhtbgaersvxxb.supabase.co/storage/v1/object/public/threeui-media/scene-images/embedded/e86cdc1b824ae3633a0b54f7459d51a093455c17a1796358cbe4dae85aabd733.png" alt="" aria-hidden="true">
   <div class="seal-c"><canvas class="hanko px" data-k="道" aria-hidden="true"></canvas></div>
-  <h2 class="h2">Lộ trình 4 chặng <span class="brush">chuyên môn &amp; học thuật</span></h2>
-  <p class="lede">Từ nền tảng kỹ sư công nghệ phần mềm thực tiễn đến chiều sâu học thuật cao học Hệ thống Thông tin tại Đại học Thủ Dầu Một (TDMU) và tư vấn giải pháp doanh nghiệp.</p>
-  <a class="btn btn-dark" href="#tools">Xem Năng Lực &amp; Dự Án Thực Chiến</a>
+  <h2 class="h2">Quá Trình Học Tập &amp; <span class="brush">Định Hướng Phát Triển</span></h2>
+  <p class="lede">Tốt nghiệp Kỹ sư Kỹ thuật Phần mềm và hiện đang tiếp tục học tập, nghiên cứu Cao học ngành Hệ thống Thông tin tại Trường Đại học Thủ Dầu Một (TDMU).</p>
+  <a class="btn btn-dark" href="#tools">Xem Các Dự Án Cá Nhân</a>
   <div class="shelf"><div class="books">
     <a class="book" href="#guide"><div class="page"><h3>Chặng 1<br>Kỹ thuật Phần mềm</h3><hr><div class="ch">Software Engineering</div><canvas class="px cover" data-art="ch1" width="117" height="96" aria-label="Pixel art: a rowboat pushing off across a lake toward snow-capped Mount Fuji under cherry blossoms"></canvas><div class="bfoot"><span>Võ Tấn Bản · B.Eng</span><span>TDMU</span></div></div><div class="case"></div><span class="read">Khám phá Chặng I</span></a>
     <a class="book" href="#guide"><div class="page"><h3>Chặng 2<br>Hệ thống Thông tin</h3><hr><div class="ch">Information Systems</div><canvas class="px cover" data-art="ch2" width="117" height="96" aria-label="Pixel art: carpenters raising the frame of a temple hall beside a vermilion pagoda"></canvas><div class="bfoot"><span>Võ Tấn Bản · M.Sc</span><span>TDMU Lab</span></div></div><div class="case"></div><span class="read">Khám phá Chặng II</span></a>
@@ -936,8 +937,8 @@ footer{position:relative;margin-top:120px;padding:0 0 0}
 <section class="tools" id="tools">
   <div class="stage" id="toolsStage"><canvas id="toolsCanvas" class="px" aria-hidden="true"></canvas></div>
   <div class="seal-c"><canvas class="hanko px" data-k="作" aria-hidden="true"></canvas></div>
-  <h2 class="h2">Dự Án &amp; Mã Nguồn Mở<br><span class="m brush">Featured Projects &amp; Open Source</span></h2>
-  <p class="lede">Khám phá các sản phẩm và công cụ thực tiễn. Nhấp vào từng dự án để xem mã nguồn hoặc trải nghiệm trực tiếp.</p>
+  <h2 class="h2">Dự Án Cá Nhân &amp; Mã Nguồn Mở<br><span class="m brush">Pet Projects &amp; Tools</span></h2>
+  <p class="lede">Một số công cụ nhỏ và website mình tự viết khi có thời gian rảnh. Nhấp vào từng thẻ để xem mã nguồn hoặc dùng thử.</p>
   
   <div class="proj-marquee-container">
     <!-- Row 1: Leftward running track -->
@@ -983,8 +984,8 @@ footer{position:relative;margin-top:120px;padding:0 0 0}
 <!-- ============ INDUSTRIES ============ -->
 <section class="industries" id="industries">
   <div class="seal-c"><canvas class="hanko px" data-k="商" aria-hidden="true"></canvas></div>
-  <h2 class="h2">Hiện thực hóa trong <span class="brush">mọi lĩnh vực số</span></h2>
-  <p class="lede">Sản xuất, kho vận, chuỗi cung ứng, bán lẻ, giáo dục, tài chính — mỗi ngành nghề là một bài toán tối ưu hóa luồng thông tin đặc thù.</p>
+  <h2 class="h2">Các Lĩnh Vực <span class="brush">Quan Tâm &amp; Tìm Hiểu</span></h2>
+  <p class="lede">Tìm hiểu cách ứng dụng phần mềm vào sản xuất, quản lý kho, giáo dục và tối ưu hóa luồng dữ liệu.</p>
   <div class="sd-wrap">
     <div class="sd-board">
       <div class="sudoku" id="sudoku" role="img" aria-label="A solver agent filling in a Sudoku grid one cell at a time; each 3 by 3 box stands for an industry"></div>
@@ -1004,7 +1005,7 @@ footer{position:relative;margin-top:120px;padding:0 0 0}
   <div class="wrap foot">
     <div>
       <div class="seal-f"><canvas class="hanko px" data-k="武" aria-hidden="true"></canvas></div>
-      <h2 class="h2">Hiện Thực Hóa Giải Pháp Số &amp;<br><span class="m"><span class="brush">Nghiên Cứu Chuyên Sâu</span></span></h2>
+      <h2 class="h2">Cùng Kết Nối &amp;<br><span class="m"><span class="brush">Học Hỏi Công Nghệ</span></span></h2>
       <img class="orn orn-stroke px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHcAAAAmCAYAAAD+6wTYAAADsElEQVR4nO1bzYoUMRDu3mdQWbDx6l4X5rQ3ZfANlDnMaR7MkwcZ30BEb54Er+tVRmhc30EpmE+qi/ynkknP9AcybXc6SedLfamqZLtuwYIF9XD9ZPi73ez2FZtcUAqliLwqUemCBRcpt50iVrd3D67nfUpnxt+HHs9xvWAKGpvh6bM/375/fdwpIXa8+9jZRZXTjLl5fvPl3fu3b+Q765evPuD+JWB1e/dw+PXzkSaRPqMKRZ8jG/RB9GEh98/Jwq8VFMs01tpj1MsZ2BWCtkTVwOo4JlArXIe8azMUPvFLT/hezkbtRd8k01qyo4EVm9T4/tB+IIT59Pnj69TJTHXQ+6Y2+TiljE2WLKdItu25qfMub9A3cNvNbn//4/4FyvG6uL+AsqF+ghyjUBJjlVFD6SaWm1MR7xT/P5wNXPNyro+VKmKzKhBj6v/A2iAFgYXlSqvPynKg6ZAWJ9cGDLqPZC2sLYMGWbS9J4nUXrZMbWhBlVwXsdyC5f2aJMeA+kQS7iI/tj7tuNc1WdQtFwBZUpL5/dbIbNUiTY5ViLPV1wiDOM6Z1DGQTDne0r+gJYR+eZKoKW9ZEhm7Fs8Jo8GabIBjVyPuL+b1hRKrSaZN8ocMtYBVwZpS1t9TpWQn5JaSZ0l0yTVXk9jB01dTiOeTT0gsj8NlTG4CypCDZysr4/WrGpLI68V1jbZy2zH1FYTa1IjIs/0j4wH5RAIRJa9dIEJdZaEqSNgU85ZbxxCx6ZEKyHFMBiwHaAe/F0tuambNh9j8dEkEe3nnhiHAezfJsVyDY1OZITl1LfQhKbhzJ/RgINEGn0X7nK+a254XJ8sDIy8kJRpa1oSUDQpNS/5fUevWawpxWktrjscQx+c8uTby5Xak2kmMljNENnKB2v0eju3zcIY/l+NJnjPFp7a+mmSb6siR8Qm5CJBbJTg0QZJT31pkouSgh4Y1rh0b/qzkWqyWWw45eUG/p5ZOgskhykkRmg4VyDKnCI2K5pZ9ZeakEHJdDz0f5UsrnpRcfjwlFdLr9JWXsxxrj5RE19GaIWLXxbcFZ/smqj/18LntPc1z0H3K5jDu1wyfTJkfePhyIHIdkRJosU8TyCS47ZmrnOsv3ORfu9G7fAK56sY9fr0Sbcv6SoD3I+W5JoIXedN2IJemU+9ppsSX41EFsDbGHDqfA4I/xEYgj99SnaSWBnR7VA9MFFh/05JaYhAgMbiOeZ/LazdDbDe7vW/JmT04sbhO/WhJ9FyJX7CgK41/ie/niHaT34oAAAAASUVORK5CYII=" alt="" aria-hidden="true">
       <div class="flinks"><span>Chuyên môn</span><a href="#guide">Lộ trình học thuật</a><a href="#platform">Case Study</a><a href="#tools">Công cụ &amp; Dự án</a><a href="#industries">Lĩnh vực số</a></div>
       <div class="fcols">
@@ -1022,7 +1023,7 @@ footer{position:relative;margin-top:120px;padding:0 0 0}
     </div>
     <div class="fcard">
       <div class="art"><canvas id="footerArt" class="px" width="163" height="225" aria-label="Pixel art: a white-eye bird on a cherry blossom branch above a spring meadow"></canvas>
-        <div class="over"><p>Võ Tấn Bản · Kỹ sư Phần mềm &amp; Học viên Cao học HTTT <span>Đại học Thủ Dầu Một (TDMU).</span></p><a class="btn btn-light" href="mailto:btv.dev03@gmail.com">Liên Hệ Hợp Tác Ngay</a></div>
+        <div class="over"><p>Võ Tấn Bản · Kỹ sư Phần mềm &amp; Học viên Cao học HTTT <span>Đại học Thủ Dầu Một (TDMU).</span></p><a class="btn btn-light" href="mailto:btv.dev03@gmail.com">Gửi Lời Nhắn Cho Mình</a></div>
       </div>
     </div>
   </div>
@@ -1132,13 +1133,12 @@ $$('#sheet a').forEach((a) => a.addEventListener('click', () => $('#sheet').clas
 {
   const box = $('#msgs');
   const script = [
-    ['me', 'Chào Bản, doanh nghiệp chúng tôi đang cần tự động hóa luồng duyệt đơn và thống nhất dữ liệu kho, bạn tư vấn giải pháp giúp tôi?'],
-    ['ai', 'Chào anh! Em sẽ thiết kế Finite State Machine để kiểm soát chặt vòng đời đơn hàng, đồng thời dựng CDC pipeline đồng bộ Postgres sang kho dữ liệu Star Schema. Dữ liệu báo cáo sẽ cập nhật dưới 2 phút và có Audit Trail chi tiết.'],
-    ['job', 'State Machine Engine', 'Xây dựng luồng Finite State Machine tự động hóa duyệt đơn', 'run'],
-    ['me', 'Hệ thống có chạy được ổn định khi kết nối mạng ở các phân xưởng chập chờn không?'],
-    ['ai', 'Dạ hoàn toàn yên tâm. Em ứng dụng mô hình Offline-First PWA với IndexedDB và WebSockets hai chiều. Khi mất mạng dữ liệu vẫn ghi nhận cục bộ và tự đồng bộ ngay khi có sóng, tăng 18% thời gian máy chạy hiệu dụng.'],
-    ['job', 'CDC Pipeline', 'Thiết lập Debezium/Kafka CDC đồng bộ dữ liệu thời gian thực', 'run'],
-    ['job', 'Offline PWA Sync', 'Kiểm tra cơ chế hàng đợi Background Sync & xung đột dữ liệu', 'wait'],
+    ['me', 'Chào Bản, mình có bài toán về việc tự động hóa luồng duyệt đơn và quản lý dữ liệu, bạn có hướng tiếp cận nào phù hợp không?'],
+    ['ai', 'Dạ chào anh! Với nhu cầu này, mình có thể dùng mô hình máy trạng thái (State Machine) để quản lý luồng duyệt rõ ràng, kết hợp cơ chế ghi log chi tiết để dễ theo dõi và kiểm tra.'],
+    ['job', 'State Machine', 'Xây dựng luồng quản lý trạng thái đơn hàng', 'run'],
+    ['me', 'Nếu mạng ở phân xưởng không ổn định thì dữ liệu xử lý thế nào?'],
+    ['ai', 'Mình có thể áp dụng kiến trúc Offline-First. Ứng dụng sẽ lưu tạm dữ liệu trên máy trạm và tự động đồng bộ lên server ngay khi kết nối lại bình thường.'],
+    ['job', 'Offline Sync', 'Kiểm tra cơ chế lưu trữ cục bộ và đồng bộ dữ liệu', 'run'],
   ];
   const make = (m) => {
     const d = document.createElement('div');
