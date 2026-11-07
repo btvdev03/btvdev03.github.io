@@ -87,14 +87,14 @@ const PROFILE_DATA = {
       title: "Phụ trách Công nghệ Thông tin (IT Lead)",
       organization: "Công ty TNHH TM DV Hoàng Giang Solar",
       location: "Thửa đất 1960, Đ. TC1, KP 6, P. Thới Hòa, TP. Bến Cát, Bình Dương & Chi nhánh TP.HCM",
-      website: "https://hoanggiang-solar.com",
-      websiteLabel: "hoanggiang-solar.com",
+      website: "https://hoanggiangsolar.vn",
+      websiteLabel: "hoanggiangsolar.vn",
       extraInfo: "Mã số thuế: 3703038002",
       description: "Phụ trách toàn diện công tác quản trị hệ thống hạ tầng CNTT, an toàn thông tin, vận hành phần mềm quản trị doanh nghiệp và số hóa toàn bộ quy trình vận hành chuỗi cung ứng, thi công điện mặt trời.",
       points: [
         "Quản trị hạ tầng mạng máy tính, máy chủ dữ liệu, hệ thống giám sát an ninh và an toàn thông tin tại trụ sở Bến Cát và chi nhánh TP.HCM.",
         "Triển khai các giải pháp phần mềm quản lý kho vật tư thiết bị, quy trình bảo hành tấm pin - inverter và chăm sóc khách hàng doanh nghiệp.",
-        "Vận hành và tối ưu hóa website thương mại điện tử hoanggiang-solar.com, ứng dụng công cụ số hỗ trợ tiếp thị và kinh doanh năng lượng sạch."
+        "Vận hành và tối ưu hóa website thương mại điện tử hoanggiangsolar.vn, ứng dụng công cụ số hỗ trợ tiếp thị và kinh doanh năng lượng sạch."
       ],
       tags: ["IT Lead", "Hoàng Giang Solar", "Quản trị hạ tầng", "Số hóa doanh nghiệp", "Solar Energy"]
     },

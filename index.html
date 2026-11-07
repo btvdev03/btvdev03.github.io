@@ -375,30 +375,39 @@ html.is-loading{overflow:hidden}
 .contact-box p{margin:0 auto 24px;font:400 15px/1.65 var(--sans);color:var(--ink-soft);max-width:560px}
 .contact-box .btn{margin:0 auto}
 
-/* ---------- footer ---------- */
-footer{position:relative;margin-top:80px;padding:0 0 0}
-.foot{display:grid;grid-template-columns:1fr 350px;gap:40px;align-items:start;padding-top:70px;padding-bottom:100px}
-.foot .h2 .m{display:block}
-.flinks{display:flex;align-items:center;gap:14px;margin-top:36px;font:500 14.5px/1.4 var(--sans);flex-wrap:wrap}
-.flinks span{color:var(--ink-mute)}
-.flinks a,.fcols a{text-decoration:none;color:var(--ink-soft);transition:color .2s}
-.flinks a:hover,.fcols a:hover{color:var(--ink-strong)}
-.fcols{display:grid;grid-template-columns:160px 160px;row-gap:12px;margin-top:28px;font:450 14px/1.4 var(--sans)}
-.fcols div{display:flex;flex-direction:column;gap:10px}
-.social{display:flex;gap:10px;margin-top:32px}
-.social a{width:38px;height:38px;border-radius:8px;display:grid;place-items:center;background:#ffffff;border:1px solid rgba(45,38,30,.1);box-shadow:0 1px 3px rgba(0,0,0,.04);color:var(--ink-strong);transition:all .2s}
-.social a:hover{border-color:#1d70d9;color:#1d70d9;transform:translateY(-1px)}
-.legal{margin-top:32px;font:450 12px/1.5 var(--sans);color:var(--ink-mute)}
-.legal p{margin:0 0 4px}
-.legal .soc{display:inline-flex;align-items:center;gap:4px;margin:0 6px;padding:2px 6px;border-radius:9px;background:#ede9df;border:1px solid rgba(45,38,30,.06);font-weight:600;font-size:11px;color:var(--ink)}
-.legal .c{color:var(--ink-mute)}
-.fcard{position:relative;margin-top:-70px;width:350px;padding:12px;border-radius:16px;background:#ffffff;border:1px solid rgba(45,38,30,.09);box-shadow:0 4px 20px rgba(45,38,30,.06)}
-.fcard .art{position:relative;height:451px;border-radius:10px;overflow:hidden;background:#3b9be9}
-.fcard canvas{position:absolute;inset:0;width:100%;height:100%}
-.fcard .over{position:absolute;left:12px;right:12px;bottom:10px;padding:16px 16px 18px;border-radius:10px;background:rgba(30,50,30,.5);backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.2)}
-.fcard .over p{margin:0;font:500 18px/1.35 var(--sans);color:#ffffff}
-.fcard .over p span{color:rgba(255,255,255,.75);font-size:13.5px;display:block;margin-top:4px}
-.grass{position:relative;height:75px;margin-top:0;width:100%;overflow:hidden}
+/* ---------- 6. Elevated Footer ---------- */
+footer{position:relative;margin-top:60px;background:linear-gradient(to bottom,transparent,rgba(246,243,235,.8) 120px,#f2eee4);border-top:1px solid rgba(45,38,30,.08)}
+.foot{padding-top:60px;padding-bottom:30px}
+.foot-brand-block{text-align:center;max-width:680px;margin:0 auto 46px}
+.foot-brand-block .seal-f{margin:0 auto 14px;display:flex;justify-content:center}
+.foot-title{font:700 clamp(24px,4vw,32px)/1.2 var(--sans);color:var(--ink-strong);margin:0 0 8px;letter-spacing:-.015em}
+.foot-sub{font:500 15px/1.4 var(--sans);color:var(--ink-soft);margin:0 0 14px}
+.foot-motto{font:400 14px/1.65 var(--sans);color:var(--ink-soft);margin:0 auto 24px;max-width:620px}
+.foot-ctas{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+
+.foot-matrix{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;padding:40px 0;border-top:1px solid rgba(45,38,30,.08);border-bottom:1px solid rgba(45,38,30,.08)}
+.foot-col h4{font:600 12.5px/1 var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--ink-strong);margin:0 0 16px}
+.foot-links{display:flex;flex-direction:column;gap:10px}
+.foot-links a,.foot-links span{font:450 13.5px/1.45 var(--sans);color:var(--ink-soft);text-decoration:none;transition:all .2s ease}
+.foot-links a:hover{color:#1d70d9;transform:translateX(2px)}
+.foot-links .foot-loc{color:var(--ink-mute);font-size:13px}
+
+.foot-card{background:#ffffff;border:1px solid rgba(45,38,30,.1);border-radius:14px;padding:20px;box-shadow:0 4px 16px rgba(45,38,30,.04);display:flex;flex-direction:column;gap:10px}
+.foot-card-head{display:flex;align-items:center;gap:8px}
+.foot-card-name{font:700 15px/1.2 var(--sans);color:var(--ink-strong)}
+.foot-card-sub{font:400 12px/1.4 var(--sans);color:var(--ink-soft)}
+.foot-card-status{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:12px;background:rgba(5,150,105,.08);border:1px solid rgba(5,150,105,.18);font:600 11.5px/1 var(--mono);color:#059669;width:fit-content}
+.foot-card-loc{font:400 12px/1.3 var(--mono);color:var(--ink-mute)}
+.foot-card-btns{display:flex;gap:8px;margin-top:4px}
+
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding:24px 0 14px;font:400 12.5px/1.5 var(--sans);color:var(--ink-mute);flex-wrap:wrap;gap:16px}
+.foot-copy p{margin:0 0 3px}
+.foot-copy .foot-note{font-size:12px;color:var(--ink-mute)}
+.foot-bottom-socials{display:flex;gap:10px}
+.foot-bottom-socials a{width:36px;height:36px;border-radius:8px;display:grid;place-items:center;background:#ffffff;border:1px solid rgba(45,38,30,.1);color:var(--ink-strong);transition:all .2s ease}
+.foot-bottom-socials a:hover{border-color:#1d70d9;color:#1d70d9;transform:translateY(-2px);box-shadow:0 4px 12px rgba(29,112,217,.12)}
+
+.grass{position:relative;height:75px;margin-top:10px;width:100%;overflow:hidden}
 .grass canvas{position:absolute;left:0;bottom:0;width:100%;height:100%}
 .grass p{position:absolute;left:0;right:0;bottom:6px;margin:0;text-align:center;font:460 12px/1 var(--sans);color:#2e7528;z-index:1}
 
@@ -450,9 +459,9 @@ footer{position:relative;margin-top:80px;padding:0 0 0}
   .article-card{padding:20px 16px;border-radius:12px}
   .socials-grid{grid-template-columns:1fr;gap:12px}
   .contact-box{padding:28px 18px;border-radius:14px}
-  .foot{grid-template-columns:1fr;padding-top:48px;padding-bottom:70px;gap:28px}
-  .fcols{grid-template-columns:1fr 1fr}
-  .fcard{margin-top:0;width:100%;max-width:350px;margin-left:auto;margin-right:auto}
+  .foot-matrix{grid-template-columns:1fr 1fr;gap:24px}.foot-bottom{flex-direction:column;text-align:center;gap:14px}.foot-bottom-socials{justify-content:center}
+  
+  
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -649,6 +658,7 @@ footer{position:relative;margin-top:80px;padding:0 0 0}
     <div class="sheet-footer">
       <a class="btn btn-dark sheet-cta" href="mailto:btv.dev03@gmail.com">Gửi Email Cho Bản</a>
       <div class="sheet-socials">
+        <a href="https://www.facebook.com/btvdev03" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg></a>
         <a href="https://github.com/btvdev03" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
         <a href="https://www.linkedin.com/in/btvdev03" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.69 1.69 0 0 0 1.69-1.69c0-.94-.75-1.69-1.69-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .94.75 1.69 1.69 1.69m1.39 9.74v-8.37H5.07v8.37h2.78z"/></svg></a>
       </div>
@@ -679,16 +689,7 @@ footer{position:relative;margin-top:80px;padding:0 0 0}
   </div>
 </section>
 
-<!-- ============ LOGOS / PROOF ============ -->
-<section class="logos" aria-label="Chuyên môn & Vị thế">
-  <div class="logo-row">
-    <a class="logo-tile" href="#timeline"><span class="mark lm-loom"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 14l6-10 6 10H3z" fill="none" stroke="#6d73d8" stroke-width="1.6"/><circle cx="9" cy="9" r="2" fill="#6d73d8"/></svg>TDMU · Kỹ sư Phần mềm</span><span class="hover">B.Eng Software</span></a>
-    <a class="logo-tile" href="#research"><span class="mark lm-kes"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="none" stroke="#3c7a63" stroke-opacity=".45"/><path d="M6 13c3-1 5-4 10-6-2 4-4 7-9 7z" fill="#3c7a63" fill-opacity=".7"/></svg>TDMU · Cao học HTTT</span><span class="hover">M.Sc Candidate</span></a>
-    <a class="logo-tile" href="#hero"><span class="mark lm-par">Miền Tây Sông Nước</span><span class="hover">Phù sa Nam Bộ</span></a>
-    <a class="logo-tile" href="#projects"><span class="mark lm-fld">Full-Stack Practical</span><span class="hover">Mã nguồn mở</span></a>
-  </div>
-  <p class="proof"><b id="count">Mộc mạc, bền bỉ &amp; Hướng tới giá trị thực</b></p>
-</section>
+
 
 <!-- ============ 1. PROJECTS ARTISTIC BANNER ============ -->
 <section class="tools wrap" id="projects">
@@ -872,54 +873,91 @@ footer{position:relative;margin-top:80px;padding:0 0 0}
 <!-- ============ FOOTER ============ -->
 <footer id="footer">
   <div class="wrap foot">
-    <div>
+    <!-- Brand & Philosophy Header -->
+    <div class="foot-brand-block">
       <div class="seal-f"><canvas class="hanko px" data-k="BẢN" aria-hidden="true"></canvas></div>
-      <h2 class="h2">Ban Vo Tan · Võ Tấn Bản<br><span class="m"><span class="brush">Kỹ sư Phần mềm &amp; Học viên Cao học HTTT</span></span></h2>
-      <div class="flinks">
-        <span>Điều hướng</span>
-        <a href="#hero">Giới thiệu</a>
-        <a href="#projects">Dự án</a>
-        <a href="#timeline">Lộ trình</a>
-        <a href="#research">Nghiên cứu</a>
-        <a href="#articles">Bài viết</a>
-        <a href="#contact">Liên hệ</a>
-      </div>
-      <div class="fcols">
-        <div>
-          <a href="#hero">Đầu trang</a>
-          <a href="#projects">Dự án mã nguồn mở</a>
-          <a href="mailto:btv.dev03@gmail.com">Email trực tiếp</a>
-          <a href="https://github.com/btvdev03" target="_blank" rel="noreferrer">GitHub cá nhân</a>
-        </div>
-        <div>
-          <a href="mailto:btv.dev03@gmail.com?subject=CV%20Request">Tải CV (PDF)</a>
-          <a href="#research">Công bố khoa học</a>
-          <a href="#contact">Trạng thái: 🟢 Sẵn sàng</a>
-        </div>
-      </div>
-      <div class="social">
-        <a href="https://github.com/btvdev03" target="_blank" rel="noreferrer" aria-label="GitHub"><svg width="14" height="14" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
-        <a href="mailto:btv.dev03@gmail.com" aria-label="Email"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M1 2.5h12v9H1z" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M1 3.5l6 4.5 6-4.5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></a>
-        <a href="https://www.linkedin.com/in/btvdev03" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.69 1.69 0 0 0 1.69-1.69c0-.94-.75-1.69-1.69-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .94.75 1.69 1.69 1.69m1.39 9.74v-8.37H5.07v8.37h2.78z"/></svg></a>
-      </div>
-      <div class="legal">
-        <p>🟢 Trạng thái: <span class="soc">Sẵn sàng hợp tác</span> Nghiên cứu &amp; Phát triển Phần mềm</p>
-        <p class="c">© 2026 Võ Tấn Bản (btvdev03). Kỹ sư Phần mềm &amp; Học viên Cao học HTTT, Đại học Thủ Dầu Một (TDMU).</p>
+      <h2 class="foot-title">Ban Vo Tan · Võ Tấn Bản</h2>
+      <p class="foot-sub"><span class="brush">Kỹ sư Phần mềm &amp; Học viên Cao học Hệ thống Thông tin</span></p>
+      <p class="foot-motto">Mang nét mộc mạc, bền bỉ của người con sông nước miền Tây sen hồng vào từng dòng mã. Đam mê xây dựng các giải pháp số hóa thực tiễn, đồng hành cùng chuyển đổi số và công nghệ tại Bình Dương &amp; TP. Hồ Chí Minh.</p>
+      <div class="foot-ctas">
+        <a class="btn btn-dark" href="mailto:btv.dev03@gmail.com">Gửi Email Hợp Tác (btv.dev03@gmail.com)</a>
+        <a class="btn btn-light" href="mailto:btv.dev03@gmail.com?subject=Lien%20he%20Nhan%20Ho%20so%20CV%20Vo%20Tan%20Ban">Tải CV / Hồ Sơ Năng Lực (PDF) ↓</a>
       </div>
     </div>
-    <div class="fcard">
-      <div class="art">
-        <canvas id="footerArt" class="px" width="163" height="225" aria-label="Pixel art 16-bit: Đóa hoa sen hồng Đồng Tháp Mười bung nở rực rỡ bên chiếc xuồng ba lá và đầm sen xanh ngút ngàn dưới chân rặng núi Thất Sơn"></canvas>
-        <div class="over">
-          <p>Võ Tấn Bản · Kỹ sư Phần mềm &amp; Học viên Cao học HTTT <span>Đại học Thủ Dầu Một (TDMU).</span></p>
-          <a class="btn btn-light" href="mailto:btv.dev03@gmail.com">Gửi Lời Nhắn Cho Mình</a>
+
+    <!-- 4-Column Navigation & Information Matrix -->
+    <div class="foot-matrix">
+      <!-- Col 1: Navigation -->
+      <div class="foot-col">
+        <h4>Điều Hướng Trang</h4>
+        <nav class="foot-links">
+          <a href="#hero">Giới thiệu bản thân</a>
+          <a href="#projects">Dự án cá nhân &amp; Mã nguồn mở</a>
+          <a href="#timeline">Lộ trình học tập &amp; Công tác</a>
+          <a href="#research">Nghiên cứu khoa học (TDMU)</a>
+          <a href="#articles">Kiến thức chia sẻ &amp; Kỹ thuật</a>
+          <a href="#contact">Liên hệ kết nối</a>
+        </nav>
+      </div>
+
+      <!-- Col 2: Affiliations & Practice -->
+      <div class="foot-col">
+        <h4>Đơn Vị &amp; Thực Tiễn</h4>
+        <nav class="foot-links">
+          <a href="https://dtc.tdmu.edu.vn" target="_blank" rel="noopener noreferrer">🏢 Trung tâm Chuyển đổi số TDMU ↗</a>
+          <a href="https://hoanggiangsolar.vn" target="_blank" rel="noopener noreferrer">☀️ Công ty Hoàng Giang Solar ↗</a>
+          <a href="https://tdmu.edu.vn" target="_blank" rel="noopener noreferrer">🎓 Trường Đại học Thủ Dầu Một ↗</a>
+          <span class="foot-loc">🌾 Quê hương Sen hồng Tháp Mười, Đồng Tháp</span>
+        </nav>
+      </div>
+
+      <!-- Col 3: Social Connect -->
+      <div class="foot-col">
+        <h4>Kết Nối Xã Hội</h4>
+        <nav class="foot-links">
+          <a href="https://www.facebook.com/btvdev03" target="_blank" rel="noopener noreferrer">📘 Facebook: btvdev03 ↗</a>
+          <a href="https://github.com/btvdev03" target="_blank" rel="noopener noreferrer">🐙 GitHub: @btvdev03 ↗</a>
+          <a href="https://www.linkedin.com/in/btvdev03" target="_blank" rel="noopener noreferrer">💼 LinkedIn: /in/btvdev03 ↗</a>
+          <a href="mailto:btv.dev03@gmail.com">✉️ btv.dev03@gmail.com</a>
+        </nav>
+      </div>
+
+      <!-- Col 4: Digital Business Card -->
+      <div class="foot-col">
+        <div class="foot-card">
+          <div class="foot-card-head">
+            <span class="foot-card-name">Võ Tấn Bản</span>
+            <svg class="verified-badge" viewBox="0 0 24 24" aria-label="Verified" style="width:17px;height:17px"><path fill="#0866FF" d="M12 2.25c.57 0 1.11.23 1.5.64l.87.91c.38.4.92.62 1.47.61l1.26-.03c.57-.01 1.12.2 1.52.6.4.4.61.95.6 1.52l-.03 1.26c-.01.55.21 1.09.61 1.47l.91.87c.41.39.64.93.64 1.5s-.23 1.11-.64 1.5l-.91.87c-.4.38-.62.92-.61 1.47l.03 1.26c.01.57-.2 1.12-.6 1.52-.4.4-.95.61-1.52.6l-1.26-.03c-.55-.01-1.09.21-1.47.61l-.87.91c-.39.41-.93.64-1.5.64s-1.11-.23-1.5-.64l-.87-.91c-.38-.4-.92-.62-1.47-.61l-1.26.03c-.57.01-1.12-.2-1.52-.6-.4-.4-.61-.95-.6-1.52l.03-1.26c.01-.55-.21-1.09-.61-1.47l-.91-.87c-.41-.39-.64-.93-.64-1.5s.23-1.11.64-1.5l.91-.87c.4-.38.62-.92.61-1.47l-.03-1.26c-.01-.57.2-1.12.6-1.52.4-.4.95-.61 1.52-.6l1.26.03c.55.01 1.09-.21 1.47-.61l.87-.91c.39-.41.93-.64 1.5-.64z"/><path fill="#FFFFFF" d="M10.25 15.75l-3.25-3.25 1.4-1.4 1.85 1.85 4.85-4.85 1.4 1.4z"/></svg>
+          </div>
+          <div class="foot-card-sub">Kỹ sư Phần mềm &amp; Học viên Cao học HTTT ĐH Thủ Dầu Một</div>
+          <span class="foot-card-status">🟢 Sẵn sàng hợp tác R&amp;D</span>
+          <div class="foot-card-loc">📍 Bến Cát, Bình Dương &amp; TP.HCM</div>
+          <div class="foot-card-btns">
+            <a class="btn-sm btn-sm-primary" href="mailto:btv.dev03@gmail.com">Nhắn tin</a>
+            <a class="btn-sm btn-sm-subtle" href="https://www.facebook.com/btvdev03" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright & Social Icons -->
+    <div class="foot-bottom">
+      <div class="foot-copy">
+        <p>© 2026 <strong>Võ Tấn Bản (btvdev03)</strong>. Bản quyền thuộc về tác giả.</p>
+        <p class="foot-note">Dữ liệu hồ sơ cá nhân cấu hình tự chủ từ profile-data.js · Nền tảng Washi-Zen &amp; Sông nước Miền Tây.</p>
+      </div>
+      <div class="foot-bottom-socials">
+        <a href="https://www.facebook.com/btvdev03" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg></a>
+        <a href="https://github.com/btvdev03" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+        <a href="https://www.linkedin.com/in/btvdev03" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.69 1.69 0 0 0 1.69-1.69c0-.94-.75-1.69-1.69-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .94.75 1.69 1.69 1.69m1.39 9.74v-8.37H5.07v8.37h2.78z"/></svg></a>
+        <a href="mailto:btv.dev03@gmail.com" aria-label="Email"><svg width="16" height="16" viewBox="0 0 14 14"><path d="M1 2.5h12v9H1z" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M1 3.5l6 4.5 6-4.5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></a>
       </div>
     </div>
   </div>
+
   <div class="grass">
     <canvas id="grassCanvas" class="px" aria-hidden="true"></canvas>
-    <p>Made with ❤️ &amp; Crafted with ThreeUI Washi-Zen Aesthetic · Võ Tấn Bản (btvdev03) · Bình Dương &amp; Miền Tây Nam Bộ, Việt Nam</p>
+    <p>Crafted with ThreeUI Washi-Zen Aesthetic · Võ Tấn Bản (btvdev03) · Bình Dương &amp; Miền Tây Nam Bộ, Việt Nam</p>
   </div>
 </footer>
 </main>
@@ -960,14 +998,7 @@ window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && sheet.classList.contains('on')) closeSheet();
 });
 
-/* ---------- counter ---------- */
-{
-  const el = $('#count'); let done = false;
-  const run = async () => { await whenVisible(el); if (done) return; done = true; const t0 = performance.now();
-    const step = () => { const k = Math.min(1, (performance.now() - t0) / 1600); el.textContent = `100% Thực tiễn & Hướng tới Giá trị Doanh nghiệp`; if (k < 1) requestAnimationFrame(step); }; step();
-    setTimeout(() => { el.style.transition = 'color 1s'; el.style.color = 'rgba(38,35,35,.5)'; }, 1700); };
-  run();
-}
+
 
 /* ---------- dynamic profile data renderer ---------- */
 function initProfileData() {
@@ -3276,7 +3307,7 @@ document.querySelectorAll('.tod button').forEach((b) => {
 views.push(tools);
 const mini = new Mini();
 document.querySelectorAll('canvas.cover').forEach((c, i) => mini.artView(c, ART[c.dataset.art], i * 3.7));
-mini.artView(document.getElementById('footerArt'), ART.pond, 9.1);
+const fa = document.getElementById('footerArt'); if (fa) mini.artView(fa, ART.pond, 9.1);
 const grassHost = document.querySelector('.grass');
 const grassV = mini.grassView(document.getElementById('grassCanvas'), grassHost);
 const sproutCanvas = document.createElement('canvas'); sproutCanvas.width = 18; sproutCanvas.height = 28; sproutCanvas.className = 'sprout px';
