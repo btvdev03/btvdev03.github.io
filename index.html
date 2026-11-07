@@ -208,18 +208,18 @@ html.is-loading{overflow:hidden}
 .h2 .brush{background:linear-gradient(135deg,#c9412e,#e85d43);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block}
 .lede{font-size:clamp(13.5px,2.2vw,15px);line-height:1.65;color:var(--ink-soft);text-align:center;max-width:680px;margin:0 auto 36px}
 
-/* ---------- 1. Projects Section & Marquee ---------- */
-.tools{position:relative;padding:90px 0 60px;color:#ffffff;isolation:isolate}
+/* ---------- 1. Projects Artistic Banner ---------- */
+.tools{position:relative;min-height:560px;padding:76px 0 106px;color:#ffffff;isolation:isolate;margin-top:40px;display:flex;flex-direction:column;align-items:center;box-sizing:border-box}
 .tools .stage{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
 .tools .stage canvas{position:absolute;left:0;top:0;display:block;width:100%;height:100%}
 .tools .h2{color:#ffffff;text-align:center;text-shadow:0 2px 18px rgba(0,20,50,.55)}
 .tools .h2 .m{color:rgba(255,255,255,.88);display:block;margin-top:6px}
 .tools .h2 .brush{background:linear-gradient(135deg,#ffd166,#ff9e7d);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.tools .lede{max-width:680px;margin:16px auto 36px;text-align:center;font-size:15px;line-height:1.65;color:rgba(255,255,255,.94);text-shadow:0 1px 10px rgba(0,20,50,.45)}
+.tools .lede{max-width:680px;margin:14px auto 24px;text-align:center;font-size:15px;line-height:1.65;color:rgba(255,255,255,.94);text-shadow:0 1px 10px rgba(0,20,50,.45)}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:40px;background:linear-gradient(to bottom,transparent,var(--bg));pointer-events:none;z-index:5}
 .hero h1 .brush{background:linear-gradient(135deg,#ffe082 0%,#ffb74d 50%,#ff7043 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;text-shadow:none}
-.projects-section{position:relative;margin-top:40px}
-.proj-marquee-container{width:100%;max-width:100%;margin:28px 0 38px;overflow:hidden;position:relative}
+
+.proj-marquee-container{width:100%;max-width:100%;margin:16px 0 24px;overflow:hidden;position:relative}
 .proj-marquee{display:flex;width:100%;max-width:100%;overflow:hidden;user-select:none;gap:14px;mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%)}
 .proj-track{display:flex;flex-shrink:0;gap:14px;align-items:center}
 .proj-left{animation:marqueeLeft 36s linear infinite}
@@ -228,21 +228,65 @@ html.is-loading{overflow:hidden}
 @keyframes marqueeLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes marqueeRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 .proj-card,.proj-chip{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 16px;border-radius:20px;background:rgba(255,255,255,.92);border:1px solid rgba(45,38,30,.09);box-shadow:0 2px 6px rgba(0,0,0,.03);font:500 13px/1 var(--mono);color:var(--ink-strong);text-decoration:none;white-space:nowrap;transition:all .25s cubic-bezier(.2,.7,.2,1);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.proj-card::before,.proj-chip::before{content:"";width:7px;height:7px;border-radius:50%;background:#059669;flex:none}
+.proj-card::before,.proj-chip::before{content:"";width:7px;height:7px;border-radius:50%;background:#059669;flex:none;animation:repoPulse 2s infinite ease-in-out}
 .proj-card:hover,.proj-chip:hover{background:#ffffff;border-color:rgba(29,112,217,.4);color:#1d70d9;transform:translateY(-2px);box-shadow:0 6px 16px rgba(29,112,217,.12)}
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;width:100%;margin-top:36px}
-.proj-detail-card{background:rgba(255,255,255,.97);border:1px solid rgba(255,255,255,.3);border-radius:16px;padding:26px 24px;box-shadow:0 8px 32px rgba(0,20,50,.18);display:flex;flex-direction:column;color:var(--ink);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
-.proj-detail-card:hover{transform:translateY(-3px);box-shadow:var(--card-hover-shadow);border-color:rgba(29,112,217,.3)}
-.proj-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:8px}
-.proj-name{margin:0;font:600 18px/1.3 var(--sans);color:var(--ink-strong)}
-.proj-badge{font:500 11.5px/1 var(--mono);padding:4px 8px;border-radius:6px;background:rgba(5,150,105,.1);color:#047857;border:1px solid rgba(5,150,105,.2);white-space:nowrap}
-.proj-tagline{margin:0 0 10px;font:500 13px/1.4 var(--sans);color:var(--ink-mute)}
-.proj-desc{margin:0 0 14px;font:400 13.5px/1.6 var(--sans);color:var(--ink-soft);flex:1}
-.proj-features{margin:0 0 16px;padding-left:18px;font:400 13px/1.55 var(--sans);color:var(--ink-soft)}
-.proj-features li{margin-bottom:4px}
-.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 18px}
-.tech-tag{font:500 11.5px/1 var(--mono);padding:4px 8px;border-radius:5px;background:rgba(45,38,30,.04);color:var(--ink-soft);border:1px solid rgba(45,38,30,.07)}
-.proj-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
+@keyframes repoPulse{0%,100%{box-shadow:0 0 0 0 rgba(5,150,105,.4)}50%{box-shadow:0 0 0 4px rgba(5,150,105,0)}}
+
+.proj-scroll-hint{margin:10px auto 0;text-align:center;z-index:2;position:relative}
+.proj-scroll-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:24px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#ffffff;font:500 13px/1.2 var(--sans);text-decoration:none;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:all .25s ease;box-shadow:0 4px 16px rgba(0,0,0,.15)}
+.proj-scroll-btn:hover{background:rgba(255,255,255,.26);border-color:#ffffff;color:#ffffff;transform:translateY(2px);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.proj-scroll-arrow{animation:bounceDown 1.8s infinite ease-in-out}
+@keyframes bounceDown{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+/* ---------- 1.2 Projects Showcase (Washi Ground) ---------- */
+.projects-showcase{position:relative;padding:36px 0 64px}
+.projects-toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:28px}
+.projects-tabs{display:inline-flex;gap:8px;padding:5px;border-radius:28px;background:rgba(38,35,35,.05);border:1px solid rgba(38,35,35,.08);max-width:100%;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.projects-tabs::-webkit-scrollbar{display:none}
+.p-tab{border:0;background:transparent;padding:8px 16px;border-radius:22px;font:500 13px/1.2 var(--sans);color:var(--ink-soft);cursor:pointer;transition:all .2s ease;white-space:nowrap;flex-shrink:0;display:inline-flex;align-items:center;gap:8px}
+.p-tab:hover{color:var(--ink-strong);background:rgba(255,255,255,.7)}
+.p-tab.active{background:#1e1c1b;color:#ffffff;box-shadow:0 2px 8px rgba(0,0,0,.18);font-weight:600}
+.p-count{font:600 11px/1 var(--mono);padding:2px 7px;border-radius:10px;background:rgba(0,0,0,.06);color:var(--ink-mute);transition:all .2s}
+.p-tab.active .p-count{background:rgba(255,255,255,.22);color:#ffffff}
+.projects-meta-info{display:flex;align-items:center;gap:8px;font:500 12px/1 var(--mono);color:var(--ink-mute)}
+.projects-status-indicator{width:7px;height:7px;border-radius:50%;background:#059669;box-shadow:0 0 0 3px rgba(5,150,105,.2);animation:repoPulse 2s infinite ease-in-out}
+
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:24px;width:100%}
+.proj-detail-card{background:rgba(255,255,255,.94);border:1px solid rgba(45,38,30,.09);border-radius:16px;padding:26px 24px;box-shadow:0 4px 18px rgba(45,38,30,.04);display:flex;flex-direction:column;color:var(--ink);transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s ease,border-color .25s ease,opacity .25s ease;position:relative}
+.proj-detail-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(45,38,30,.09);border-color:rgba(29,112,217,.3)}
+.proj-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px}
+.proj-title-group{display:flex;flex-direction:column;gap:3px}
+.proj-name{margin:0;font:600 18.5px/1.3 var(--mono),var(--sans);color:var(--ink-strong);letter-spacing:-.01em}
+.proj-category-pill{font:500 11.5px/1.2 var(--sans);color:var(--ink-mute)}
+.proj-badge{font:600 11px/1 var(--mono);padding:5px 9px;border-radius:6px;white-space:nowrap;text-transform:uppercase;letter-spacing:.03em}
+.proj-badge-cli{background:rgba(5,150,105,.1);color:#047857;border:1px solid rgba(5,150,105,.2)}
+.proj-badge-web{background:rgba(29,112,217,.1);color:#1d70d9;border:1px solid rgba(29,112,217,.2)}
+.proj-badge-research{background:rgba(124,58,237,.1);color:#7c3aed;border:1px solid rgba(124,58,237,.2)}
+.proj-tagline{margin:0 0 12px;font:500 13px/1.45 var(--sans);color:#8c5d31}
+.proj-desc{margin:0 0 16px;font:400 13.5px/1.65 var(--sans);color:var(--ink-soft);flex:1}
+.proj-features{list-style:none;padding:0;margin:0 0 18px;display:flex;flex-direction:column;gap:8px}
+.proj-features li{display:flex;align-items:flex-start;gap:8px;font:400 12.5px/1.55 var(--sans);color:var(--ink-soft)}
+.proj-features-icon{width:14px;height:14px;color:#059669;flex:none;margin-top:3px}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.tech-tag{font:500 11.5px/1 var(--mono);padding:5px 9px;border-radius:6px;background:rgba(45,38,30,.04);color:var(--ink-soft);border:1px solid rgba(45,38,30,.07)}
+.proj-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto;padding-top:14px;border-top:1px solid rgba(45,38,30,.06);flex-wrap:wrap}
+.proj-metric{display:inline-flex;align-items:center;gap:6px;font:500 11.5px/1 var(--mono);color:#059669;background:rgba(5,150,105,.07);padding:4px 8px;border-radius:4px}
+.metric-dot{width:5px;height:5px;border-radius:50%;background:#059669}
+.proj-actions{display:flex;gap:8px;align-items:center;margin-left:auto}
+.btn-sm{display:inline-flex;align-items:center;gap:5px;height:32px;padding:0 12px;border-radius:16px;font:500 12px/1 var(--sans);text-decoration:none;transition:all .2s ease;white-space:nowrap}
+.btn-sm-primary{background:#1e1c1b;color:#ffffff}
+.btn-sm-primary:hover{background:#383432;color:#ffffff;transform:translateY(-1px)}
+.btn-sm-subtle{background:rgba(29,112,217,.08);color:#1d70d9;border:1px solid rgba(29,112,217,.15)}
+.btn-sm-subtle:hover{background:rgba(29,112,217,.15);border-color:rgba(29,112,217,.3);color:#1557ad;transform:translateY(-1px)}
+
+.projects-more-box{margin-top:32px;background:rgba(255,255,255,.8);border:1px dashed rgba(45,38,30,.15);border-radius:14px;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px;box-shadow:0 2px 10px rgba(0,0,0,.02);transition:all .25s ease}
+.projects-more-box:hover{background:#ffffff;border-color:rgba(29,112,217,.35);box-shadow:0 6px 20px rgba(29,112,217,.06)}
+.projects-more-content{display:flex;align-items:center;gap:16px}
+.projects-more-icon{width:42px;height:42px;border-radius:10px;background:rgba(30,28,27,.06);color:#1e1c1b;display:flex;align-items:center;justify-content:center;flex:none}
+.projects-more-title{margin:0 0 3px;font:600 15px/1.3 var(--sans);color:var(--ink-strong)}
+.projects-more-desc{margin:0;font:400 12.5px/1.5 var(--sans);color:var(--ink-soft)}
+.btn-outline-github{display:inline-flex;align-items:center;gap:6px;height:38px;padding:0 16px;border-radius:20px;border:1px solid rgba(45,38,30,.15);background:#ffffff;color:var(--ink-strong);font:500 12.5px/1 var(--sans);white-space:nowrap;transition:all .2s ease;flex:none}
+.btn-outline-github:hover{border-color:#1e1c1b;background:#1e1c1b;color:#ffffff}
 
 /* ---------- 2. Timeline Section ---------- */
 .timeline-section{position:relative;padding:90px 0 40px}
@@ -384,8 +428,16 @@ footer{position:relative;margin-top:80px;padding:0 0 0}
   .logo-row{grid-template-columns:repeat(2,1fr);gap:10px;width:calc(100% - 28px)}
   .logo-tile{height:48px;font-size:12px;padding:0 10px}
   .wrap{width:calc(100% - 28px)}
+  .tools{min-height:480px;padding:56px 0 76px}
+  .projects-showcase{padding:24px 0 48px}
+  .projects-toolbar{flex-direction:column;align-items:stretch;gap:12px}
+  .projects-tabs{width:100%;padding:4px}
   .projects-grid{grid-template-columns:1fr;gap:16px}
-  .proj-detail-card{padding:20px 16px;border-radius:12px}
+  .proj-detail-card{padding:20px 18px;border-radius:14px}
+  .proj-footer{flex-direction:column;align-items:flex-start;gap:12px}
+  .proj-actions{width:100%;margin-left:0;justify-content:flex-start}
+  .projects-more-box{flex-direction:column;align-items:flex-start;padding:18px 16px;gap:16px}
+  .btn-outline-github{width:100%;justify-content:center}
   .timeline-toolbar{flex-direction:column;align-items:stretch;gap:12px}
   .timeline-tabs{width:100%;padding:4px}
   .timeline-wrap::before{left:14px;top:14px;bottom:20px}
@@ -422,6 +474,7 @@ footer{position:relative;margin-top:80px;padding:0 0 0}
 <script>
 (function () {
   var L = document.getElementById('loader'); if (!L) return;
+  if (location.search.indexOf('noload') !== -1) { L.classList.add('done'); return; }
   var root = document.documentElement; root.classList.add('is-loading');
   var RM = matchMedia('(prefers-reduced-motion: reduce)').matches, PX = 3, TAU = Math.PI * 2;
   var rnd = function (s) { return function () { s ^= s << 13; s >>>= 0; s ^= s >>> 17; s ^= s << 5; s >>>= 0; return s / 4294967296; }; };
@@ -637,8 +690,8 @@ footer{position:relative;margin-top:80px;padding:0 0 0}
   <p class="proof"><b id="count">Mộc mạc, bền bỉ &amp; Hướng tới giá trị thực</b></p>
 </section>
 
-<!-- ============ 1. PROJECTS ============ -->
-<section class="tools projects-section wrap" id="projects">
+<!-- ============ 1. PROJECTS ARTISTIC BANNER ============ -->
+<section class="tools wrap" id="projects">
   <div class="stage" id="toolsStage"><canvas id="toolsCanvas" class="px" aria-hidden="true"></canvas></div>
   <div class="seal-c"><canvas class="hanko px" data-k="DỰ" aria-hidden="true"></canvas></div>
   <h2 class="h2">Dự Án Cá Nhân &amp; Mã Nguồn Mở<br><span class="m brush">Pet Projects &amp; Open Source Tools</span></h2>
@@ -684,8 +737,62 @@ footer{position:relative;margin-top:80px;padding:0 0 0}
     </div>
   </div>
 
+  <div class="proj-scroll-hint">
+    <a class="proj-scroll-btn" href="#projects-showcase">
+      <span>Khám phá chi tiết các dự án</span>
+      <svg class="proj-scroll-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 5v14M19 12l-7 7-7-7"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============ 1.2 PROJECTS SHOWCASE (Washi Paper Background) ============ -->
+<section class="projects-showcase wrap" id="projects-showcase">
+  <div class="projects-toolbar">
+    <div class="projects-tabs" id="projectTabs" role="tablist" aria-label="Lọc thể loại dự án">
+      <button class="p-tab active" data-filter="all" role="tab" aria-selected="true">
+        <span>Tất Cả Dự Án</span> <span class="p-count" id="countAll">5</span>
+      </button>
+      <button class="p-tab" data-filter="cli" role="tab" aria-selected="false">
+        <span>🛠️ CLI &amp; DevTools</span> <span class="p-count" id="countCli">2</span>
+      </button>
+      <button class="p-tab" data-filter="web" role="tab" aria-selected="false">
+        <span>🌐 Web App &amp; 3D</span> <span class="p-count" id="countWeb">2</span>
+      </button>
+      <button class="p-tab" data-filter="research" role="tab" aria-selected="false">
+        <span>🔬 Nghiên Cứu &amp; Khai Phá</span> <span class="p-count" id="countResearch">1</span>
+      </button>
+    </div>
+    <div class="projects-meta-info">
+      <span class="projects-status-indicator" aria-hidden="true"></span>
+      <span class="projects-status-text">Mã Nguồn Mở &amp; Đang Hoạt Động</span>
+    </div>
+  </div>
+
   <div class="projects-grid" id="projectsGrid">
     <!-- Dynamic project detail cards rendered from profile-data.js -->
+  </div>
+
+  <!-- Expansion footer box for GitHub repositories -->
+  <div class="projects-more-box">
+    <div class="projects-more-content">
+      <div class="projects-more-icon" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+        </svg>
+      </div>
+      <div class="projects-more-text">
+        <h4 class="projects-more-title">Xem thêm các kho lưu trữ khác trên GitHub</h4>
+        <p class="projects-more-desc">Toàn bộ mã nguồn, tài liệu và các thử nghiệm lập trình cá nhân đều được công khai tại GitHub @btvdev03.</p>
+      </div>
+    </div>
+    <a class="btn btn-outline-github" href="https://github.com/btvdev03?tab=repositories" target="_blank" rel="noopener noreferrer">
+      <span>Ghé thăm @btvdev03 trên GitHub</span>
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8"/>
+      </svg>
+    </a>
   </div>
 </section>
 
@@ -876,31 +983,95 @@ function initProfileData() {
     return;
   }
 
-  // 1. Projects Grid
+  // 1. Projects Grid & Dynamic Filtering
   const projGrid = $('#projectsGrid');
   if (projGrid && data.projects) {
+    const countAll = data.projects.length;
+    const countCli = data.projects.filter(p => p.categoryGroup === 'cli').length;
+    const countWeb = data.projects.filter(p => p.categoryGroup === 'web').length;
+    const countResearch = data.projects.filter(p => p.categoryGroup === 'research').length;
+
+    const elCountAll = $('#countAll'); if (elCountAll) elCountAll.textContent = countAll;
+    const elCountCli = $('#countCli'); if (elCountCli) elCountCli.textContent = countCli;
+    const elCountWeb = $('#countWeb'); if (elCountWeb) elCountWeb.textContent = countWeb;
+    const elCountResearch = $('#countResearch'); if (elCountResearch) elCountResearch.textContent = countResearch;
+
     projGrid.innerHTML = data.projects.map(p => `
-      <article class="proj-detail-card">
+      <article class="proj-detail-card" data-category="${p.categoryGroup || 'cli'}">
         <div class="proj-head">
-          <h3 class="proj-name">${p.name}</h3>
-          <span class="proj-badge">${p.badge || p.status || 'Project'}</span>
+          <div class="proj-title-group">
+            <h3 class="proj-name">${p.name}</h3>
+            ${p.category ? `<span class="proj-category-pill">${p.category}</span>` : ''}
+          </div>
+          <span class="proj-badge proj-badge-${p.categoryGroup || 'cli'}">${p.badge || 'Project'}</span>
         </div>
         <p class="proj-tagline">${p.tagline || ''}</p>
         <p class="proj-desc">${p.description}</p>
         ${p.features && p.features.length ? `
           <ul class="proj-features">
-            ${p.features.map(f => `<li>${f}</li>`).join('')}
+            ${p.features.map(f => `
+              <li>
+                <svg class="proj-features-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                </svg>
+                <span>${f}</span>
+              </li>
+            `).join('')}
           </ul>
         ` : ''}
         <div class="proj-tags">
           ${(p.techStack || []).map(t => `<span class="tech-tag">${t}</span>`).join('')}
         </div>
-        <div class="proj-actions">
-          ${p.githubUrl ? `<a class="btn-sm btn-sm-primary" href="${p.githubUrl}" target="_blank" rel="noopener noreferrer">Mã nguồn GitHub</a>` : ''}
-          ${p.demoUrl ? `<a class="btn-sm btn-sm-subtle" href="${p.demoUrl}" target="_blank" rel="noopener noreferrer">Dùng thử Live ↗</a>` : ''}
+        <div class="proj-footer">
+          ${p.highlightMetric ? `
+            <div class="proj-metric">
+              <span class="metric-dot"></span>
+              <span class="metric-text">${p.highlightMetric}</span>
+            </div>
+          ` : '<div></div>'}
+          <div class="proj-actions">
+            ${p.githubUrl ? `
+              <a class="btn-sm btn-sm-primary" href="${p.githubUrl}" target="_blank" rel="noopener noreferrer">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+                <span>Mã nguồn</span>
+              </a>
+            ` : ''}
+            ${p.demoUrl ? `
+              <a class="btn-sm btn-sm-subtle" href="${p.demoUrl}" target="_blank" rel="noopener noreferrer">
+                <span>Dùng thử</span>
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8"/>
+                </svg>
+              </a>
+            ` : ''}
+          </div>
         </div>
       </article>
     `).join('');
+
+    // Tab filter handling for projects
+    const pTabs = $$('#projectTabs .p-tab', document);
+    pTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        pTabs.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        const filter = tab.dataset.filter;
+        const cards = $$('.proj-detail-card', projGrid);
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
   }
 
   // 2. Timeline Container
@@ -942,7 +1113,7 @@ function initProfileData() {
     `).join('');
 
     // Tab filter handling
-    const tabs = $$('.t-tab', document);
+    const tabs = $$('#timelineTabs .t-tab', document);
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
         tabs.forEach(b => b.classList.remove('active'));
@@ -2741,8 +2912,8 @@ class ToolsView {
       const nonla = new THREE.Mesh(new THREE.ConeGeometry(6.5, 4, 12), bambooMat); nonla.position.y = 13; man.add(nonla);
       man.position.set(12, 10, 0); man.rotation.z = -0.22; liftNet.add(man);
 
-      liftNet.position.set(-220, -180, 220);
-      liftNet.scale.setScalar(0.92);
+      liftNet.position.set(40, 38, 160);
+      liftNet.scale.setScalar(1.05);
       this.gBC.add(liftNet);
     }
 
@@ -2892,7 +3063,7 @@ class ToolsView {
     this.dirty = true;
   }
   resize() {
-    const w = this.stage.clientWidth || innerWidth || 1440, h = this.stage.clientHeight || 1200;
+    const w = this.stage.clientWidth || innerWidth || 1440, h = this.stage.clientHeight || 560;
     const P = pxSize(w);
     const lw = Math.ceil(w / P), lh = Math.ceil(h / P);
     if (lw === this.lw && lh === this.lh && P === this.P) return;
