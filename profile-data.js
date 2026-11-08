@@ -293,21 +293,22 @@ const PROFILE_DATA = {
     {
       id: "btvdev03-portfolio",
       name: "btvdev03.github.io",
-      badge: "Portfolio & 3D",
+      badge: "Portfolio v2.0 · 3D",
       categoryGroup: "web",
       category: "Creative Engineering",
-      tagline: "Website cá nhân phong cách Washi-Zen & Sông nước Miền Tây Nam Bộ",
-      description: "Portfolio cá nhân kết hợp nghệ thuật đồ họa Three.js thủ công mô phỏng dòng sông phù sa, xuồng ba lá bồng bềnh, đầm sen Đồng Tháp Mười và rặng núi Thất Sơn thanh bình.",
+      tagline: "Website cá nhân kiến trúc Washi-Zen & Sông nước Miền Tây Nam Bộ (v2.0)",
+      description: "Portfolio cá nhân chính thức kết hợp đồ họa Three.js và Pixel Art 16-bit thuần thủ công: mô phỏng dòng sông phù sa, xuồng ba lá, đầm sen Tháp Mười, giàn vó tre và rặng núi Thất Sơn thanh bình; kiến trúc dữ liệu tự chủ profile-data.js và tối ưu 100% Mobile.",
       features: [
-        "Shader sông nước phù sa dập dềnh 3D mộc mạc kèm hiệu ứng chu kỳ hoàng hôn/đêm",
-        "Kiến trúc dữ liệu độc lập profile-data.js giúp dễ dàng cập nhật thông tin",
-        "Thiết kế mộc mạc, đậm chất văn hóa Nam Bộ kết hợp chuẩn học thuật quốc tế"
+        "Đồ họa Three.js & Pixel Art sông nước Miền Tây (Shader phù sa, xuồng ba lá, giàn vó tre, núi Thất Sơn)",
+        "Kiến trúc phân tầng: Banner nghệ thuật 3D kết hợp Showcase dự án với bộ lọc Category Tabs",
+        "Tối ưu 100% Responsive Mobile với Mobile Drawer kính mờ, chuẩn touch và 0 lỗi tràn ngang",
+        "Quản lý dữ liệu tập trung tự chủ qua profile-data.js cho Lộ trình, Nghiên cứu và Bài viết"
       ],
-      techStack: ["Three.js", "TypeScript", "Vite", "Tailwind CSS"],
+      techStack: ["Three.js", "TypeScript", "Vite", "GLSL Shaders", "Canvas API"],
       githubUrl: "https://github.com/btvdev03/btvdev03.github.io",
       demoUrl: "https://btvdev03.github.io/",
-      highlightMetric: "Three.js 60 FPS",
-      status: "Live Portfolio"
+      highlightMetric: "100% Responsive · 60 FPS",
+      status: "Bản mới nhất (Live)"
     }
   ],
 

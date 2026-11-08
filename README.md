@@ -1,78 +1,77 @@
-# btvdev03.github.io — Personal Academic & Software Engineering Portfolio
+# btvdev03.github.io — Personal Academic & Software Engineering Portfolio (v2.0)
 
-> **Võ Tấn Bản** • Software Engineer & Information Systems Researcher  
-> M.Sc Candidate in Information Systems @ Trường Đại học Thủ Dầu Một (TDMU)  
-> Email: `btv.dev03@gmail.com` • Location: Bình Dương, Việt Nam • GitHub: [@btvdev03](https://github.com/btvdev03)
-
-Live Website: [https://btvdev03.github.io](https://btvdev03.github.io)
+> **Võ Tấn Bản** • Kỹ sư Phần mềm & Học viên Cao học Hệ thống Thông tin  
+> Trường Đại học Thủ Dầu Một (TDMU) • Bình Dương & Đồng Tháp, Việt Nam  
+> 🌐 **Website**: [https://btvdev03.github.io](https://btvdev03.github.io) • 🐙 **GitHub**: [@btvdev03](https://github.com/btvdev03) • ✉️ **Email**: `btv.dev03@gmail.com` • 📘 **Facebook**: [btvdev03](https://www.facebook.com/btvdev03)
 
 ---
 
-## 🌟 Overview & Highlights
+## 🌾 Triết Lý Thiết Kế & Bản Sắc Văn Hóa (Mekong Delta & Washi-Zen)
 
-Trang Portfolio cá nhân của **Kỹ sư Võ Tấn Bản**, được kiến trúc theo chuẩn High-Craft Web Engineering dành cho lập trình viên & nhà nghiên cứu:
+Website portfolio cá nhân chính thức của **Kỹ sư Võ Tấn Bản**, được kiến trúc thủ công kết hợp giữa **Nghệ thuật đồ họa 3D Three.js**, **Pixel Art 16-bit retro** và **Văn hóa Sông nước Miền Tây Nam Bộ**:
 
-1. **Sleek Dark Tech Theme**: Tone nền sâu `#08090d` kết hợp hiệu ứng neon Cyber Teal, Cyan & Indigo.
-2. **Interactive Spotlight Cards**: Quầng sáng vật lý di chuyển theo tọa độ chuột (`SpotlightCard`) mang lại trải nghiệm tương tác trực quan, tinh tế.
-3. **Command Palette (`Cmd + K` / `Ctrl + K`)**: Bảng điều khiển tra cứu nhanh toàn diện (chuyển mục, sao chép email kèm hiệu ứng confetti, mở GitHub, tìm kiếm dự án và bài báo).
-4. **BibTeX Citation & Copy**: Hỗ trợ nhà nghiên cứu trích dẫn các bài báo học thuật với một cú click chuột kèm phản hồi trực quan.
-5. **Decoupled Data Architecture (`src/data/portfolioData.ts`)**: Toàn bộ dữ liệu (thông tin cá nhân, bài báo nghiên cứu, case study chuyển đổi số, dự án mã nguồn mở, năng lực công nghệ, lộ trình học vấn) được quản lý tập trung và định kiểu chặt chẽ bằng TypeScript types.
+* **Hồn cốt Phù sa Nam Bộ**: Mô phỏng dòng kênh phù sa dập dềnh bồi đắp, chiếc xuồng ba lá mộc mạc bồng bềnh, đóa sen hồng Đồng Tháp Mười bung nở, giàn vó tre vươn mình ra dòng sông đêm và rặng núi Thất Sơn (An Giang) mờ sương tĩnh lặng.
+* **Chu kỳ ánh sáng thực tế (Dynamic Time-of-Day)**: 4 chế độ hiển thị thời gian linh hoạt (*Morning*, *Day*, *Sunset*, *Night*) với bảng màu shader và ánh sáng tự nhiên chuyển động theo thời gian thực.
+* **Phong cách Washi-Zen thanh tịnh**: Nền giấy washi mỹ thuật nhẹ nhàng, kết hợp typography sắc nét (`Onest` & `Instrument Serif`) mang lại trải nghiệm đọc thư thái, mộc mạc và chân thành.
 
 ---
 
-## 🏗️ Architecture & Sections
+## 🏗️ Kiến Trúc Hệ Thống (Architecture Highlights)
 
-- **Floating Glassmorphism Navbar**: Thanh điều hướng nổi với logo `<VB/>`, phím tắt `⌘K`, menu mobile responsive.
-- **Hero & Identity**: Giới thiệu ngắn, status badge `🟢 Open for Research & Digital Transformation Collab`, interactive terminal card (`whoami`), metrics tổng quan.
-- **Digital Transformation & Practical Solutions**: Case studies giải quyết bài toán thực tế của doanh nghiệp (Vấn đề -> Giải pháp kiến trúc -> Chỉ số kết quả đo lường).
-- **Academic Research & Papers**: Các bài báo & hướng nghiên cứu khoa học tại TDMU (Abstract đóng/mở mượt mà bằng Framer Motion, DOI, PDF, BibTeX copy & preview).
-- **Engineering & Open-Source Tools**:
-  - `git-roast`: CLI phân tích thói quen code qua Git commit & bóc phốt dev phong cách Spotify Wrapped.
-  - `InstantTranslate`: Chrome Extension MV3 dịch thuật ngữ đa ngữ cảnh tức thì.
-  - `IdeaClaimer`: Hệ sinh thái tự động thu thập & tổng hợp ý tưởng nghiên cứu / công nghệ từ arXiv & Hacker News.
-  - `zen-desk-clock`: Đồng hồ để bàn tối giản phong cách Zen & Pomodoro Deep Work.
-- **Systems & Engineering Matrix**: Ma trận năng lực 4 chiều (Kiến trúc HTTT, Software Engineering, AI/NLP & Khai phá dữ liệu, DevOps & Hạ tầng).
-- **Academic & Experience Journey**: Lộ trình đào tạo Kỹ sư Kỹ thuật Phần mềm và Cao học Hệ thống Thông tin tại TDMU.
-- **Contact & Footer**: Tương tác sao chép email, thông tin liên hệ và copyright.
-
----
-
-## 🛠️ Tech Stack
-
-- **Framework & Runtime**: React 19, TypeScript, Vite
-- **Styling**: Tailwind CSS v4 (`@tailwindcss/vite`)
-- **Animation & Physics**: Framer Motion
-- **Icons**: Lucide Icons & Custom SVG components
-- **Effects**: Canvas Confetti
-- **CI/CD & Deployment**: GitHub Actions (`.github/workflows/deploy.yml`) -> GitHub Pages
+1. **Phân Tầng Dự Án (Two-Tier Project Architecture)**:
+   - **Tầng 1 - Artistic 3D Banner**: Canvas 3D bầu trời đêm Thất Sơn với dải Marquee kép chạy mượt mà vô tận, tôn vinh trọn vẹn cảnh sắc chòi lá, đom đóm và giàn vó tre.
+   - **Tầng 2 - Projects Showcase**: Khu vực trưng bày thẻ dự án trên nền giấy washi mộc mạc, tích hợp hệ thống **Category Tabs Filter** tức thì (`Tất Cả Dự Án`, `🛠️ CLI & DevTools`, `🌐 Web App & 3D`, `🔬 Nghiên Cứu & Khai Phá`), sẵn sàng mở rộng khi có hàng chục dự án mà không bị rối mắt.
+2. **Lộ Trình Học Tập & Công Tác Thực Tế (Career & Academic Timeline)**:
+   - Dòng thời gian trực quan gồm **9 cột mốc thực tế**:
+     - *Công tác thực chiến*: IT Lead tại Công ty Hoàng Giang Solar (`hoanggiangsolar.vn`), Chuyên viên Truyền thông & Thành viên Ban chuyên môn Phòng Giải pháp số - Trung tâm Chuyển đổi số ĐH Thủ Dầu Một (TDMU DTC `dtc.tdmu.edu.vn`).
+     - *Học tập & Đào tạo*: Học viên Cao học Hệ thống Thông tin (2026 - 2028), Kỹ sư Kỹ thuật Phần mềm ĐH Thủ Dầu Một (2021 - 2026), Trung cấp nghề Tin học Ứng dụng & THPT Nông Lâm nghiệp Bình Dương, THCS Hòa Lợi / Lý Tự Trọng, Tiểu học Hòa Lợi, Tiểu học Láng Biển (Tháp Mười, Đồng Tháp).
+   - Tích hợp bộ lọc tabs tương tác và tải hồ sơ năng lực / CV PDF.
+3. **Nghiên Cứu Khoa Học & Ấn Phẩm Học Thuật**:
+   - Định hướng nghiên cứu cao học tại TDMU: *Semantic Search*, *Khai phá tri thức (Knowledge Discovery)*, *Mô hình hóa dữ liệu* và *Chuyển đổi số*.
+   - Hỗ trợ xem trích dẫn và sao chép mã BibTeX tiện lợi với một cú click.
+4. **Kiến Thức Chia Sẻ & Ghi Chú Kỹ Thuật**:
+   - Nơi ghi chép các bài học thực tiễn: Tối ưu hoá Git Internals CLI, Kiến trúc Offline-First cho nhà máy, và hành trình từ Kỹ sư đến Học viên Cao học HTTT.
+5. **100% Responsive Mobile Toàn Diện**:
+   - Khóa khung 0 tràn ngang (`scrollWidth <= clientWidth`).
+   - Mobile Drawer trượt mờ kính (`backdrop-filter: blur(20px)`), phím đóng mở êm ái, thẻ điều hướng chuẩn touch target Apple/Google HIG (44x44px).
+6. **Hệ Thống Dữ Liệu Tự Chủ (`profile-data.js`)**:
+   - Tách biệt hoàn toàn tầng dữ liệu và tầng hiển thị. Toàn bộ thông tin lộ trình, dự án, bài báo, bài viết và mạng xã hội được quản lý tập trung, độc lập và dễ dàng cập nhật.
 
 ---
 
-## 🚀 Development & Deployment
+## 🛠️ Công Nghệ Sử Dụng (Tech Stack)
 
-### 1. Chạy thử nghiệm Local:
+- **3D Graphics & Canvas**: Three.js, Custom GLSL Shader Materials, Canvas 2D API, Pixel Art 16-bit
+- **Frontend & Build Tool**: HTML5 Semantic, CSS3 Modern (Custom Properties, Grid, Flexbox, Clamp), TypeScript, Vite
+- **Typography**: Onest, Instrument Serif, JetBrains Mono
+- **Responsive Testing**: Playwright Chromium Headless
+- **CI/CD & Hosting**: GitHub Actions (`.github/workflows/deploy.yml`) tự động hóa build và phát hành lên **GitHub Pages**.
+
+---
+
+## 🚀 Khởi Chạy & Phát Triển Cục Bộ
+
 ```bash
-# Cài đặt thư viện
+# 1. Cài đặt thư viện dependencies
 npm install
 
-# Khởi chạy server phát triển
+# 2. Khởi chạy dev server
 npm run dev
-# Mở trình duyệt tại http://localhost:5173
-```
 
-### 2. Kiểm tra đóng gói Production:
-```bash
+# 3. Build kiểm tra đóng gói bản production
 npm run build
-npm run preview
 ```
 
-### 3. Tự động hóa Deployment lên GitHub Pages:
-Repo đã được cấu hình GitHub Actions workflow tại `.github/workflows/deploy.yml`. Khi push code lên nhánh `main`:
-```bash
-git push -u origin main
-```
-GitHub Actions sẽ tự động kích hoạt workflow, cài đặt dependencies, build Vite project và phát hành trực tiếp lên `https://btvdev03.github.io`.
+---
 
-> **Lưu ý cấu hình trên GitHub Repo**:
-> 1. Vào repository **Settings** -> **Pages**.
-> 2. Trong mục **Build and deployment** -> **Source**, chọn **GitHub Actions**.
+## 📬 Liên Hệ & Hợp Tác
+
+- **Tác giả**: Võ Tấn Bản (Ban Vo Tan)
+- **Email**: [btv.dev03@gmail.com](mailto:btv.dev03@gmail.com)
+- **GitHub**: [@btvdev03](https://github.com/btvdev03)
+- **Facebook**: [facebook.com/btvdev03](https://www.facebook.com/btvdev03)
+- **LinkedIn**: [linkedin.com/in/btvdev03](https://www.linkedin.com/in/btvdev03)
+- **Cơ quan công tác**: Trung tâm Chuyển đổi số - Trường Đại học Thủ Dầu Một & Công ty Hoàng Giang Solar
+
+---
+*© 2026 Võ Tấn Bản. Crafted with ThreeUI Washi-Zen Aesthetic & Mekong Delta Soul.*
