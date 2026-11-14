@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  schedule:
+    # Daily sync at 01:15 UTC (08:15 GMT+7) to refresh GitHub stars & repos
+    - cron: '15 1 * * *'
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -34,6 +37,11 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Sync GitHub metadata
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run sync || true
 
       - name: Build project
         run: npm run build

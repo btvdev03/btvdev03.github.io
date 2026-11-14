@@ -1,0 +1,117 @@
+{
+  "username": "btvdev03",
+  "profile": {
+    "name": "Ban Vo Tan",
+    "bio": null,
+    "blog": "",
+    "company": null,
+    "location": null,
+    "followers": 1,
+    "publicRepos": 7,
+    "totalStars": 7
+  },
+  "repos": {
+    "tdmu-buoi6-quiz-phishing": {
+      "name": "tdmu-buoi6-quiz-phishing",
+      "description": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "homepage": null,
+      "htmlUrl": "https://github.com/btvdev03/tdmu-buoi6-quiz-phishing",
+      "pushedAt": "2026-11-13T12:12:44Z"
+    },
+    "btvdev03": {
+      "name": "btvdev03",
+      "description": "My GitHub Profile",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "homepage": null,
+      "htmlUrl": "https://github.com/btvdev03/btvdev03",
+      "pushedAt": "2026-11-10T16:20:49Z"
+    },
+    "season-qr": {
+      "name": "season-qr",
+      "description": null,
+      "language": "TypeScript",
+      "stars": 1,
+      "forks": 0,
+      "homepage": null,
+      "htmlUrl": "https://github.com/btvdev03/season-qr",
+      "pushedAt": "2026-11-10T08:38:31Z"
+    },
+    "glance": {
+      "name": "Glance",
+      "description": null,
+      "language": "JavaScript",
+      "stars": 3,
+      "forks": 0,
+      "homepage": "https://btvdev03.github.io/Glance/",
+      "htmlUrl": "https://github.com/btvdev03/Glance",
+      "pushedAt": "2026-11-08T17:30:23Z"
+    },
+    "btvdev03.github.io": {
+      "name": "btvdev03.github.io",
+      "description": null,
+      "language": "HTML",
+      "stars": 0,
+      "forks": 0,
+      "homepage": null,
+      "htmlUrl": "https://github.com/btvdev03/btvdev03.github.io",
+      "pushedAt": "2026-11-08T08:07:04Z"
+    },
+    "zen-desk-clock": {
+      "name": "zen-desk-clock",
+      "description": null,
+      "language": "JavaScript",
+      "stars": 2,
+      "forks": 0,
+      "homepage": null,
+      "htmlUrl": "https://github.com/btvdev03/zen-desk-clock",
+      "pushedAt": "2026-11-08T04:54:20Z"
+    },
+    "git-roast": {
+      "name": "git-roast",
+      "description": null,
+      "language": "JavaScript",
+      "stars": 1,
+      "forks": 0,
+      "homepage": null,
+      "htmlUrl": "https://github.com/btvdev03/git-roast",
+      "pushedAt": "2026-10-30T09:04:47Z"
+    }
+  },
+  "extraRepos": [
+    {
+      "name": "tdmu-buoi6-quiz-phishing",
+      "description": null,
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "homepage": null,
+      "htmlUrl": "https://github.com/btvdev03/tdmu-buoi6-quiz-phishing",
+      "pushedAt": "2026-11-13T12:12:44Z"
+    },
+    {
+      "name": "season-qr",
+      "description": null,
+      "language": "TypeScript",
+      "stars": 1,
+      "forks": 0,
+      "homepage": null,
+      "htmlUrl": "https://github.com/btvdev03/season-qr",
+      "pushedAt": "2026-11-10T08:38:31Z"
+    },
+    {
+      "name": "Glance",
+      "description": null,
+      "language": "JavaScript",
+      "stars": 3,
+      "forks": 0,
+      "homepage": "https://btvdev03.github.io/Glance/",
+      "htmlUrl": "https://github.com/btvdev03/Glance",
+      "pushedAt": "2026-11-08T17:30:23Z"
+    }
+  ]
+}

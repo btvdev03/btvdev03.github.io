@@ -1027,8 +1027,10 @@ function initProfileData() {
     const elCountWeb = $('#countWeb'); if (elCountWeb) elCountWeb.textContent = countWeb;
     const elCountResearch = $('#countResearch'); if (elCountResearch) elCountResearch.textContent = countResearch;
 
-    projGrid.innerHTML = data.projects.map(p => `
-      <article class="proj-detail-card" data-category="${p.categoryGroup || 'cli'}">
+    projGrid.innerHTML = data.projects.map(p => {
+      const repoSlug = (p.githubUrl || '').replace(/\/+$/, '').split('/').pop()?.toLowerCase() || '';
+      return `
+      <article class="proj-detail-card" data-category="${p.categoryGroup || 'cli'}" data-repo="${repoSlug}">
         <div class="proj-head">
           <div class="proj-title-group">
             <h3 class="proj-name">${p.name}</h3>
@@ -1080,7 +1082,28 @@ function initProfileData() {
           </div>
         </div>
       </article>
-    `).join('');
+    `;
+    }).join('');
+
+    // Enrich project cards & status banner with synced GitHub stats if available
+    fetch('./github-sync.json')
+      .then(r => (r.ok ? r.json() : null))
+      .then(sync => {
+        if (!sync || !sync.repos) return;
+        const statusEl = $('.projects-status-text');
+        if (statusEl && sync.profile) {
+          statusEl.textContent = `Mã Nguồn Mở · ${sync.profile.publicRepos} Kho · ★ ${sync.profile.totalStars} GitHub`;
+        }
+        $$('.proj-detail-card', projGrid).forEach(card => {
+          const slug = card.dataset.repo;
+          const repo = slug ? sync.repos[slug] : null;
+          const metricEl = card.querySelector('.metric-text');
+          if (repo && repo.stars > 0 && metricEl && !metricEl.textContent.includes('★')) {
+            metricEl.textContent = `${metricEl.textContent} · ★ ${repo.stars}`;
+          }
+        });
+      })
+      .catch(() => {});
 
     // Tab filter handling for projects
     const pTabs = $$('#projectTabs .p-tab', document);
